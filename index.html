@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Decay Labs — NFT Marketplace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ════════ HEADER ════════ -->
+    <header class="nav" id="nav">
+      <a href="#top" class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">Decay<span class="bn-2">Labs</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#top">Home</a>
+        <a href="#trending">Explore</a>
+        <a href="#families">Collection</a>
+        <a href="https://opensea.io/collection/decaylabs-395322216" target="_blank" rel="noopener">Profile</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="chain-chip" id="chainChip" type="button" title="Network">
+          <svg class="ico ico-base" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#0052FF"/><path fill="#fff" d="M7.9 13.4a5.4 5.4 0 1 0 0-10.8 5.4 5.4 0 0 0-5.13 3.73h6.66v3.34H2.77A5.4 5.4 0 0 0 7.9 13.4z"/></svg>
+          <span>Base</span><i class="caret">▾</i>
+        </button>
+        <a class="btn btn--x" href="https://x.com/Decaylabss" target="_blank" rel="noopener">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          Follow on X
+        </a>
+        <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+
+    <!-- ════════ HERO ════════ -->
+    <section class="hero" id="top">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="hero-main">
+          <p class="hero-eyebrow">Genesis Collection · 1,000 Survivors on Base</p>
+          <h1 class="hero-title hero-title--horror glitch" data-text="Survive the Decay">Survive the <span class="acc">Decay</span></h1>
+          <p class="hero-sub">Discover, Collect &amp; Sell Extraordinary NFTs.
+             1,000 hand-illustrated undead survivors, minted on Base.</p>
+
+          <div class="hero-badges">
+            <span class="cbadge">
+              <svg class="ico ico-base" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#0052FF"/><path fill="#fff" d="M7.9 13.4a5.4 5.4 0 1 0 0-10.8 5.4 5.4 0 0 0-5.13 3.73h6.66v3.34H2.77A5.4 5.4 0 0 0 7.9 13.4z"/></svg>
+              Built on Base
+            </span>
+            <span class="cbadge">
+              <svg class="ico ico-eth" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 1 3.6 8.1 8 10.8l4.4-2.7z"/><path fill="currentColor" opacity=".7" d="M8 11.7 3.6 9 8 15l4.4-6z"/></svg>
+              0.005 Ξ Floor
+            </span>
+            <span class="cbadge"><i class="ok">✓</i> Verified on Basescan</span>
+          </div>
+
+          <div class="hero-cta">
+            <button class="btn btn--primary btn--lg btn--wallet" id="heroConnect">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 7a3 3 0 0 1 3-3h11a2 2 0 0 1 2 2v1h1a2 2 0 0 1 2 2v8a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V7Zm16 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z"/></svg>
+              Connect Wallet
+            </button>
+            <a href="#trending" class="btn btn--ghost btn--lg">Explore Collection</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hs"><b>1,000</b><i>Survivors</i></div>
+            <div class="hs"><b>0.005 Ξ</b><i>Floor Price</i></div>
+            <div class="hs"><b>Base</b><i>Blockchain</i></div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="tilt" data-tilt data-tilt-max="14">
+            <div class="hero-card">
+              <img src="public/nft-1.png" alt="Featured Decay Labs survivor" />
+              <div class="hero-card-badge">
+                <div class="hcb-l">
+                  <span class="hcb-label">Floor Price</span>
+                  <span class="hcb-val"><svg class="ico ico-eth" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 1 3.6 8.1 8 10.8l4.4-2.7z"/><path fill="currentColor" opacity=".7" d="M8 11.7 3.6 9 8 15l4.4-6z"/></svg>0.005 Ξ</span>
+                </div>
+                <span class="hcb-up">+12.45%</span>
+              </div>
+              <span class="glare"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════ TRENDING GRID ════════ -->
+    <section class="section" id="trending">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Marketplace</p>
+          <h2 class="section-title">Trending <span class="acc">survivors</span></h2>
+        </div>
+        <a href="https://opensea.io/collection/decaylabs-395322216" target="_blank" rel="noopener" class="link-more">View on OpenSea <i>↗</i></a>
+      </div>
+      <div class="card-grid" id="cardGrid"></div>
+    </section>
+
+    <!-- ════════ BROWSE BY FAMILY ════════ -->
+    <section class="section" id="families">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Browse</p>
+          <h2 class="section-title">Explore by <span class="acc">trait family</span></h2>
+        </div>
+      </div>
+      <div class="family-grid" id="familyGrid"></div>
+    </section>
+
+    <!-- ════════ CTA BANNER ════════ -->
+    <section class="cta" id="cta">
+      <div class="cta-inner">
+        <p class="eyebrow">Mint is live soon</p>
+        <h2 class="cta-title">Claim your <span class="acc">decayed survivor</span></h2>
+        <p class="cta-sub">Connect your wallet on Base to mint, or find Decay Labs on the secondary market before the floor rises.</p>
+        <div class="cta-actions">
+          <button class="btn btn--green btn--xl shiver" id="ctaConnect">Claim Your Survivor</button>
+          <a href="https://opensea.io/collection/decaylabs-395322216" target="_blank" rel="noopener" class="btn btn--ghost btn--lg">Buy on OpenSea</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════ FOOTER ════════ -->
+    <footer class="footer">
+      <div class="footer-top">
+        <a href="#top" class="brand">
+          <span class="brand-mark"></span>
+          <span class="brand-name">Decay<span class="bn-2">Labs</span></span>
+        </a>
+        <div class="footer-links">
+          <a href="https://opensea.io/collection/decaylabs-395322216" target="_blank" rel="noopener">OpenSea</a>
+          <a href="https://x.com/Decaylabss" target="_blank" rel="noopener">X / Twitter</a>
+          <a href="https://basescan.org/address/0x65F5e8006F4eF730d6984836F606a5C5c516CdC8" target="_blank" rel="noopener">Basescan</a>
+        </div>
+      </div>
+      <button class="contract-chip" id="contractChip" type="button" title="Copy contract address">
+        <span class="cc-label">Contract</span>
+        <span class="cc-addr">0x65F5…CdC8</span>
+        <span class="cc-copy">Copy</span>
+      </button>
+      <div class="footer-bottom">
+        <span>© 2026 Decay Labs · Genesis Collection · Built on Base</span>
+        <span class="credit">Design based on a template by Ignacio Prados (CC BY 4.0)</span>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
