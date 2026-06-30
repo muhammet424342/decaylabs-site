@@ -3,7 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Decay Labs — NFT Marketplace</title>
+    <title>Decay Labs — 1,000 Decayed Survivors on Base</title>
+    <meta name="description" content="Decay Labs is an on-chain collection of 1,000 hand-illustrated undead survivors, minted on Base. Discover, collect & trade." />
+    <meta name="theme-color" content="#0b0d0a" />
+
+    <!-- ⚠️ Deploy edince bu URL'yi gerçek alan adınla değiştir (ör. https://decaylabs-site.vercel.app) -->
+    <link rel="canonical" href="https://decaylabs-site.vercel.app/" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32.png" />
+    <link rel="apple-touch-icon" href="public/apple-touch-icon.png" />
+
+    <!-- Open Graph (Facebook, Discord, etc.) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Decay Labs" />
+    <meta property="og:title" content="Decay Labs — 1,000 Decayed Survivors on Base" />
+    <meta property="og:description" content="An on-chain collection of 1,000 hand-illustrated undead survivors, minted on Base. Discover, collect & trade." />
+    <meta property="og:url" content="https://decaylabs-site.vercel.app/" />
+    <meta property="og:image" content="https://decaylabs-site.vercel.app/public/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter / X card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Decaylabss" />
+    <meta name="twitter:creator" content="@Decaylabss" />
+    <meta name="twitter:title" content="Decay Labs — 1,000 Decayed Survivors on Base" />
+    <meta name="twitter:description" content="An on-chain collection of 1,000 hand-illustrated undead survivors, minted on Base." />
+    <meta name="twitter:image" content="https://decaylabs-site.vercel.app/public/og.png" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -52,7 +80,7 @@
             </span>
             <span class="cbadge">
               <svg class="ico ico-eth" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 1 3.6 8.1 8 10.8l4.4-2.7z"/><path fill="currentColor" opacity=".7" d="M8 11.7 3.6 9 8 15l4.4-6z"/></svg>
-              0.005 Ξ Floor
+              <span class="jsFloor">0.005</span> Ξ Floor
             </span>
             <span class="cbadge"><i class="ok">✓</i> Verified on Basescan</span>
           </div>
@@ -67,8 +95,8 @@
 
           <div class="hero-stats">
             <div class="hs"><b>1,000</b><i>Survivors</i></div>
-            <div class="hs"><b>0.005 Ξ</b><i>Floor Price</i></div>
-            <div class="hs"><b>Base</b><i>Blockchain</i></div>
+            <div class="hs"><b><span class="jsFloor">0.005</span> Ξ</b><i>Floor Price</i></div>
+            <div class="hs"><b id="hsOwners">Base</b><i id="hsOwnersLbl">Blockchain</i></div>
           </div>
         </div>
 
@@ -79,9 +107,9 @@
               <div class="hero-card-badge">
                 <div class="hcb-l">
                   <span class="hcb-label">Floor Price</span>
-                  <span class="hcb-val"><svg class="ico ico-eth" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 1 3.6 8.1 8 10.8l4.4-2.7z"/><path fill="currentColor" opacity=".7" d="M8 11.7 3.6 9 8 15l4.4-6z"/></svg>0.005 Ξ</span>
+                  <span class="hcb-val"><svg class="ico ico-eth" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 1 3.6 8.1 8 10.8l4.4-2.7z"/><path fill="currentColor" opacity=".7" d="M8 11.7 3.6 9 8 15l4.4-6z"/></svg><span class="jsFloor">0.005</span> Ξ</span>
                 </div>
-                <span class="hcb-up">+12.45%</span>
+                <span class="hcb-up" id="hcbChange" hidden>+0%</span>
               </div>
               <span class="glare"></span>
             </div>
@@ -96,6 +124,7 @@
         <div>
           <p class="eyebrow">Marketplace</p>
           <h2 class="section-title">Trending <span class="acc">survivors</span></h2>
+          <p class="coll-live" id="collLive">Floor 0.005 Ξ · Built on Base</p>
         </div>
         <a href="https://opensea.io/collection/decaylabs-395322216" target="_blank" rel="noopener" class="link-more">View on OpenSea <i>↗</i></a>
       </div>
@@ -150,6 +179,6 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=2"></script>
   </body>
 </html>

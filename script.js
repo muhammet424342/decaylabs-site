@@ -23,14 +23,13 @@ if (cardGrid) {
     <article class="card reveal d${(i % 4) + 1}" data-tilt data-tilt-max="10">
       <div class="card-media">
         <span class="card-fam">${t.fam}</span>
-        <span class="card-rarity ${t.rarity.toLowerCase()}">${t.rarity}</span>
         <img src="${img(t.n)}" alt="${id}" loading="lazy" />
       </div>
       <div class="card-body">
         <div class="card-name">${id}</div>
         <div class="card-meta">
-          <div class="floor"><span>Floor</span><b>${t.price} Ξ</b></div>
-          <div class="vol"><span>Volume 24h</span><b>${t.vol} Ξ</b></div>
+          <div class="floor"><span>Floor</span><b><span class="jsFloor">0.005</span> Ξ</b></div>
+          <a class="card-view" href="https://opensea.io/collection/decaylabs-395322216" target="_blank" rel="noopener">View ↗</a>
         </div>
       </div>
       <span class="glare"></span>
@@ -48,6 +47,33 @@ if (familyGrid) {
       <div class="family-label"><b>${f}</b><i>Trait family</i></div>
     </div>`).join("");
 }
+
+/* ---- Live collection stats (real data via /api/stats serverless proxy) ---- */
+async function fetchStats() {
+  let data = { floor: 0.005, volume: null, owners: null, change7d: null, fallback: true };
+  try {
+    const r = await fetch("/api/stats", { headers: { accept: "application/json" } });
+    if (r.ok) data = await r.json();
+  } catch (e) { /* offline / local static server → keep fallback */ }
+
+  const eth = (v) => (v == null ? null : (Math.round(v * 1000) / 1000).toString());
+  const floorStr = data.floor != null ? eth(data.floor) : "0.005";
+  document.querySelectorAll(".jsFloor").forEach((el) => { el.textContent = floorStr; });
+
+  if (data.owners != null) {
+    const o = document.getElementById("hsOwners"), ol = document.getElementById("hsOwnersLbl");
+    if (o) { o.textContent = Number(data.owners).toLocaleString(); ol.textContent = "Owners"; }
+  }
+
+  const live = document.getElementById("collLive");
+  if (live) {
+    const parts = [`Floor ${floorStr} Ξ`];
+    if (data.owners != null) parts.push(`${Number(data.owners).toLocaleString()} owners`);
+    if (data.volume != null) parts.push(`${eth(data.volume)} Ξ volume`);
+    live.textContent = parts.join("  ·  ");
+  }
+}
+fetchStats();
 
 /* ---- Sticky nav background on scroll ---- */
 const nav = document.getElementById("nav");

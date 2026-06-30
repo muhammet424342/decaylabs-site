@@ -239,6 +239,12 @@ body::before{ content:""; position:fixed; inset:-10%; z-index:-2; pointer-events
 .card-meta span{ font-size:9.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
 .card-meta b{ font-size:14px; font-weight:700; }
 .card-meta .floor b{ background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.card-view{ align-self:flex-end; font-size:12px; font-weight:700; color:#cfcad8;
+  border:1px solid var(--line); border-radius:999px; padding:.45em 1em; transition:all .25s ease; white-space:nowrap; }
+.card-view:hover{ color:#fff; border-color:rgba(255,255,255,.4); background:rgba(255,255,255,.06); }
+
+/* live collection stats line under the trending title */
+.coll-live{ margin-top:.7em; font-size:13px; font-weight:600; color:#b9b4c4; letter-spacing:.01em; }
 
 /* ───────── FAMILY GRID ───────── */
 .family-grid{ display:grid; grid-template-columns:repeat(5,1fr); gap:1.2em; }
