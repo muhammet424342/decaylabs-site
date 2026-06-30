@@ -91,15 +91,6 @@ if (burger && navLinks) {
   );
 }
 
-/* ---- Connect wallet (placeholder until web3 wired) ---- */
-function connectWallet() {
-  alert("Wallet connection coming soon — Decay Labs mints on Base.");
-}
-["connectWallet", "ctaConnect", "heroConnect"].forEach((id) => {
-  const el = document.getElementById(id);
-  if (el) el.addEventListener("click", connectWallet);
-});
-
 /* ---- Chain chip ---- */
 const chainChip = document.getElementById("chainChip");
 if (chainChip) {
