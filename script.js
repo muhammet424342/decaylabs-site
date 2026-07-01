@@ -168,4 +168,77 @@ if (reduceMotion) {
   window.addEventListener("resize", onReveal, { passive: true });
   checkReveal();
 }
+
+/* ---- AI assistant (DeepSeek via /api/chat) ---- */
+(function initChat() {
+  const fab = document.getElementById("chatFab");
+  const panel = document.getElementById("chatPanel");
+  const closeBtn = document.getElementById("chatClose");
+  const log = document.getElementById("chatLog");
+  const form = document.getElementById("chatForm");
+  const input = document.getElementById("chatInput");
+  if (!fab || !panel || !form) return;
+
+  const history = [];
+  let greeted = false, busy = false;
+
+  const add = (role, text) => {
+    const div = document.createElement("div");
+    div.className = "msg " + (role === "me" ? "me" : "bot");
+    div.textContent = text;
+    log.appendChild(div);
+    log.scrollTop = log.scrollHeight;
+    return div;
+  };
+
+  const open = () => {
+    panel.classList.add("open");
+    panel.setAttribute("aria-hidden", "false");
+    fab.classList.add("hide");
+    if (!greeted) {
+      greeted = true;
+      add("bot", "Welcome to Decay Labs 🧟 Ask me anything — what the collection is, how to buy on Base, traits, whatever you like.");
+    }
+    setTimeout(() => input.focus(), 250);
+  };
+  const close = () => {
+    panel.classList.remove("open");
+    panel.setAttribute("aria-hidden", "true");
+    fab.classList.remove("hide");
+  };
+
+  fab.addEventListener("click", open);
+  closeBtn.addEventListener("click", close);
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const text = input.value.trim();
+    if (!text || busy) return;
+    busy = true; input.value = "";
+    add("me", text);
+    history.push({ role: "user", content: text });
+
+    const typing = add("bot", "…");
+    typing.classList.add("typing");
+
+    try {
+      const r = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ messages: history.slice(-8) }),
+      });
+      const data = await r.json();
+      const reply = (data && data.reply) || "Sorry, I couldn't answer that.";
+      typing.remove();
+      add("bot", reply);
+      history.push({ role: "assistant", content: reply });
+    } catch (err) {
+      typing.remove();
+      add("bot", "Connection trouble — please try again in a moment.");
+    } finally {
+      busy = false;
+      input.focus();
+    }
+  });
+})();
 })();
