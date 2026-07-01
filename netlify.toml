@@ -1,0 +1,9 @@
+# Netlify config — static site, no build. Maps /api/stats to a serverless function.
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/api/stats"
+  to = "/.netlify/functions/stats"
+  status = 200
