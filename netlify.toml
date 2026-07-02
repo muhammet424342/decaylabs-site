@@ -7,8 +7,3 @@
   from = "/api/stats"
   to = "/.netlify/functions/stats"
   status = 200
-
-[[redirects]]
-  from = "/api/chat"
-  to = "/.netlify/functions/chat"
-  status = 200
