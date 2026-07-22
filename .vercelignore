@@ -1,0 +1,15 @@
+netlify
+netlify.toml
+*.bak
+TOKEN.txt
+DEPLOY_URL.txt
+deploy.bat
+DEPLOY.md
+fetch-retry-preload.cjs
+.claude
+.oskey
+.vtoken
+api/stats.js
+node_modules
+package-lock.json
+package.json

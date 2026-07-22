@@ -1,0 +1,21 @@
+{
+  "accountAssociation": {
+    "header": "eyJmaWQiOjMzNDMxMDMsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHhjM2EwYmU3NWY0QWY5OEEzNDNjZjZjRGQ0MmRFYzJDZmU1RTU1YzM2In0",
+    "payload": "eyJkb21haW4iOiJkZWNheWxhYnMub25saW5lIn0",
+    "signature": "6DR44vV8C1qmnRaYlPR18IwbLvxLCCcenLi4AuaaNg9Rz6CU2rtPfjj3X0Z+dF5CH55TJKeXVFSlTRpYkgMVLxw="
+  },
+  "miniapp": {
+    "version": "1",
+    "name": "Decay Labs",
+    "iconUrl": "https://decaylabs.online/public/icon-192.png",
+    "homeUrl": "https://decaylabs.online",
+    "imageUrl": "https://decaylabs.online/public/og.png",
+    "buttonTitle": "🧟 Enter Decay Labs",
+    "splashImageUrl": "https://decaylabs.online/public/icon-192.png",
+    "splashBackgroundColor": "#0b0d0a",
+    "subtitle": "1,000 undead survivors on Base",
+    "description": "An on-chain collection of 1,000 hand-illustrated undead survivors, minted on Base. Discover, collect and trade.",
+    "primaryCategory": "art-creativity",
+    "tags": ["nft", "art", "base", "collectibles", "zombie"]
+  }
+}

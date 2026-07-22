@@ -2,3 +2,15 @@
 .vercel/
 node_modules/
 .DS_Store
+
+.vercel
+
+# secrets — never commit
+.oskey
+.vtoken
+TOKEN.txt
+deploy.bat
+.env
+.env.*
+*.key
+*secret*
