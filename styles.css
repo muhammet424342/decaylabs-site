@@ -85,10 +85,12 @@ body::after{ content:""; position:fixed; inset:0; z-index:-1; pointer-events:non
   pointer-events:none; opacity:0; }
 .glitch::before{ color:#22ffea; animation:glitchA 4.5s steps(2,end) infinite; }
 .glitch::after{ color:#ff004d; animation:glitchB 4.5s steps(2,end) infinite; }
-@keyframes glitchA{ 0%,92%,100%{ opacity:0; transform:none; } 93%{ opacity:.5; transform:translate(-3px,-1px); }
-  96%{ opacity:.4; transform:translate(2px,1px); } 99%{ opacity:0; transform:none; } }
-@keyframes glitchB{ 0%,91%,100%{ opacity:0; transform:none; } 94%{ opacity:.45; transform:translate(3px,1px); }
-  97%{ opacity:.4; transform:translate(-2px,-1px); } 99%{ opacity:0; transform:none; } }
+/* Parlama döngünün BAŞINDA: efekt aynı, ama ::before ilk kez ~90ms'de görünür oluyor.
+   Eskiden %93'te (=4.19s) görünüyordu ve Chrome onu LCP sanıp 4.94s "poor" veriyordu. */
+@keyframes glitchA{ 0%,8%,100%{ opacity:0; transform:none; } 2%{ opacity:.5; transform:translate(-3px,-1px); }
+  5%{ opacity:.4; transform:translate(2px,1px); } }
+@keyframes glitchB{ 0%,9%,100%{ opacity:0; transform:none; } 3%{ opacity:.45; transform:translate(3px,1px); }
+  6%{ opacity:.4; transform:translate(-2px,-1px); } }
 
 @media (prefers-reduced-motion:reduce){
   .hero-title--horror.glitch{ animation:none; }
