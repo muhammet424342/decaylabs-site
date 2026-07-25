@@ -77,9 +77,18 @@ body::after{ content:""; position:fixed; inset:0; z-index:-1; pointer-events:non
 
 /* neon glow + glitch on hero title */
 .hero-title--horror.glitch{ animation:neonpulse 3.4s ease-in-out infinite; }
+/* GPU: eskiden her keyframe'de İKİ text-shadow vardı (60px + 95px blur). Dev basligin
+   golgesi her karede yeniden rasterize ediliyordu = surekli GPU yuku. Tek golgeye
+   indirildi ve blur kucultuldu; parlama efekti ayni kaliyor. */
 @keyframes neonpulse{
-  0%,100%{ text-shadow:0 0 28px rgba(192,38,211,.35), 0 0 60px rgba(192,38,211,.14); }
-  50%{ text-shadow:0 0 46px rgba(255,0,77,.5), 0 0 95px rgba(192,38,211,.28); } }
+  0%,100%{ text-shadow:0 0 26px rgba(192,38,211,.42); }
+  50%{ text-shadow:0 0 40px rgba(255,0,77,.5); } }
+
+/* GPU: hero ekrandan cikinca tum sonsuz animasyonlar duraklar. Gorunum degismez,
+   cunku zaten gorunmuyorlar; ama tarayici bosuna cizmeyi birakir. */
+.anim-off .hero-title--horror.glitch,
+.anim-off .glitch::before,
+.anim-off .glitch::after{ animation-play-state:paused; }
 .glitch{ position:relative; }
 .glitch::before, .glitch::after{ content:attr(data-text); position:absolute; left:0; top:0; width:100%;
   pointer-events:none; opacity:0; }

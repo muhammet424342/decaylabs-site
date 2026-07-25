@@ -169,3 +169,14 @@ if (reduceMotion) {
   checkReveal();
 }
 })();
+
+/* GPU: hero ekran disindayken sonsuz animasyonlari duraklat.
+   neonpulse/glitchA/glitchB sayfanin altina inildiginde bile 60fps cizmeye
+   devam ediyordu. Gorunum degismez -- zaten gorunmuyorlardi. */
+(function () {
+  var el = document.querySelector(".hero-title--horror");
+  if (!el || !("IntersectionObserver" in window)) return;
+  new IntersectionObserver(function (entries) {
+    document.body.classList.toggle("anim-off", !entries[0].isIntersecting);
+  }, { threshold: 0 }).observe(el);
+})();
