@@ -4,6 +4,8 @@
 
 const OPENSEA = "https://opensea.io/collection/decaylabs-395322216";
 const BASE_CHAIN_HEX = "0x2105"; // 8453
+// ERC-8021 attribution for Decay Labs Builder Code: bc_yb6cmebf
+const BUILDER_DATA_SUFFIX = "0x62635f796236636d6562660b0080218021802180218021802180218021";
 
 const ABI = [{
   type: "function", name: "fulfillBasicOrder_efficient_6GL6yc", stateMutability: "payable",
@@ -106,6 +108,7 @@ async function buy() {
     p.additionalRecipients = (p.additionalRecipients || []).map((x) => ({ amount: BigInt(x.amount), recipient: x.recipient }));
     let data = encodeFunctionData({ abi: ABI, functionName: "fulfillBasicOrder_efficient_6GL6yc", args: [p] });
     data += (d.calldataSuffix || "").replace(/^0x/, "");
+    data += BUILDER_DATA_SUFFIX.replace(/^0x/, "");
 
     setLabel(`Buy #${d.tokenId ?? ""} · ${d.priceEth ?? "0.005"} Ξ`);
     status("Confirm the purchase in your wallet…");
