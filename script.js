@@ -48,11 +48,11 @@ if (familyGrid) {
     </div>`).join("");
 }
 
-/* ---- Live collection stats (real data via /api/stats serverless proxy) ---- */
+/* ---- Live collection stats (real data via the Vercel serverless proxy) ---- */
 async function fetchStats() {
   let data = { floor: 0.005, volume: null, owners: null, change7d: null, fallback: true };
   try {
-    const r = await fetch("/api/stats", { headers: { accept: "application/json" } });
+    const r = await fetch("/api/collection-stats.js", { headers: { accept: "application/json" } });
     if (r.ok) data = await r.json();
   } catch (e) { /* offline / local static server → keep fallback */ }
 

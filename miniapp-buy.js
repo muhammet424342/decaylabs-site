@@ -1,6 +1,5 @@
-// Decay Labs — Base App / Farcaster mini app: in-app buy (no OpenSea redirect).
-// Robust: the click handler attaches immediately; heavy libs (viem, Farcaster SDK)
-// load lazily on demand, so a slow/failed CDN never leaves the button dead.
+// Decay Labs — standard web app for the Base App: in-app buy (no redirect).
+// Viem loads lazily on demand, so a slow/failed CDN never leaves the button dead.
 
 const OPENSEA = "https://opensea.io/collection/decaylabs-395322216";
 const BASE_CHAIN_HEX = "0x2105"; // 8453
@@ -39,32 +38,17 @@ const $ = (id) => document.getElementById(id);
 const status = (msg, html) => { const el = $("buyStatus"); if (!el) return; if (html) el.innerHTML = html; else el.textContent = msg || ""; };
 const setLabel = (t) => { const el = $("buyBtnLabel"); if (el) el.textContent = t; };
 
-async function loadSdk() {
-  try { const m = await import("https://esm.sh/@farcaster/miniapp-sdk"); return m.sdk; } catch (_) { return null; }
-}
-async function loadEncoder() {
-  const m = await import("https://esm.sh/viem@2");
-  return m.encodeFunctionData;
-}
-
-async function isInMiniApp(sdk) {
-  try { if (sdk?.isInMiniApp) return await sdk.isInMiniApp(); } catch (_) {}
-  // fallback heuristic: mini app clients run inside an iframe / RN webview
-  return typeof window !== "undefined" && window.parent !== window;
+async function loadViemStack() {
+  const [viem, chains] = await Promise.all([
+    import("https://esm.sh/viem@2.45.0"),
+    import("https://esm.sh/viem@2.45.0/chains"),
+  ]);
+  return { ...viem, base: chains.base };
 }
 
-async function getProvider() {
-  const sdk = await loadSdk();
-  // Only use the Farcaster wallet provider when we are actually inside a mini app,
-  // otherwise its RPC bridge doesn't exist and requests throw.
-  if (sdk && (await isInMiniApp(sdk))) {
-    try {
-      if (sdk.wallet?.getEthereumProvider) { const p = await sdk.wallet.getEthereumProvider(); if (p) return p; }
-      if (sdk.wallet?.ethProvider) return sdk.wallet.ethProvider;
-    } catch (_) {}
-  }
-  if (typeof window !== "undefined" && window.ethereum) return window.ethereum;
-  return null;
+function getProvider() {
+  // The Base App exposes a standard EIP-1193 provider in its in-app browser.
+  return typeof window !== "undefined" ? window.ethereum || null : null;
 }
 
 async function ensureBase(provider) {
@@ -91,14 +75,15 @@ async function buy() {
       return;
     }
 
-    const accounts = await provider.request({ method: "eth_requestAccounts" });
+    const { base, createWalletClient, custom, encodeFunctionData } = await loadViemStack();
+    const walletClient = createWalletClient({ chain: base, transport: custom(provider) });
+    const accounts = await walletClient.requestAddresses();
     const buyer = accounts && accounts[0];
     if (!buyer) throw new Error("No wallet account");
 
     await ensureBase(provider);
 
     status("Finding the cheapest one…");
-    const encodeFunctionData = await loadEncoder();
     const r = await fetch(`/api/buy.js?address=${buyer}`, { headers: { accept: "application/json" } });
     const d = await r.json();
     if (!r.ok || d.error) throw new Error(d.error || `api ${r.status}`);
@@ -108,12 +93,17 @@ async function buy() {
     p.additionalRecipients = (p.additionalRecipients || []).map((x) => ({ amount: BigInt(x.amount), recipient: x.recipient }));
     let data = encodeFunctionData({ abi: ABI, functionName: "fulfillBasicOrder_efficient_6GL6yc", args: [p] });
     data += (d.calldataSuffix || "").replace(/^0x/, "");
-    data += BUILDER_DATA_SUFFIX.replace(/^0x/, "");
 
     setLabel(`Buy #${d.tokenId ?? ""} · ${d.priceEth ?? "0.005"} Ξ`);
     status("Confirm the purchase in your wallet…");
-    const hash = await provider.request({ method: "eth_sendTransaction",
-      params: [{ from: buyer, to: d.to, value: d.valueHex, data }] });
+    const hash = await walletClient.sendTransaction({
+      account: buyer,
+      chain: base,
+      to: d.to,
+      value: BigInt(d.valueHex),
+      data,
+      dataSuffix: BUILDER_DATA_SUFFIX,
+    });
 
     status(null, `🧟 Purchased! <a href="https://basescan.org/tx/${hash}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">View transaction ↗</a>`);
   } catch (e) {
@@ -135,9 +125,3 @@ async function buy() {
 // ── Attach handler immediately (no top-level imports that could block this) ──
 const btn = $("buyBtn");
 if (btn) btn.addEventListener("click", buy);
-
-// Signal readiness to Base App / Farcaster (best-effort, lazy).
-(async () => {
-  const sdk = await loadSdk();
-  try { await sdk?.actions?.ready(); document.documentElement.classList.add("in-miniapp"); } catch (_) {}
-})();
