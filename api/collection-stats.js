@@ -1,38 +1,36 @@
-// Stable Vercel route for Decay Labs collection statistics.
 const SLUG = "decaylabs-395322216";
 
 export default async function handler(req, res) {
   res.setHeader("Cache-Control", "s-maxage=300, stale-while-revalidate=600");
-  const fallback = {
-    floor: 0.005,
-    volume: null,
-    owners: null,
-    sales: null,
-    change7d: null,
-    fallback: true,
-  };
-
+  res.setHeader("X-Content-Type-Options", "nosniff");
+  if (req.method && req.method !== "GET") {
+    res.setHeader("Allow", "GET");
+    return res.status(405).json({ error: "method_not_allowed" });
+  }
+  const empty = { floor: null, volume: null, owners: null, sales: null, source: null, fresh: false };
   const key = process.env.OPENSEA_API_KEY;
-  if (!key) return res.status(200).json(fallback);
-
+  if (!key) return res.status(200).json(empty);
   try {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 8000);
     const response = await fetch(`https://api.opensea.io/api/v2/collections/${SLUG}/stats`, {
       headers: { accept: "application/json", "x-api-key": key },
+      signal: controller.signal
     });
-    if (!response.ok) return res.status(200).json(fallback);
-
+    clearTimeout(timer);
+    if (!response.ok) return res.status(200).json(empty);
     const body = await response.json();
     const total = body.total || {};
-    const sevenDay = (body.intervals || []).find((item) => item.interval === "seven_day") || {};
     return res.status(200).json({
-      floor: total.floor_price ?? 0.005,
-      volume: total.volume ?? null,
-      owners: total.num_owners ?? null,
-      sales: total.sales ?? null,
-      change7d: typeof sevenDay.volume_change === "number" ? sevenDay.volume_change : null,
-      fallback: false,
+      floor: Number.isFinite(total.floor_price) ? total.floor_price : null,
+      volume: Number.isFinite(total.volume) ? total.volume : null,
+      owners: Number.isFinite(total.num_owners) ? total.num_owners : null,
+      sales: Number.isFinite(total.sales) ? total.sales : null,
+      source: "OpenSea API",
+      fresh: true
     });
-  } catch (_) {
-    return res.status(200).json(fallback);
+  } catch (error) {
+    console.warn("[stats-api]", error);
+    return res.status(200).json(empty);
   }
 }

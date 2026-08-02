@@ -1,0 +1,32 @@
+{
+  "name": "Decay Labs Subject #0191",
+  "description": "Subject 0191 is a hand-illustrated witness from The Half-Life Archive. Assigned to Rustbound; archive condition: quarantined, transmission continues. Narrative classifications do not represent financial rarity or guaranteed utility.",
+  "image": "ipfs://QmcNKaghAM636EiW9zQeirxz25s7fU1eJ8tN8PzLgK7qP/191.png",
+  "external_url": "https://decaylabs.online/subject?id=191",
+  "attributes": [
+    {
+      "trait_type": "Narrative Faction",
+      "value": "Rustbound"
+    },
+    {
+      "trait_type": "Archive Chapter",
+      "value": "091"
+    },
+    {
+      "trait_type": "Chapter Record",
+      "value": "After the Enemy"
+    },
+    {
+      "trait_type": "Signal",
+      "value": "VANTA/RUSTBOUND/0191"
+    },
+    {
+      "trait_type": "Collection Status",
+      "value": "Genesis Archive"
+    },
+    {
+      "trait_type": "Media Storage",
+      "value": "IPFS"
+    }
+  ]
+}

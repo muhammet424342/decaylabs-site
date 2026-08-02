@@ -1,0 +1,32 @@
+{
+  "name": "Decay Labs Subject #0576",
+  "description": "Subject 0576 is a hand-illustrated witness from The Half-Life Archive. Assigned to Rustbound; archive condition: contained, external witness required. Narrative classifications do not represent financial rarity or guaranteed utility.",
+  "image": "ipfs://QmcNKaghAM636EiW9zQeirxz25s7fU1eJ8tN8PzLgK7qP/576.png",
+  "external_url": "https://decaylabs.online/subject?id=576",
+  "attributes": [
+    {
+      "trait_type": "Narrative Faction",
+      "value": "Rustbound"
+    },
+    {
+      "trait_type": "Archive Chapter",
+      "value": "076"
+    },
+    {
+      "trait_type": "Chapter Record",
+      "value": "Prototype City"
+    },
+    {
+      "trait_type": "Signal",
+      "value": "VANTA/RUSTBOUND/0576"
+    },
+    {
+      "trait_type": "Collection Status",
+      "value": "Genesis Archive"
+    },
+    {
+      "trait_type": "Media Storage",
+      "value": "IPFS"
+    }
+  ]
+}

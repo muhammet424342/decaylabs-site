@@ -1,210 +1,269 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8">
     <script>
-      // Vercel'in otomatik .vercel.app adresine gireni resmi domaine yönlendir (marka bütünlüğü).
       if (location.hostname.endsWith(".vercel.app")) {
         location.replace("https://decaylabs.online" + location.pathname + location.search + location.hash);
       }
     </script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Decay Labs — 1,000 Decayed Survivors on Base</title>
-    <meta name="description" content="Decay Labs is an on-chain collection of 1,000 hand-illustrated undead survivors, minted on Base. Discover, collect & trade." />
-    <meta name="theme-color" content="#0b0d0a" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#090a08">
+    <meta name="color-scheme" content="dark">
+    <title>Decay Labs | Everything Decays. Proof Remains.</title>
+    <meta name="description" content="1,000 hand-illustrated undead witnesses created on Base. Enter the Half-Life Archive and collect through an in-app Seaport checkout.">
+    <link rel="canonical" href="https://decaylabs.online/">
+    <link rel="icon" type="image/svg+xml" href="/public/brand-mark.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32.png">
+    <link rel="apple-touch-icon" href="/public/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.webmanifest">
 
-    <!-- Base Dashboard (base.dev) app verification -->
-    <meta name="base:app_id" content="6a6018e4426d14cfbad57663" />
-    <meta name="talentapp:project_verification" content="6a995d29cc91f3ee4813ca5dfa7d4b24fe706bba6ff7830fee67bba22e142a2cf03f4f9ad147ba914233fd58746b74ccdd48837e21036e14a0dbfb144578d5ec" />
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Decay Labs">
+    <meta property="og:title" content="Decay Labs | Everything Decays. Proof Remains.">
+    <meta property="og:description" content="1,000 undead witnesses. One city rewritten. A hand-illustrated archive created on Base.">
+    <meta property="og:url" content="https://decaylabs.online/">
+    <meta property="og:image" content="https://decaylabs.online/public/og-v2.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Decay Labs survivors inside the Half-Life Archive">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@Decaylabss">
+    <meta name="twitter:creator" content="@Decaylabss">
+    <meta name="twitter:title" content="Decay Labs | Everything Decays. Proof Remains.">
+    <meta name="twitter:description" content="1,000 undead witnesses. One city rewritten. Created on Base.">
+    <meta name="twitter:image" content="https://decaylabs.online/public/og-v2.png">
 
-    <!-- ⚠️ Deploy edince bu URL'yi gerçek alan adınla değiştir (ör. https://decaylabs.online) -->
-    <link rel="canonical" href="https://decaylabs.online/" />
+    <meta name="base:app_id" content="6a6018e4426d14cfbad57663">
+    <meta name="talentapp:project_verification" content="6a995d29cc91f3ee4813ca5dfa7d4b24fe706bba6ff7830fee67bba22e142a2cf03f4f9ad147ba914233fd58746b74ccdd48837e21036e14a0dbfb144578d5ec">
+    <meta name="fc:miniapp" content='{"version":"1","imageUrl":"https://decaylabs.online/public/og-v2.png","button":{"title":"Enter the Archive","action":{"type":"launch_miniapp","name":"Decay Labs","url":"https://decaylabs.online","splashImageUrl":"https://decaylabs.online/public/icon-192.png","splashBackgroundColor":"#090a08"}}}'>
+    <meta name="fc:frame" content='{"version":"1","imageUrl":"https://decaylabs.online/public/og-v2.png","button":{"title":"Enter the Archive","action":{"type":"launch_frame","name":"Decay Labs","url":"https://decaylabs.online","splashImageUrl":"https://decaylabs.online/public/icon-192.png","splashBackgroundColor":"#090a08"}}}'>
 
-    <!-- Favicons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="public/favicon-32.png" />
-    <link rel="apple-touch-icon" href="public/apple-touch-icon.png" />
-
-    <!-- Open Graph (Facebook, Discord, etc.) -->
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Decay Labs" />
-    <meta property="og:title" content="Decay Labs — 1,000 Decayed Survivors on Base" />
-    <meta property="og:description" content="An on-chain collection of 1,000 hand-illustrated undead survivors, minted on Base. Discover, collect & trade." />
-    <meta property="og:url" content="https://decaylabs.online/" />
-    <meta property="og:image" content="https://decaylabs.online/public/og.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-
-    <!-- Twitter / X card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Decaylabss" />
-    <meta name="twitter:creator" content="@Decaylabss" />
-    <meta name="twitter:title" content="Decay Labs — 1,000 Decayed Survivors on Base" />
-    <meta name="twitter:description" content="An on-chain collection of 1,000 hand-illustrated undead survivors, minted on Base." />
-    <meta name="twitter:image" content="https://decaylabs.online/public/og.png" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=3" />
-    <style>
-      .buy-status { margin: 14px 0 0; min-height: 1.2em; font-size: .9rem; color: #9fb0a4;
-        font-family: 'Space Grotesk', system-ui, sans-serif; letter-spacing: .01em; }
-      #buyBtn { cursor: pointer; border: none; font: inherit; }
-      #buyBtn:disabled { opacity: .6; cursor: progress; }
-    </style>
-
-    <!-- ════════ Base App / Farcaster Mini App embed ════════ -->
-    <!-- Bu etiket, link akışta paylaşılınca "aç" butonlu kart olarak çıkmasını sağlar -->
-    <meta name="fc:miniapp" content='{"version":"1","imageUrl":"https://decaylabs.online/public/og.png","button":{"title":"🧟 Enter Decay Labs","action":{"type":"launch_miniapp","name":"Decay Labs","url":"https://decaylabs.online","splashImageUrl":"https://decaylabs.online/public/icon-192.png","splashBackgroundColor":"#0b0d0a"}}}' />
-    <!-- Geriye dönük uyum (eski Frame istemcileri) -->
-    <meta name="fc:frame" content='{"version":"1","imageUrl":"https://decaylabs.online/public/og.png","button":{"title":"🧟 Enter Decay Labs","action":{"type":"launch_frame","name":"Decay Labs","url":"https://decaylabs.online","splashImageUrl":"https://decaylabs.online/public/icon-192.png","splashBackgroundColor":"#0b0d0a"}}}' />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CreativeWorkSeries",
+        "name": "Decay Labs",
+        "url": "https://decaylabs.online/",
+        "description": "A hand-illustrated archive of 1,000 undead witnesses created on Base.",
+        "genre": ["Horror", "Science fiction", "Digital art"],
+        "isPartOf": {
+          "@type": "CreativeWork",
+          "name": "The Half-Life Archive"
+        },
+        "sameAs": [
+          "https://x.com/Decaylabss",
+          "https://opensea.io/collection/decaylabs-395322216",
+          "https://basescan.org/address/0x65F5e8006F4eF730d6984836F606a5C5c516CdC8",
+          "https://github.com/muhammet424342/base-miniapp-buy-starter"
+        ]
+      }
+    </script>
+    <link rel="stylesheet" href="/styles.css?v=10">
   </head>
   <body>
-    <!-- ════════ HEADER ════════ -->
-    <header class="nav" id="nav">
-      <a href="#top" class="brand">
-        <span class="brand-mark"></span>
-        <span class="brand-name">Decay<span class="bn-2">Labs</span></span>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <a class="brand" href="/" aria-label="Decay Labs home">
+        <img src="/public/brand-mark.svg" alt="" width="38" height="38">
+        <span><strong>Decay</strong> Labs</span>
       </a>
-      <nav class="nav-links" id="navLinks">
-        <a href="#top">Home</a>
-        <a href="#trending">Explore</a>
-        <a href="#families">Collection</a>
-        <a href="https://opensea.io/collection/decaylabs-395322216" target="_blank" rel="noopener">Profile</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+        <span class="sr-only">Open navigation</span>
+        <span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary" data-nav>
+        <a href="/lore">Archive</a>
+        <a href="/collection">Subjects</a>
+        <a href="#proof">The Build</a>
+        <a href="/trust">Trust</a>
+        <a href="/links">Links</a>
       </nav>
-      <div class="nav-actions">
-        <button class="chain-chip" id="chainChip" type="button" title="Network">
-          <svg class="ico ico-base" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#0052FF"/><path fill="#fff" d="M7.9 13.4a5.4 5.4 0 1 0 0-10.8 5.4 5.4 0 0 0-5.13 3.73h6.66v3.34H2.77A5.4 5.4 0 0 0 7.9 13.4z"/></svg>
-          <span>Base</span><i class="caret">▾</i>
-        </button>
-        <a class="btn btn--x" href="https://x.com/Decaylabss" target="_blank" rel="noopener">
-          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          Follow on X
-        </a>
-        <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
-      </div>
+      <a class="button button--quiet header-cta" href="https://x.com/Decaylabss" target="_blank" rel="noopener noreferrer">Follow the signal</a>
     </header>
 
-    <!-- ════════ HERO ════════ -->
-    <section class="hero" id="top">
-      <div class="hero-grid" aria-hidden="true"></div>
-      <div class="hero-inner">
-        <div class="hero-main">
-          <p class="hero-eyebrow">Genesis Collection · 1,000 Survivors on Base</p>
-          <h1 class="hero-title hero-title--horror glitch" data-text="Survive the Decay">Survive the <span class="acc">Decay</span></h1>
-          <p class="hero-sub">Discover, Collect &amp; Sell Extraordinary NFTs.
-             1,000 hand-illustrated undead survivors, minted on Base.</p>
-
-          <div class="hero-badges">
-            <span class="cbadge">
-              <svg class="ico ico-base" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#0052FF"/><path fill="#fff" d="M7.9 13.4a5.4 5.4 0 1 0 0-10.8 5.4 5.4 0 0 0-5.13 3.73h6.66v3.34H2.77A5.4 5.4 0 0 0 7.9 13.4z"/></svg>
-              Built on Base
-            </span>
-            <span class="cbadge">
-              <svg class="ico ico-eth" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 1 3.6 8.1 8 10.8l4.4-2.7z"/><path fill="currentColor" opacity=".7" d="M8 11.7 3.6 9 8 15l4.4-6z"/></svg>
-              <span class="jsFloor">0.005</span> Ξ Floor
-            </span>
-            <span class="cbadge"><i class="ok">✓</i> Verified on Basescan</span>
-          </div>
-
-          <div class="hero-cta">
-            <button class="btn btn--primary btn--lg" id="buyBtn" type="button">
-              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm-1.7 13.9-2.9-3.6 1.2-1 1.6 2 3.9-5 1.2.9-5 6.7Z"/></svg>
-              <span id="buyBtnLabel">🧟 Buy on Base · 0.005 Ξ</span>
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="ambient ambient--one" aria-hidden="true"></div>
+        <div class="ambient ambient--two" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <p class="kicker"><span class="signal-dot"></span> Genesis archive / Base / 1,000 subjects</p>
+          <h1 id="hero-title">Everything decays.<br><em>Proof<br>remains.</em></h1>
+          <p class="hero-lede">One thousand hand-illustrated witnesses woke beneath the sealed city of Vanta. Each carries a memory that belongs to someone else.</p>
+          <div class="hero-actions">
+            <a class="button button--primary" href="/lore">Enter the archive</a>
+            <button class="button button--secondary" id="buyBtn" type="button" data-buy-token="">
+              <span id="buyBtnLabel">Collect a listed Subject</span>
             </button>
-            <a href="#trending" class="btn btn--ghost btn--lg">Explore Collection</a>
           </div>
-          <p id="buyStatus" class="buy-status" role="status" aria-live="polite"></p>
-
-          <div class="hero-stats">
-            <div class="hs"><b>1,000</b><i>Survivors</i></div>
-            <div class="hs"><b><span class="jsFloor">0.005</span> Ξ</b><i>Floor Price</i></div>
-            <div class="hs"><b id="hsOwners">Base</b><i id="hsOwnersLbl">Blockchain</i></div>
-          </div>
+          <p class="transaction-status" id="buyStatus" role="status" aria-live="polite"></p>
+          <ul class="proof-list" aria-label="Collection facts">
+            <li><strong>Created on Base</strong><span>ERC-721 ownership</span></li>
+            <li><strong>Media on IPFS</strong><span>Verifiable storage</span></li>
+            <li><strong>No active mint</strong><span>Secondary listings only</span></li>
+          </ul>
         </div>
-
-        <div class="hero-visual">
-          <div class="tilt" data-tilt data-tilt-max="14">
-            <div class="hero-card">
-              <img src="public/nft-1.png" alt="Featured Decay Labs survivor" />
-              <div class="hero-card-badge">
-                <div class="hcb-l">
-                  <span class="hcb-label">Floor Price</span>
-                  <span class="hcb-val"><svg class="ico ico-eth" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 1 3.6 8.1 8 10.8l4.4-2.7z"/><path fill="currentColor" opacity=".7" d="M8 11.7 3.6 9 8 15l4.4-6z"/></svg><span class="jsFloor">0.005</span> Ξ</span>
-                </div>
-                <span class="hcb-up" id="hcbChange" hidden>+0%</span>
-              </div>
-              <span class="glare"></span>
+        <div class="hero-art" aria-label="Featured Subject 0007">
+          <div class="archive-frame">
+            <span class="frame-index">SUBJECT / 0007</span>
+            <img src="/public/nft-7.png" alt="Decay Labs Subject 0007, an undead survivor from Vanta" width="700" height="700" fetchpriority="high">
+            <div class="frame-caption">
+              <span>Nail / status unknown</span>
+              <span class="status-live">signal detected</span>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ════════ TRENDING GRID ════════ -->
-    <section class="section" id="trending">
-      <div class="section-head">
+      <section class="truth-band" aria-label="Transparent project status">
+        <p><strong>Current state:</strong> all 1,000 tokens were created by the founder. There is no whitelist, surprise mint, staking program, token, or promised return.</p>
+        <a href="/trust">Verify every claim <span aria-hidden="true">&rarr;</span></a>
+      </section>
+
+      <section class="section story-intro" id="archive" aria-labelledby="archive-title">
+        <div class="section-heading section-heading--split">
+          <div>
+            <p class="kicker">The Half-Life Archive</p>
+            <h2 id="archive-title">A story designed to keep opening.</h2>
+          </div>
+          <p>The Bloom was built to preserve human memory. Instead, it made history privately editable. Ten arcs and one hundred chapters follow the witnesses who survived the rewrite.</p>
+        </div>
+        <div class="chapter-feature" data-latest-chapter>
+          <div>
+            <span class="chapter-number">CHAPTER 001</span>
+            <h3>Funeral Playback</h3>
+            <p>Subject #0007 wakes while watching footage of his own funeral.</p>
+            <a class="text-link" href="/lore">Read the 100-chapter map <span aria-hidden="true">&rarr;</span></a>
+          </div>
+          <blockquote>"If the recording is real, who woke inside the capsule?"</blockquote>
+        </div>
+      </section>
+
+      <section class="section subjects-section" id="subjects" aria-labelledby="subjects-title">
+        <div class="section-heading section-heading--split">
+          <div>
+            <p class="kicker">Archive selection</p>
+            <h2 id="subjects-title">Meet the witnesses.</h2>
+          </div>
+          <p>No invented rarity scores. No fictional volume. Each card shows narrative identity and links to independently verifiable ownership.</p>
+        </div>
+        <div class="subject-grid" data-subject-grid aria-live="polite"></div>
+        <div class="section-actions">
+          <a class="button button--secondary" href="/collection">Explore all Subject records</a>
+          <a class="text-link" href="https://opensea.io/collection/decaylabs-395322216" target="_blank" rel="noopener noreferrer">View current listings on OpenSea <span aria-hidden="true">&nearr;</span></a>
+        </div>
+      </section>
+
+      <section class="section build-section" id="proof" aria-labelledby="proof-title">
+        <div class="section-heading section-heading--split">
+          <div>
+            <p class="kicker">Proof over promises</p>
+            <h2 id="proof-title">The checkout already works.</h2>
+          </div>
+          <p>Decay Labs can collect a live Seaport listing inside the Base experience. The code is public, the wallet confirms the transaction, and the final transfer settles on Base.</p>
+        </div>
+        <ol class="flow" aria-label="In-app checkout flow">
+          <li><span>01</span><strong>Choose a Subject</strong><p>Select a currently listed record.</p></li>
+          <li><span>02</span><strong>Confirm in your wallet</strong><p>Price, token and network remain visible.</p></li>
+          <li><span>03</span><strong>Verify on Base</strong><p>The transaction is independently inspectable.</p></li>
+        </ol>
+        <div class="build-proof">
+          <div class="code-window" aria-label="Checkout architecture illustration">
+            <div class="code-bar"><i></i><i></i><i></i><span>purchase-flow.txt</span></div>
+            <pre><code>collector
+  -&gt; Decay Labs mini app
+  -&gt; OpenSea signed listing
+  -&gt; Seaport fulfillment
+  -&gt; wallet confirmation
+  -&gt; Base transaction proof</code></pre>
+          </div>
+          <div class="build-copy">
+            <span class="status-pill">LIVE BUILD</span>
+            <h3>Not another roadmap slide.</h3>
+            <p>The implementation is available as an MIT-licensed starter. Builders can inspect the API proxy, calldata encoding and wallet fallback instead of trusting a marketing claim.</p>
+            <a class="button button--quiet" href="https://github.com/muhammet424342/base-miniapp-buy-starter" target="_blank" rel="noopener noreferrer">Inspect the source <span aria-hidden="true">&nearr;</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section transparency" aria-labelledby="transparency-title">
+        <div class="section-heading">
+          <p class="kicker">Public status</p>
+          <h2 id="transparency-title">Live. Building. Not promised.</h2>
+        </div>
+        <div class="status-columns">
+          <article>
+            <span class="status-pill status-pill--live">LIVE</span>
+            <h3>What exists now</h3>
+            <ul>
+              <li>1,000 ERC-721 tokens on Base</li>
+              <li>IPFS-hosted media and metadata</li>
+              <li>In-app Seaport checkout</li>
+              <li>Open-source checkout starter</li>
+              <li>100-chapter narrative map</li>
+            </ul>
+          </article>
+          <article>
+            <span class="status-pill status-pill--building">BUILDING</span>
+            <h3>What is being tested</h3>
+            <ul>
+              <li>Subject records and faction canon</li>
+              <li>Community chapter checkpoints</li>
+              <li>Collector onboarding and safety</li>
+              <li>Curated Archive Releases</li>
+            </ul>
+          </article>
+          <article>
+            <span class="status-pill status-pill--none">NOT PROMISED</span>
+            <h3>What is not for sale</h3>
+            <ul>
+              <li>Guaranteed returns or floor growth</li>
+              <li>Surprise mints or hidden supply</li>
+              <li>Staking yield or a future token</li>
+              <li>An unbuilt game disguised as utility</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section dispatch" aria-labelledby="dispatch-title">
         <div>
-          <p class="eyebrow">Marketplace</p>
-          <h2 class="section-title">Trending <span class="acc">survivors</span></h2>
-          <p class="coll-live" id="collLive">Floor 0.005 Ξ · Built on Base</p>
+          <p class="kicker">Follow the signal</p>
+          <h2 id="dispatch-title">The archive opens in public.</h2>
+          <p>New chapters, Subject files and shipped product updates are published on X. No engagement bait. No surprise mint links.</p>
         </div>
-        <a href="https://opensea.io/collection/decaylabs-395322216" target="_blank" rel="noopener" class="link-more">View on OpenSea <i>↗</i></a>
-      </div>
-      <div class="card-grid" id="cardGrid"></div>
-    </section>
-
-    <!-- ════════ BROWSE BY FAMILY ════════ -->
-    <section class="section" id="families">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">Browse</p>
-          <h2 class="section-title">Explore by <span class="acc">trait family</span></h2>
+        <div class="dispatch-actions">
+          <a class="button button--primary" href="https://x.com/Decaylabss" target="_blank" rel="noopener noreferrer">Follow @Decaylabss</a>
+          <a class="button button--secondary" href="/trust">Read the safety rules</a>
         </div>
-      </div>
-      <div class="family-grid" id="familyGrid"></div>
-    </section>
+      </section>
+    </main>
 
-    <!-- ════════ CTA BANNER ════════ -->
-    <section class="cta" id="cta">
-      <div class="cta-inner">
-        <p class="eyebrow">Join the decay</p>
-        <h2 class="cta-title">Own a piece of the <span class="acc">apocalypse</span></h2>
-        <p class="cta-sub">1,000 hand-illustrated survivors, live on Base. Collect them on OpenSea and follow the story as it unfolds.</p>
-        <div class="cta-actions">
-          <a href="https://opensea.io/collection/decaylabs-395322216" target="_blank" rel="noopener" class="btn btn--green btn--xl">Buy on OpenSea</a>
-          <a href="https://x.com/Decaylabss" target="_blank" rel="noopener" class="btn btn--ghost btn--lg">Follow on X</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ════════ FOOTER ════════ -->
-    <footer class="footer">
-      <div class="footer-top">
-        <a href="#top" class="brand">
-          <span class="brand-mark"></span>
-          <span class="brand-name">Decay<span class="bn-2">Labs</span></span>
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <a class="brand" href="/">
+          <img src="/public/brand-mark.svg" alt="" width="34" height="34">
+          <span><strong>Decay</strong> Labs</span>
         </a>
-        <div class="footer-links">
-          <a href="https://opensea.io/collection/decaylabs-395322216" target="_blank" rel="noopener">OpenSea</a>
-          <a href="https://x.com/Decaylabss" target="_blank" rel="noopener">X / Twitter</a>
-          <a href="https://basescan.org/address/0x65F5e8006F4eF730d6984836F606a5C5c516CdC8" target="_blank" rel="noopener">Basescan</a>
-        </div>
+        <p>Everything decays. Proof remains.</p>
       </div>
-      <button class="contract-chip" id="contractChip" type="button" title="Copy contract address">
-        <span class="cc-label">Contract</span>
-        <span class="cc-addr">0x65F5…CdC8</span>
-        <span class="cc-copy">Copy</span>
-      </button>
-      <div class="footer-bottom">
-        <span>© 2026 Decay Labs · Genesis Collection · Built on Base</span>
-        <span class="credit">Design based on a template by Ignacio Prados (CC BY 4.0)</span>
+      <nav aria-label="Footer">
+        <a href="/lore">Archive</a>
+        <a href="/collection">Subjects</a>
+        <a href="/trust">Trust &amp; safety</a>
+        <a href="/faq">FAQ</a>
+        <a href="/links">Official links</a>
+      </nav>
+      <div class="footer-proof">
+        <button class="contract-button" type="button" data-copy="0x65F5e8006F4eF730d6984836F606a5C5c516CdC8">
+          <span>Contract</span><code>0x65F5...CdC8</code><b>Copy</b>
+        </button>
+        <p>&copy; <span data-year>2026</span> Decay Labs. Created on Base.</p>
       </div>
     </footer>
 
-    <script src="script.js?v=7"></script>
-
-    <!-- ════════ Base App standard web wallet + in-app buy ════════ -->
-    <script type="module" src="miniapp-buy.js?v=6"></script>
+    <script type="module" src="/app.js?v=10"></script>
+    <script type="module" src="/miniapp-buy.js?v=10"></script>
   </body>
 </html>

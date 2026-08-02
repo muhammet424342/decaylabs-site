@@ -1,0 +1,32 @@
+{
+  "name": "Decay Labs Subject #0948",
+  "description": "Subject 0948 is a hand-illustrated witness from The Half-Life Archive. Assigned to Glass Saints; archive condition: stable, memory drift detected. Narrative classifications do not represent financial rarity or guaranteed utility.",
+  "image": "ipfs://QmcNKaghAM636EiW9zQeirxz25s7fU1eJ8tN8PzLgK7qP/948.png",
+  "external_url": "https://decaylabs.online/subject?id=948",
+  "attributes": [
+    {
+      "trait_type": "Narrative Faction",
+      "value": "Glass Saints"
+    },
+    {
+      "trait_type": "Archive Chapter",
+      "value": "048"
+    },
+    {
+      "trait_type": "Chapter Record",
+      "value": "One Shattered Witness"
+    },
+    {
+      "trait_type": "Signal",
+      "value": "VANTA/GLASS-SAINTS/0948"
+    },
+    {
+      "trait_type": "Collection Status",
+      "value": "Genesis Archive"
+    },
+    {
+      "trait_type": "Media Storage",
+      "value": "IPFS"
+    }
+  ]
+}

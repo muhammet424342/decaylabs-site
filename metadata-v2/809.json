@@ -1,0 +1,32 @@
+{
+  "name": "Decay Labs Subject #0809",
+  "description": "Subject 0809 is a hand-illustrated witness from The Half-Life Archive. Assigned to Staticborn; archive condition: mobile, signal contamination rising. Narrative classifications do not represent financial rarity or guaranteed utility.",
+  "image": "ipfs://QmcNKaghAM636EiW9zQeirxz25s7fU1eJ8tN8PzLgK7qP/809.png",
+  "external_url": "https://decaylabs.online/subject?id=809",
+  "attributes": [
+    {
+      "trait_type": "Narrative Faction",
+      "value": "Staticborn"
+    },
+    {
+      "trait_type": "Archive Chapter",
+      "value": "009"
+    },
+    {
+      "trait_type": "Chapter Record",
+      "value": "The Missing Walk"
+    },
+    {
+      "trait_type": "Signal",
+      "value": "VANTA/STATICBORN/0809"
+    },
+    {
+      "trait_type": "Collection Status",
+      "value": "Genesis Archive"
+    },
+    {
+      "trait_type": "Media Storage",
+      "value": "IPFS"
+    }
+  ]
+}

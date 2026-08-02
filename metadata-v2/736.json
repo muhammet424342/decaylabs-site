@@ -1,0 +1,32 @@
+{
+  "name": "Decay Labs Subject #0736",
+  "description": "Subject 0736 is a hand-illustrated witness from The Half-Life Archive. Assigned to Rustbound; archive condition: stable, memory drift detected. Narrative classifications do not represent financial rarity or guaranteed utility.",
+  "image": "ipfs://QmcNKaghAM636EiW9zQeirxz25s7fU1eJ8tN8PzLgK7qP/736.png",
+  "external_url": "https://decaylabs.online/subject?id=736",
+  "attributes": [
+    {
+      "trait_type": "Narrative Faction",
+      "value": "Rustbound"
+    },
+    {
+      "trait_type": "Archive Chapter",
+      "value": "036"
+    },
+    {
+      "trait_type": "Chapter Record",
+      "value": "Metadata Rifles"
+    },
+    {
+      "trait_type": "Signal",
+      "value": "VANTA/RUSTBOUND/0736"
+    },
+    {
+      "trait_type": "Collection Status",
+      "value": "Genesis Archive"
+    },
+    {
+      "trait_type": "Media Storage",
+      "value": "IPFS"
+    }
+  ]
+}

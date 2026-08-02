@@ -1,0 +1,8 @@
+{
+  "name": "Decay Labs",
+  "description": "One thousand hand-illustrated undead witnesses created on Base. Enter The Half-Life Archive, verify ownership onchain, and collect through an in-app Seaport checkout.",
+  "image": "https://decaylabs.online/public/og-v2.png",
+  "external_link": "https://decaylabs.online",
+  "seller_fee_basis_points": 1000,
+  "fee_recipient": "0x9072954ead2b42d8bc992861e22ec170a622eb06"
+}

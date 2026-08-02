@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://decaylabs.online/sitemap.xml

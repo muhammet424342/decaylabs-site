@@ -1,0 +1,32 @@
+{
+  "name": "Decay Labs Subject #0603",
+  "description": "Subject 0603 is a hand-illustrated witness from The Half-Life Archive. Assigned to Glass Saints; archive condition: observed, future record present. Narrative classifications do not represent financial rarity or guaranteed utility.",
+  "image": "ipfs://QmcNKaghAM636EiW9zQeirxz25s7fU1eJ8tN8PzLgK7qP/603.png",
+  "external_url": "https://decaylabs.online/subject?id=603",
+  "attributes": [
+    {
+      "trait_type": "Narrative Faction",
+      "value": "Glass Saints"
+    },
+    {
+      "trait_type": "Archive Chapter",
+      "value": "003"
+    },
+    {
+      "trait_type": "Chapter Record",
+      "value": "Do Not Remember"
+    },
+    {
+      "trait_type": "Signal",
+      "value": "VANTA/GLASS-SAINTS/0603"
+    },
+    {
+      "trait_type": "Collection Status",
+      "value": "Genesis Archive"
+    },
+    {
+      "trait_type": "Media Storage",
+      "value": "IPFS"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Decay Labs Subject #0438",
+  "description": "Subject 0438 is a hand-illustrated witness from The Half-Life Archive. Assigned to Glass Saints; archive condition: unverified, duplicate past detected. Narrative classifications do not represent financial rarity or guaranteed utility.",
+  "image": "ipfs://QmcNKaghAM636EiW9zQeirxz25s7fU1eJ8tN8PzLgK7qP/438.png",
+  "external_url": "https://decaylabs.online/subject?id=438",
+  "attributes": [
+    {
+      "trait_type": "Narrative Faction",
+      "value": "Glass Saints"
+    },
+    {
+      "trait_type": "Archive Chapter",
+      "value": "038"
+    },
+    {
+      "trait_type": "Chapter Record",
+      "value": "Future Nail"
+    },
+    {
+      "trait_type": "Signal",
+      "value": "VANTA/GLASS-SAINTS/0438"
+    },
+    {
+      "trait_type": "Collection Status",
+      "value": "Genesis Archive"
+    },
+    {
+      "trait_type": "Media Storage",
+      "value": "IPFS"
+    }
+  ]
+}

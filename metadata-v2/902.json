@@ -1,0 +1,32 @@
+{
+  "name": "Decay Labs Subject #0902",
+  "description": "Subject 0902 is a hand-illustrated witness from The Half-Life Archive. Assigned to Sporekin; archive condition: mobile, signal contamination rising. Narrative classifications do not represent financial rarity or guaranteed utility.",
+  "image": "ipfs://QmcNKaghAM636EiW9zQeirxz25s7fU1eJ8tN8PzLgK7qP/902.png",
+  "external_url": "https://decaylabs.online/subject?id=902",
+  "attributes": [
+    {
+      "trait_type": "Narrative Faction",
+      "value": "Sporekin"
+    },
+    {
+      "trait_type": "Archive Chapter",
+      "value": "002"
+    },
+    {
+      "trait_type": "Chapter Record",
+      "value": "Three Open Capsules"
+    },
+    {
+      "trait_type": "Signal",
+      "value": "VANTA/SPOREKIN/0902"
+    },
+    {
+      "trait_type": "Collection Status",
+      "value": "Genesis Archive"
+    },
+    {
+      "trait_type": "Media Storage",
+      "value": "IPFS"
+    }
+  ]
+}

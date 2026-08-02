@@ -1,0 +1,32 @@
+{
+  "name": "Decay Labs Subject #0868",
+  "description": "Subject 0868 is a hand-illustrated witness from The Half-Life Archive. Assigned to Glass Saints; archive condition: missing, ownership record intact. Narrative classifications do not represent financial rarity or guaranteed utility.",
+  "image": "ipfs://QmcNKaghAM636EiW9zQeirxz25s7fU1eJ8tN8PzLgK7qP/868.png",
+  "external_url": "https://decaylabs.online/subject?id=868",
+  "attributes": [
+    {
+      "trait_type": "Narrative Faction",
+      "value": "Glass Saints"
+    },
+    {
+      "trait_type": "Archive Chapter",
+      "value": "068"
+    },
+    {
+      "trait_type": "Chapter Record",
+      "value": "Canonical Death"
+    },
+    {
+      "trait_type": "Signal",
+      "value": "VANTA/GLASS-SAINTS/0868"
+    },
+    {
+      "trait_type": "Collection Status",
+      "value": "Genesis Archive"
+    },
+    {
+      "trait_type": "Media Storage",
+      "value": "IPFS"
+    }
+  ]
+}

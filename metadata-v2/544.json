@@ -1,0 +1,32 @@
+{
+  "name": "Decay Labs Subject #0544",
+  "description": "Subject 0544 is a hand-illustrated witness from The Half-Life Archive. Assigned to Staticborn; archive condition: quarantined, transmission continues. Narrative classifications do not represent financial rarity or guaranteed utility.",
+  "image": "ipfs://QmcNKaghAM636EiW9zQeirxz25s7fU1eJ8tN8PzLgK7qP/544.png",
+  "external_url": "https://decaylabs.online/subject?id=544",
+  "attributes": [
+    {
+      "trait_type": "Narrative Faction",
+      "value": "Staticborn"
+    },
+    {
+      "trait_type": "Archive Chapter",
+      "value": "044"
+    },
+    {
+      "trait_type": "Chapter Record",
+      "value": "Lot 404"
+    },
+    {
+      "trait_type": "Signal",
+      "value": "VANTA/STATICBORN/0544"
+    },
+    {
+      "trait_type": "Collection Status",
+      "value": "Genesis Archive"
+    },
+    {
+      "trait_type": "Media Storage",
+      "value": "IPFS"
+    }
+  ]
+}

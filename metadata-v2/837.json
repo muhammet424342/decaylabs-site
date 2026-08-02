@@ -1,0 +1,32 @@
+{
+  "name": "Decay Labs Subject #0837",
+  "description": "Subject 0837 is a hand-illustrated witness from The Half-Life Archive. Assigned to Sporekin; archive condition: quarantined, transmission continues. Narrative classifications do not represent financial rarity or guaranteed utility.",
+  "image": "ipfs://QmcNKaghAM636EiW9zQeirxz25s7fU1eJ8tN8PzLgK7qP/837.png",
+  "external_url": "https://decaylabs.online/subject?id=837",
+  "attributes": [
+    {
+      "trait_type": "Narrative Faction",
+      "value": "Sporekin"
+    },
+    {
+      "trait_type": "Archive Chapter",
+      "value": "037"
+    },
+    {
+      "trait_type": "Chapter Record",
+      "value": "The Missing Trait"
+    },
+    {
+      "trait_type": "Signal",
+      "value": "VANTA/SPOREKIN/0837"
+    },
+    {
+      "trait_type": "Collection Status",
+      "value": "Genesis Archive"
+    },
+    {
+      "trait_type": "Media Storage",
+      "value": "IPFS"
+    }
+  ]
+}

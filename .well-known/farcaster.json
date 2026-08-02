@@ -9,13 +9,13 @@
     "name": "Decay Labs",
     "iconUrl": "https://decaylabs.online/public/icon-192.png",
     "homeUrl": "https://decaylabs.online",
-    "imageUrl": "https://decaylabs.online/public/og.png",
-    "buttonTitle": "🧟 Enter Decay Labs",
+    "imageUrl": "https://decaylabs.online/public/og-v2.png",
+    "buttonTitle": "Enter the Archive",
     "splashImageUrl": "https://decaylabs.online/public/icon-192.png",
-    "splashBackgroundColor": "#0b0d0a",
-    "subtitle": "1,000 undead survivors on Base",
-    "description": "An on-chain collection of 1,000 hand-illustrated undead survivors, minted on Base. Discover, collect and trade.",
+    "splashBackgroundColor": "#090a08",
+    "subtitle": "1,000 witnesses on Base",
+    "description": "A hand-illustrated undead archive with an in-app Seaport checkout and a 100-chapter narrative map.",
     "primaryCategory": "art-creativity",
-    "tags": ["nft", "art", "base", "collectibles", "zombie"]
+    "tags": ["nft", "art", "base", "collectibles", "story"]
   }
 }

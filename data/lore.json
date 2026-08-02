@@ -1,0 +1,215 @@
+{
+  "title": "The Half-Life Archive",
+  "subtitle": "One thousand witnesses. One city rewritten.",
+  "premise": "In 2149, an immortality network called the Bloom began erasing identity instead of preserving life. One thousand witnesses woke beneath the sealed city of Vanta, each carrying a memory that belonged to someone else.",
+  "publicationNote": "The archive is a narrative system, not a promise of financial utility. Community decisions can influence selected canon checkpoints.",
+  "factions": [
+    {
+      "id": "rustbound",
+      "name": "Rustbound",
+      "motto": "Replace what memory takes.",
+      "description": "Mechanists who bind dead machines to their bodies to preserve function after memory fails.",
+      "accent": "#d85b3f"
+    },
+    {
+      "id": "sporekin",
+      "name": "Sporekin",
+      "motto": "Decay is a language.",
+      "description": "Symbionts who believe the Bloom is trying to communicate through mutation.",
+      "accent": "#b5d45c"
+    },
+    {
+      "id": "glass-saints",
+      "name": "Glass Saints",
+      "motto": "A memory sealed is a memory saved.",
+      "description": "Archivists who crystallize memories, accepting that preservation can become imprisonment.",
+      "accent": "#8ecae6"
+    },
+    {
+      "id": "staticborn",
+      "name": "Staticborn",
+      "motto": "The signal remembers us.",
+      "description": "Listeners who hear broadcasts from timelines that Vanta has already erased.",
+      "accent": "#d78bff"
+    },
+    {
+      "id": "bone-cartographers",
+      "name": "Bone Cartographers",
+      "motto": "Every body leaves a map.",
+      "description": "Surveyors who reconstruct forbidden geography from the remains of the forgotten.",
+      "accent": "#d8c6a0"
+    }
+  ],
+  "arcs": [
+    {
+      "id": 1,
+      "title": "Wake Protocol",
+      "range": "001-010",
+      "chapters": [
+        { "id": 1, "title": "Funeral Playback", "hook": "Subject #0007 wakes while watching footage of his own funeral." },
+        { "id": 2, "title": "Three Open Capsules", "hook": "The Vault contains 1,000 capsules, but only 997 are still occupied." },
+        { "id": 3, "title": "Do Not Remember", "hook": "A warning appears on the wall after every witness looks away." },
+        { "id": 4, "title": "Borrowed Grief", "hook": "Nail remembers the childhood of a Survivor he has never met." },
+        { "id": 5, "title": "The Red Moon", "hook": "The first exterior door opens onto a sky that should not exist." },
+        { "id": 6, "title": "Mara Is Alive", "hook": "A damaged radio repeats one sentence in a dead scientist's voice." },
+        { "id": 7, "title": "Floor Thirteen", "hook": "The elevator reveals a level missing from every architectural record." },
+        { "id": 8, "title": "Ledger Skin", "hook": "A token number burns itself into a witness's arm." },
+        { "id": 9, "title": "The Missing Walk", "hook": "The Vault insists the three absent Subjects are moving inside the facility." },
+        { "id": 10, "title": "The First Door", "hook": "The community chooses one exit; something behind the rejected door begins to scream.", "checkpoint": true }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Five Factions",
+      "range": "011-020",
+      "chapters": [
+        { "id": 11, "title": "Rust Oath", "hook": "The Rustbound offer freedom in exchange for one irreplaceable memory." },
+        { "id": 12, "title": "Language of Spores", "hook": "A Sporekin leader translates the infection's first complete sentence." },
+        { "id": 13, "title": "Glass Weapon", "hook": "The Saints prove a preserved memory can wound the person who lived it." },
+        { "id": 14, "title": "Tomorrow's Broadcast", "hook": "The Staticborn intercept a live transmission dated forty years ahead." },
+        { "id": 15, "title": "Bone City", "hook": "The Cartographers discover Vanta was built over a human skeleton." },
+        { "id": 16, "title": "Five Records of Nail", "hook": "Every faction possesses a different childhood for Subject #0007." },
+        { "id": 17, "title": "The Empty Portrait", "hook": "A Survivor vanishes from every image while ownership remains onchain." },
+        { "id": 18, "title": "Message from Zero", "hook": "The empty token sends a message to its next witness." },
+        { "id": 19, "title": "War for Thirteen", "hook": "The factions converge on the hidden floor and discover it is already open." },
+        { "id": 20, "title": "Choose a Shelter", "hook": "Nail must join one faction, permanently changing who controls the key.", "checkpoint": true }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "The City of Vanta",
+      "range": "021-030",
+      "chapters": [
+        { "id": 21, "title": "The Stopped Minute", "hook": "Every clock in Vanta displays the same impossible time of death." },
+        { "id": 22, "title": "Class Still in Session", "hook": "Children who never age continue a lesson no teacher remembers starting." },
+        { "id": 23, "title": "Public Names", "hook": "Billboards begin publishing the Survivors' private memories." },
+        { "id": 24, "title": "The Backward Line", "hook": "A metro train returns passengers to places that no longer exist." },
+        { "id": 25, "title": "Warm Laboratory", "hook": "Mara Vey's abandoned laboratory contains a fresh cup of coffee." },
+        { "id": 26, "title": "Subject 1001", "hook": "The experiment log lists one more witness than the collection contains." },
+        { "id": 27, "title": "The Unseen Witness", "hook": "Subject 1001 appears in every group photograph but casts no shadow." },
+        { "id": 28, "title": "Mother at the Market", "hook": "Nail finds his mother alive, younger, and certain she never had a child." },
+        { "id": 29, "title": "Vanta Beyond Vanta", "hook": "The city border leads back to the city from the opposite direction." },
+        { "id": 30, "title": "Archive or Ash", "hook": "The community must preserve Mara's files or destroy the only account of the outbreak.", "checkpoint": true }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "The Clean",
+      "range": "031-040",
+      "chapters": [
+        { "id": 31, "title": "White Masks", "hook": "Sterile soldiers enter Vanta without triggering the quarantine." },
+        { "id": 32, "title": "The Offer", "hook": "The Clean promise no cure, only the comfort of forgetting." },
+        { "id": 33, "title": "Caul's Face", "hook": "Director Caul removes his mask and reveals Nail's older face." },
+        { "id": 34, "title": "Quiet Surrender", "hook": "One faction has already traded the Vault key for immunity." },
+        { "id": 35, "title": "Successful Treatment", "hook": "A cured Survivor remains alive but disappears from every record." },
+        { "id": 36, "title": "Metadata Rifles", "hook": "The Clean's weapons target identity instead of flesh." },
+        { "id": 37, "title": "The Missing Trait", "hook": "One visual trait is erased from all one thousand witnesses overnight." },
+        { "id": 38, "title": "Future Nail", "hook": "Mara claims Caul is not Nail's father but his possible future." },
+        { "id": 39, "title": "A Murder in Advance", "hook": "Nail can kill the man he may become before the future is written." },
+        { "id": 40, "title": "Mercy for Caul", "hook": "The community decides whether the Director survives the first confrontation.", "checkpoint": true }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Memory Market",
+      "range": "041-050",
+      "chapters": [
+        { "id": 41, "title": "The Memory Market", "hook": "Vanta's underground opens a market where people sell the lives they remember." },
+        { "id": 42, "title": "The Last Morning", "hook": "A child auctions the final verified memory from before the Bloom." },
+        { "id": 43, "title": "Wrong Owners", "hook": "Every purchased memory belongs to someone other than its seller." },
+        { "id": 44, "title": "Lot 404", "hook": "Subject #0404's complete history is offered to an anonymous bidder." },
+        { "id": 45, "title": "The Owner's Voice", "hook": "The Staticborn hear a voice calling them custodians from outside Vanta." },
+        { "id": 46, "title": "Birth Record", "hook": "Nail buys the memory of his birth and sees Mara on the table." },
+        { "id": 47, "title": "The Wrong Child", "hook": "The newborn in Nail's memory is not Nail." },
+        { "id": 48, "title": "One Shattered Witness", "hook": "The market keeper claims all Subjects are fragments of one testimony." },
+        { "id": 49, "title": "First Custodian", "hook": "The Vault's original owner arrives to reclaim the archive." },
+        { "id": 50, "title": "Who Keeps the Memory", "hook": "The community chooses which faction receives the last unaltered memory.", "checkpoint": true }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Bedrock Signal",
+      "range": "051-060",
+      "chapters": [
+        { "id": 51, "title": "The Bedrock Signal", "hook": "A signal beneath Vanta cannot be muted, copied, or forgotten." },
+        { "id": 52, "title": "One Thousand Sentences", "hook": "The same signal tells every Subject something different." },
+        { "id": 53, "title": "Map of Noise", "hook": "The Cartographers discover the static describes a physical route." },
+        { "id": 54, "title": "The Older City", "hook": "Beneath Vanta lies another city with the same street names." },
+        { "id": 55, "title": "The Living Ledger", "hook": "The Rustbound uncover an engine that records ownership as biological change." },
+        { "id": 56, "title": "Future Recalculation", "hook": "Every transfer causes the engine to rewrite its prediction." },
+        { "id": 57, "title": "The First Door Opened", "hook": "The first external transfer opened a real door beneath the city." },
+        { "id": 58, "title": "Unwitnessed", "hook": "A Subject with no external witness begins fading from Vanta." },
+        { "id": 59, "title": "Quarantine Chain", "hook": "Mara admits the ledger was built to contain something, not preserve anyone." },
+        { "id": 60, "title": "Cut or Descend", "hook": "The community chooses between severing the signal and following it underground.", "checkpoint": true }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Survivor War",
+      "range": "061-070",
+      "chapters": [
+        { "id": 61, "title": "The Ownership Revolt", "hook": "The factions reject a future controlled by people outside their world." },
+        { "id": 62, "title": "Broken Glass", "hook": "The Saints release every sealed memory at once." },
+        { "id": 63, "title": "False Pasts", "hook": "Thousands of believable histories flood Vanta and demand recognition." },
+        { "id": 64, "title": "Three Nails", "hook": "Nail meets three versions of himself, each carrying valid evidence." },
+        { "id": 65, "title": "Vault Taken", "hook": "The Rustbound seize the capsules and begin replacing their controls." },
+        { "id": 66, "title": "Bloom Weather", "hook": "Spore clouds turn the city's atmosphere into a shared nervous system." },
+        { "id": 67, "title": "The Static Traitor", "hook": "The Staticborn leader has been broadcasting for The Clean." },
+        { "id": 68, "title": "Canonical Death", "hook": "A community choice determines which central witness cannot return." },
+        { "id": 69, "title": "Trait of the Dead", "hook": "The lost witness reappears as a mark on another Subject." },
+        { "id": 70, "title": "Rule Vanta", "hook": "The community gives one faction temporary control of the city.", "checkpoint": true }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Outside",
+      "range": "071-080",
+      "chapters": [
+        { "id": 71, "title": "Ocean Above", "hook": "The first expedition leaves Vanta and finds an ocean suspended in the sky." },
+        { "id": 72, "title": "Other Cities", "hook": "Vanta is not the last sealed city, only the first to wake." },
+        { "id": 73, "title": "Vault Chorus", "hook": "Distress calls arrive from archives using incompatible histories." },
+        { "id": 74, "title": "Two Hundred Years Late", "hook": "One rescue signal was sent from Vanta's own future." },
+        { "id": 75, "title": "The Foreign Witness", "hook": "A visitor from another archive carries a trait that Vanta erased." },
+        { "id": 76, "title": "Prototype City", "hook": "Nail learns Vanta was built to test whether history could be privately owned." },
+        { "id": 77, "title": "Decay Engine", "hook": "The outside world powers itself with controlled forgetting." },
+        { "id": 78, "title": "Clean Capital", "hook": "The source of The Clean is a city with no living inhabitants." },
+        { "id": 79, "title": "Archived Citizens", "hook": "Personalities without bodies govern the capital through borrowed memories." },
+        { "id": 80, "title": "Reveal Vanta", "hook": "The community decides whether the world learns that Vanta survived.", "checkpoint": true }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "The Original Lie",
+      "range": "081-090",
+      "chapters": [
+        { "id": 81, "title": "Mara Never Lived", "hook": "Every official record identifies Mara Vey as a synthetic identity." },
+        { "id": 82, "title": "One Voice", "hook": "All archived recordings collapse into the voice of one unknown Subject." },
+        { "id": 83, "title": "The Ownership Experiment", "hook": "The Bloom was designed to preserve property claims, not human life." },
+        { "id": 84, "title": "Private History", "hook": "The wealthy tried to own the only surviving version of the past." },
+        { "id": 85, "title": "One Thousand Witnesses", "hook": "The Subjects are the people whose testimony threatened the official timeline." },
+        { "id": 86, "title": "Upload Funeral", "hook": "Nail's funeral recorded a transfer, not a death." },
+        { "id": 87, "title": "Caul's Truth", "hook": "Director Caul returns with proof that he tried to stop the first rewrite." },
+        { "id": 88, "title": "External Witnesses", "hook": "The Vault identifies collectors as observers capable of stabilizing history." },
+        { "id": 89, "title": "Retroactive Choice", "hook": "Every community decision has already altered details in earlier chapters." },
+        { "id": 90, "title": "Name the Enemy", "hook": "The community names Mara, Caul, or the Vault as the final antagonist.", "checkpoint": true }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Second Decay",
+      "range": "091-100",
+      "chapters": [
+        { "id": 91, "title": "After the Enemy", "hook": "Destroying the chosen enemy causes the edges of the world to dissolve." },
+        { "id": 92, "title": "Load-Bearing Prison", "hook": "The Vault is both the cage and the structure holding Vanta together." },
+        { "id": 93, "title": "One Thousand Locks", "hook": "Each Subject is revealed as a separate quarantine lock." },
+        { "id": 94, "title": "Different Witnesses", "hook": "The locks require one thousand independent attestations to open safely." },
+        { "id": 95, "title": "The Missing Three", "hook": "The absent capsules were removed because they contained commands, not people." },
+        { "id": 96, "title": "998, 999, 1000", "hook": "The final Subjects are instructions capable of ending the archive." },
+        { "id": 97, "title": "Forget Everything", "hook": "The last command can free Vanta only by erasing every external witness." },
+        { "id": 98, "title": "Nail Enters the Archive", "hook": "Nail seals himself inside the ledger to preserve one uncontested truth." },
+        { "id": 99, "title": "The Moon Opens", "hook": "The red moon splits, revealing the world outside the simulation." },
+        { "id": 100, "title": "Only the First City", "hook": "Every witness receives the same final message: VANTA WAS ONLY THE FIRST CITY.", "checkpoint": true }
+      ]
+    }
+  ]
+}

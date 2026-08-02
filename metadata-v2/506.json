@@ -1,0 +1,32 @@
+{
+  "name": "Decay Labs Subject #0506",
+  "description": "Subject 0506 is a hand-illustrated witness from The Half-Life Archive. Assigned to Rustbound; archive condition: quarantined, transmission continues. Narrative classifications do not represent financial rarity or guaranteed utility.",
+  "image": "ipfs://QmcNKaghAM636EiW9zQeirxz25s7fU1eJ8tN8PzLgK7qP/506.png",
+  "external_url": "https://decaylabs.online/subject?id=506",
+  "attributes": [
+    {
+      "trait_type": "Narrative Faction",
+      "value": "Rustbound"
+    },
+    {
+      "trait_type": "Archive Chapter",
+      "value": "006"
+    },
+    {
+      "trait_type": "Chapter Record",
+      "value": "Mara Is Alive"
+    },
+    {
+      "trait_type": "Signal",
+      "value": "VANTA/RUSTBOUND/0506"
+    },
+    {
+      "trait_type": "Collection Status",
+      "value": "Genesis Archive"
+    },
+    {
+      "trait_type": "Media Storage",
+      "value": "IPFS"
+    }
+  ]
+}

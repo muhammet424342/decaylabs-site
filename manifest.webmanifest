@@ -1,0 +1,14 @@
+{
+  "name": "Decay Labs: The Half-Life Archive",
+  "short_name": "Decay Labs",
+  "description": "One thousand undead witnesses created on Base.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#090a08",
+  "theme_color": "#090a08",
+  "icons": [
+    { "src": "/public/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/public/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

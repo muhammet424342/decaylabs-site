@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Decay Labs mark</title>
+  <desc id="desc">A fractured archive seal forming the letter D</desc>
+  <defs>
+    <linearGradient id="rust" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F06A48"/>
+      <stop offset="1" stop-color="#8E1F2D"/>
+    </linearGradient>
+  </defs>
+  <path fill="none" stroke="url(#rust)" stroke-width="7" stroke-linecap="square" d="M18 10h12c14 0 24 8 24 22S44 54 30 54H18V36"/>
+  <path fill="none" stroke="#B7D65A" stroke-width="5" stroke-linecap="square" d="M18 10v17m0 9v18"/>
+  <path fill="#B7D65A" d="m10 27 8-8 8 8-8 8z"/>
+</svg>

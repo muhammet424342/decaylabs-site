@@ -1,0 +1,32 @@
+{
+  "name": "Decay Labs Subject #0665",
+  "description": "Subject 0665 is a hand-illustrated witness from The Half-Life Archive. Assigned to Bone Cartographers; archive condition: contained, external witness required. Narrative classifications do not represent financial rarity or guaranteed utility.",
+  "image": "ipfs://QmcNKaghAM636EiW9zQeirxz25s7fU1eJ8tN8PzLgK7qP/665.png",
+  "external_url": "https://decaylabs.online/subject?id=665",
+  "attributes": [
+    {
+      "trait_type": "Narrative Faction",
+      "value": "Bone Cartographers"
+    },
+    {
+      "trait_type": "Archive Chapter",
+      "value": "065"
+    },
+    {
+      "trait_type": "Chapter Record",
+      "value": "Vault Taken"
+    },
+    {
+      "trait_type": "Signal",
+      "value": "VANTA/BONE-CARTOGRAPHERS/0665"
+    },
+    {
+      "trait_type": "Collection Status",
+      "value": "Genesis Archive"
+    },
+    {
+      "trait_type": "Media Storage",
+      "value": "IPFS"
+    }
+  ]
+}

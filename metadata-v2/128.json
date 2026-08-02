@@ -1,0 +1,32 @@
+{
+  "name": "Decay Labs Subject #0128",
+  "description": "Subject 0128 is a hand-illustrated witness from The Half-Life Archive. Assigned to Glass Saints; archive condition: missing, ownership record intact. Narrative classifications do not represent financial rarity or guaranteed utility.",
+  "image": "ipfs://QmcNKaghAM636EiW9zQeirxz25s7fU1eJ8tN8PzLgK7qP/128.png",
+  "external_url": "https://decaylabs.online/subject?id=128",
+  "attributes": [
+    {
+      "trait_type": "Narrative Faction",
+      "value": "Glass Saints"
+    },
+    {
+      "trait_type": "Archive Chapter",
+      "value": "028"
+    },
+    {
+      "trait_type": "Chapter Record",
+      "value": "Mother at the Market"
+    },
+    {
+      "trait_type": "Signal",
+      "value": "VANTA/GLASS-SAINTS/0128"
+    },
+    {
+      "trait_type": "Collection Status",
+      "value": "Genesis Archive"
+    },
+    {
+      "trait_type": "Media Storage",
+      "value": "IPFS"
+    }
+  ]
+}

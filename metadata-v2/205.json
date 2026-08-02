@@ -1,0 +1,32 @@
+{
+  "name": "Decay Labs Subject #0205",
+  "description": "Subject 0205 is a hand-illustrated witness from The Half-Life Archive. Assigned to Bone Cartographers; archive condition: quarantined, transmission continues. Narrative classifications do not represent financial rarity or guaranteed utility.",
+  "image": "ipfs://QmcNKaghAM636EiW9zQeirxz25s7fU1eJ8tN8PzLgK7qP/205.png",
+  "external_url": "https://decaylabs.online/subject?id=205",
+  "attributes": [
+    {
+      "trait_type": "Narrative Faction",
+      "value": "Bone Cartographers"
+    },
+    {
+      "trait_type": "Archive Chapter",
+      "value": "005"
+    },
+    {
+      "trait_type": "Chapter Record",
+      "value": "The Red Moon"
+    },
+    {
+      "trait_type": "Signal",
+      "value": "VANTA/BONE-CARTOGRAPHERS/0205"
+    },
+    {
+      "trait_type": "Collection Status",
+      "value": "Genesis Archive"
+    },
+    {
+      "trait_type": "Media Storage",
+      "value": "IPFS"
+    }
+  ]
+}

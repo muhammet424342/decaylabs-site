@@ -1,37 +1,42 @@
-# Decay Labs — Archive
+# Decay Labs
 
-The site behind [decaylabs.online](https://decaylabs.online): a 1000-piece NFT collection on
-Base, and a verified Base App mini app you can buy from without leaving the client.
+The production source for [decaylabs.online](https://decaylabs.online): a hand-illustrated collection of 1,000 Subjects created on Base, the 100-chapter Half-Life Archive, and an in-app Seaport checkout.
 
-## What's here
+## Product surfaces
 
 | Path | Purpose |
 | --- | --- |
-| `index.html`, `styles.css`, `script.js` | The static site (vanilla + GSAP, no build step) |
-| `api/buy.js` | Serverless endpoint: cheapest listing → Seaport fulfillment data |
-| `miniapp-buy.js` | Wallet connect, Base network switch, calldata encode, tx send |
-| `.well-known/farcaster.json` | Signed Farcaster/Base App mini app manifest |
+| `/` | Brand, narrative, curated Subjects and build proof |
+| `/lore` | Ten story arcs and one hundred chapter hooks |
+| `/collection` | Curated archive plus 1-1000 Subject lookup |
+| `/subject?id=404` | Deterministic narrative record for any token |
+| `/trust` | Contract, inventory, storage and safety disclosure |
+| `/faq` | Plain-language product answers |
+| `/links` | Canonical official destinations |
+| `/api/buy.js` | Listing selection and Seaport fulfillment proxy |
+| `/api/collection-stats.js` | Current stats without invented fallback values |
 
-## In-app buying
+## Truth standard
 
-`api/buy.js` asks OpenSea for the cheapest active listing and the matching Seaport
-fulfillment payload, keeping the API key server-side. The browser encodes
-`fulfillBasicOrder_efficient_6GL6yc` with viem and sends it through the wallet the
-mini app already provides — buyers never get redirected to a marketplace.
+- All 1,000 tokens were initially created into founder-controlled inventory.
+- There is no active mint, whitelist or surprise airdrop.
+- Ownership lives on Base; media and metadata are referenced through IPFS.
+- Factions and memory fragments are narrative classifications, not rarity or price claims.
+- Games, staking, tokens and financial returns are not represented as delivered or promised.
 
-Two things keep that button alive without babysitting:
+## Local development
 
-- OpenSea agent keys expire after 30 days, so the endpoint mints a fresh keyless one
-  and retries when the current key stops authenticating.
-- If the marketplace API is unreachable for any reason, the front-end falls back to
-  the OpenSea collection page rather than dead-ending the buyer.
+```powershell
+python -m http.server 4173
+```
 
-## Deploying
+Open <http://127.0.0.1:4173>. Static pages work locally; Vercel serverless routes require a Vercel development environment or test mocks.
 
-Pushes to `main` deploy automatically via Vercel. `OPENSEA_API_KEY` is set as a Vercel
-environment variable; nothing secret lives in this repo.
+## Deployment
 
-## Links
+Pushes to the configured production branch deploy through Vercel. Required environment variables:
 
-- Site: <https://decaylabs.online>
-- Collection: <https://opensea.io/collection/decaylabs-395322216>
+- `OPENSEA_API_KEY`: server-side marketplace API key.
+- `CURATED_TOKEN_IDS`: optional comma-separated set used by the generic in-app purchase button. Defaults to `1..24`.
+
+No secrets belong in this repository.

@@ -1,0 +1,32 @@
+{
+  "name": "Decay Labs Subject #0716",
+  "description": "Subject 0716 is a hand-illustrated witness from The Half-Life Archive. Assigned to Rustbound; archive condition: mobile, signal contamination rising. Narrative classifications do not represent financial rarity or guaranteed utility.",
+  "image": "ipfs://QmcNKaghAM636EiW9zQeirxz25s7fU1eJ8tN8PzLgK7qP/716.png",
+  "external_url": "https://decaylabs.online/subject?id=716",
+  "attributes": [
+    {
+      "trait_type": "Narrative Faction",
+      "value": "Rustbound"
+    },
+    {
+      "trait_type": "Archive Chapter",
+      "value": "016"
+    },
+    {
+      "trait_type": "Chapter Record",
+      "value": "Five Records of Nail"
+    },
+    {
+      "trait_type": "Signal",
+      "value": "VANTA/RUSTBOUND/0716"
+    },
+    {
+      "trait_type": "Collection Status",
+      "value": "Genesis Archive"
+    },
+    {
+      "trait_type": "Media Storage",
+      "value": "IPFS"
+    }
+  ]
+}

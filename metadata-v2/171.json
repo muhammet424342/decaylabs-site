@@ -1,0 +1,32 @@
+{
+  "name": "Decay Labs Subject #0171",
+  "description": "Subject 0171 is a hand-illustrated witness from The Half-Life Archive. Assigned to Rustbound; archive condition: observed, future record present. Narrative classifications do not represent financial rarity or guaranteed utility.",
+  "image": "ipfs://QmcNKaghAM636EiW9zQeirxz25s7fU1eJ8tN8PzLgK7qP/171.png",
+  "external_url": "https://decaylabs.online/subject?id=171",
+  "attributes": [
+    {
+      "trait_type": "Narrative Faction",
+      "value": "Rustbound"
+    },
+    {
+      "trait_type": "Archive Chapter",
+      "value": "071"
+    },
+    {
+      "trait_type": "Chapter Record",
+      "value": "Ocean Above"
+    },
+    {
+      "trait_type": "Signal",
+      "value": "VANTA/RUSTBOUND/0171"
+    },
+    {
+      "trait_type": "Collection Status",
+      "value": "Genesis Archive"
+    },
+    {
+      "trait_type": "Media Storage",
+      "value": "IPFS"
+    }
+  ]
+}

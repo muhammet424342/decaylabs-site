@@ -1,0 +1,27 @@
+{
+  "name": "Decay Labs",
+  "symbol": "DECAY",
+  "chain": "Base",
+  "chainId": 8453,
+  "standard": "ERC-721",
+  "supply": 1000,
+  "contract": "0x65F5e8006F4eF730d6984836F606a5C5c516CdC8",
+  "founderWallet": "0x9072954ead2b42d8bc992861e22ec170a622eb06",
+  "collectionSlug": "decaylabs-395322216",
+  "openseaUrl": "https://opensea.io/collection/decaylabs-395322216",
+  "basescanUrl": "https://basescan.org/address/0x65F5e8006F4eF730d6984836F606a5C5c516CdC8",
+  "githubUrl": "https://github.com/muhammet424342/base-miniapp-buy-starter",
+  "xUrl": "https://x.com/Decaylabss",
+  "storage": {
+    "metadata": "IPFS",
+    "media": "IPFS",
+    "imageCid": "QmcNKaghAM636EiW9zQeirxz25s7fU1eJ8tN8PzLgK7qP"
+  },
+  "truth": {
+    "status": "All 1,000 tokens were created by the founder and initially remain founder-held unless transferred onchain.",
+    "sale": "There is no active mint or whitelist. Available tokens are secondary listings.",
+    "utility": "No token, staking yield, game, airdrop, or financial return is promised.",
+    "verification": "Ownership and transfers can be verified independently on BaseScan."
+  },
+  "curatedTokenIds": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+}

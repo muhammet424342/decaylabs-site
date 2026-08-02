@@ -1,0 +1,32 @@
+{
+  "name": "Decay Labs Subject #0862",
+  "description": "Subject 0862 is a hand-illustrated witness from The Half-Life Archive. Assigned to Sporekin; archive condition: responsive, chronology unstable. Narrative classifications do not represent financial rarity or guaranteed utility.",
+  "image": "ipfs://QmcNKaghAM636EiW9zQeirxz25s7fU1eJ8tN8PzLgK7qP/862.png",
+  "external_url": "https://decaylabs.online/subject?id=862",
+  "attributes": [
+    {
+      "trait_type": "Narrative Faction",
+      "value": "Sporekin"
+    },
+    {
+      "trait_type": "Archive Chapter",
+      "value": "062"
+    },
+    {
+      "trait_type": "Chapter Record",
+      "value": "Broken Glass"
+    },
+    {
+      "trait_type": "Signal",
+      "value": "VANTA/SPOREKIN/0862"
+    },
+    {
+      "trait_type": "Collection Status",
+      "value": "Genesis Archive"
+    },
+    {
+      "trait_type": "Media Storage",
+      "value": "IPFS"
+    }
+  ]
+}
