@@ -1,3 +1,6 @@
+import { executeCheckout, CheckoutError } from "./checkout-client.mjs";
+import { friendlyCheckoutMessage } from "./checkout-rules.mjs";
+
 const OPENSEA_COLLECTION = "https://opensea.io/collection/decaylabs-395322216";
 const CONTRACT = "0x65F5e8006F4eF730d6984836F606a5C5c516CdC8";
 const BASE_CHAIN_ID = 8453;
@@ -62,38 +65,15 @@ async function checkout(button) {
     const accounts = await provider.request({ method: "eth_requestAccounts" });
     const buyer = accounts?.[0];
     if (!buyer) throw new Error("no_wallet_account");
-    await ensureBase(provider);
-
-    status(requestedToken ? `Checking the live listing for Subject ${String(requestedToken).padStart(4, "0")}...` : "Checking the current Archive selection...");
-    const query = new URLSearchParams({ address: buyer });
-    if (requestedToken) query.set("tokenId", String(requestedToken));
-    const response = await fetch(`/api/buy.js?${query}`, { headers: { accept: "application/json" } });
-    const data = await response.json();
-    if (!response.ok || data.error) throw new Error(data.error || `checkout_${response.status}`);
-    if (data.chainId !== BASE_CHAIN_ID) throw new Error("chain_mismatch");
-    if (requestedToken && Number(data.tokenId) !== requestedToken) throw new Error("token_mismatch");
-    if (!/^0x[0-9a-fA-F]{40}$/.test(data.to || "")) throw new Error("invalid_transaction_target");
-    if (!Number.isFinite(data.priceEth) || data.priceEth <= 0 || data.priceEth > MAX_CHECKOUT_ETH) throw new Error("price_out_of_range");
-
     const { encodeFunctionData } = await import("https://esm.sh/viem@2.45.0");
-    const parameters = { ...data.parameters };
-    UINT_FIELDS.forEach((key) => { parameters[key] = BigInt(parameters[key]); });
-    parameters.additionalRecipients = (parameters.additionalRecipients || []).map((recipient) => ({ amount: BigInt(recipient.amount), recipient: recipient.recipient }));
-    let calldata = encodeFunctionData({ abi: ABI, functionName: "fulfillBasicOrder_efficient_6GL6yc", args: [parameters] });
-    calldata += String(data.calldataSuffix || "").replace(/^0x/, "");
-    calldata += BUILDER_SUFFIX;
-
-    label.textContent = `Subject ${String(data.tokenId).padStart(4, "0")} / ${data.priceEth} ETH`;
-    status(`Confirm Subject ${String(data.tokenId).padStart(4, "0")} for ${data.priceEth} ETH in your wallet.`);
-    const hash = await provider.request({ method: "eth_sendTransaction", params: [{ from: buyer, to: data.to, value: data.valueHex, data: calldata }] });
-    status(`Purchase submitted. <a href="https://basescan.org/tx/${hash}" target="_blank" rel="noopener noreferrer">Verify transaction &nearr;</a>`, true);
+    const result = await executeCheckout({ provider, buyer, tokenId: requestedToken, onStatus: status, encodeFunctionData });
+    label.textContent = `Subject ${String(result.data.tokenId).padStart(4, "0")} / ${result.data.priceEth} ETH`;
+    status(`Purchase submitted. <a href="https://basescan.org/tx/${result.hash}" target="_blank" rel="noopener noreferrer">Verify transaction &nearr;</a>`, true);
   } catch (error) {
-    const message = String(error?.message || error);
-    if (/reject|denied|4001/i.test(message)) status("Transaction cancelled. Nothing was submitted.");
-    else if (/token_not_listed|no_curated_listings/i.test(message)) fallback("That Subject is not currently listed.", requestedToken);
-    else if (/price_out_of_range/i.test(message)) fallback("The live price failed the checkout safety limit.", requestedToken);
-    else fallback("In-app checkout is temporarily unavailable.", requestedToken);
-    console.error("[checkout]", error);
+    const code = error?.code || "checkout_unavailable";
+    if (["token_not_listed", "no_curated_listings", "sold"].includes(code)) fallback(friendlyCheckoutMessage(code), requestedToken);
+    else status(friendlyCheckoutMessage(code));
+    console.error("[checkout]", { code, message: error?.message });
   } finally {
     button.disabled = false;
     if (!/Purchase submitted/.test(document.getElementById("buyStatus")?.textContent || "")) label.textContent = originalLabel;

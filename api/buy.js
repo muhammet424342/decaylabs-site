@@ -1,8 +1,10 @@
+import { BASE_CHAIN_ID, EXPECTED_CONTRACT, isAddress, isAllowedProtocol, normalizeTokenId, normalizeWei } from "../checkout-rules.mjs";
+
 const SLUG = "decaylabs-395322216";
-const CHAIN_ID = 8453;
+const CHAIN_ID = BASE_CHAIN_ID;
 const OS = "https://api.opensea.io/api/v2";
 const DEFAULT_CURATED = Array.from({ length: 24 }, (_, index) => index + 1);
-const CONTRACT = "0x65F5e8006F4eF730d6984836F606a5C5c516CdC8";
+const CONTRACT = EXPECTED_CONTRACT;
 let cachedKey = null;
 
 function allowedTokenIds() {
@@ -17,6 +19,31 @@ export function tokenIdFromListing(listing) {
 
 function priceWei(listing) {
   try { return BigInt(listing?.price?.current?.value ?? 0); } catch (_) { return 0n; }
+}
+
+function listingDetails(listing) {
+  const parameters = listing?.protocol_data?.parameters || {};
+  const offer = parameters.offer?.[0] || {};
+  return { tokenId: tokenIdFromListing(listing), contract: offer.token || offer.asset_contract?.address || listing?.asset?.contract || "", seller: parameters.offerer || listing?.offerer || listing?.maker?.address || "", protocolAddress: listing?.protocol_address || "", orderHash: listing?.order_hash || "", chain: String(listing?.chain || "").toLowerCase(), priceWei: priceWei(listing) };
+}
+
+export function validateListingFulfillment(listing, transaction, fulfillmentBody = {}) {
+  const expected = listingDetails(listing);
+  const parameters = transaction?.input_data?.parameters || {};
+  const fulfillmentChain = fulfillmentBody.chain_id ?? fulfillmentBody.chainId ?? transaction?.chain_id ?? transaction?.chainId;
+  if (!expected.orderHash) return "invalid_order_hash";
+  if (!["base", "base-mainnet", String(CHAIN_ID)].includes(expected.chain)) return "chain_mismatch";
+  if (!isAddress(expected.contract) || expected.contract.toLowerCase() !== CONTRACT.toLowerCase()) return "invalid_contract";
+  if (!isAddress(expected.seller)) return "invalid_seller";
+  if (!isAllowedProtocol(expected.protocolAddress)) return "invalid_protocol";
+  if (fulfillmentChain != null && String(fulfillmentChain) !== String(CHAIN_ID) && String(fulfillmentChain).toLowerCase() !== "base") return "chain_mismatch";
+  if (!isAllowedProtocol(transaction?.to) || transaction.to.toLowerCase() !== expected.protocolAddress.toLowerCase()) return "invalid_transaction_target";
+  if (String(parameters.offerToken || "").toLowerCase() !== CONTRACT.toLowerCase()) return "invalid_contract";
+  if (String(parameters.offerIdentifier) !== expected.tokenId) return "token_mismatch";
+  if (String(parameters.offerer || "").toLowerCase() !== expected.seller.toLowerCase()) return "invalid_seller";
+  const txValue = normalizeWei(transaction?.value);
+  if (txValue === null || txValue !== expected.priceWei) return "price_changed";
+  return null;
 }
 
 export function selectListing(listings, requestedTokenId, curated = allowedTokenIds()) {
@@ -66,11 +93,13 @@ export default async function handler(req, res) {
   }
 
   const buyer = String(req.query.address || "").toLowerCase();
-  if (!/^0x[0-9a-f]{40}$/.test(buyer)) return res.status(400).json({ error: "invalid_address" });
-  const tokenParam = req.query.tokenId == null || req.query.tokenId === "" ? null : Number(req.query.tokenId);
-  if (tokenParam != null && (!Number.isInteger(tokenParam) || tokenParam < 1 || tokenParam > 1000)) {
+  if (!isAddress(buyer)) return res.status(400).json({ error: "invalid_address" });
+  const tokenParam = req.query.tokenId == null || req.query.tokenId === "" ? null : normalizeTokenId(req.query.tokenId);
+  if (req.query.tokenId != null && req.query.tokenId !== "" && tokenParam == null) {
     return res.status(400).json({ error: "invalid_token_id" });
   }
+  const expectedPriceWei = req.query.expectedPriceWei == null || req.query.expectedPriceWei === "" ? null : normalizeWei(req.query.expectedPriceWei);
+  if (req.query.expectedPriceWei != null && req.query.expectedPriceWei !== "" && expectedPriceWei == null) return res.status(400).json({ error: "invalid_expected_price" });
 
   try {
     let key = cachedKey || process.env.OPENSEA_API_KEY || await mintKey();
@@ -102,6 +131,7 @@ export default async function handler(req, res) {
 
     const tokenId = tokenIdFromListing(listing);
     if (tokenParam != null && tokenId !== String(tokenParam)) return res.status(409).json({ error: "token_mismatch" });
+    if (expectedPriceWei !== null && priceWei(listing) !== expectedPriceWei) return res.status(409).json({ error: "price_changed" });
 
     const fulfillment = await call(`${OS}/listings/fulfillment_data`, {
       method: "POST",
@@ -111,10 +141,13 @@ export default async function handler(req, res) {
       })
     });
     if (!fulfillment.ok) return res.status(502).json({ error: "fulfillment_unavailable" });
-    const transaction = (await fulfillment.json()).fulfillment_data?.transaction;
+    const fulfillmentBody = await fulfillment.json();
+    const transaction = fulfillmentBody.fulfillment_data?.transaction;
     if (!transaction?.to || !transaction?.input_data?.parameters || transaction.value == null) {
       return res.status(502).json({ error: "invalid_fulfillment" });
     }
+    const fulfillmentError = validateListingFulfillment(listing, transaction, fulfillmentBody);
+    if (fulfillmentError) return res.status(502).json({ error: fulfillmentError });
 
     const price = listing.price?.current;
     const decimals = Number(price?.decimals ?? 18);
@@ -123,8 +156,10 @@ export default async function handler(req, res) {
       to: transaction.to,
       protocolAddress: listing.protocol_address || "",
       contract: CONTRACT,
-      valueHex: transaction.value_hex || `0x${BigInt(transaction.value).toString(16)}`,
-      valueWei: String(transaction.value),
+      seller: listing.protocol_data?.parameters?.offerer || listing.offerer || listing.maker?.address || "",
+     valueHex: transaction.value_hex || `0x${BigInt(transaction.value).toString(16)}`,
+     valueWei: String(transaction.value),
+      priceWei: String(price?.value ?? ""),
       parameters: transaction.input_data.parameters,
       calldataSuffix: transaction.calldata_suffix || "",
       priceEth,
