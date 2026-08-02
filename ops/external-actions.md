@@ -1,4 +1,6 @@
-# External actions requiring authenticated accounts or signatures
+# DecayLabs external actions register
+
+Canonical order and field-complete audit: see [`external-actions-v2.md`](external-actions-v2.md). It records Platform, Action, File, Menu, Account, Wallet, Risk, Control and evidence status.
 
 Local code, copy, assets, metadata and operating documents are implemented in this repository. The actions below cannot be completed safely without an authenticated third-party session, a wallet signature, an API credential or a human presence during account-risk prompts.
 

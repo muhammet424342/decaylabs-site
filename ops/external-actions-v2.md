@@ -1,0 +1,11 @@
+# External actions register (ordered)
+
+The canonical register is `ops/external-actions.md`. This companion checklist is kept as a compact audit index; account, wallet, financial and irreversible actions remain unchecked until manually performed with evidence.
+
+1. **X** — Files: `ops/x/profile-and-pinned.md`, `ops/x/final-publishing-pack.json`, `public/x-avatar.png`, `public/x-banner.jpg`. Menu: Profile → Edit profile / Compose → Schedule. Account: yes. Wallet: no. Risk: medium. Control: verify crop, copy, links and pinned thread on X. Status: `[ ] manual`.
+2. **OpenSea** — Files: `ops/marketplace/opensea-profile.md`, `data/collection.json`. Menu: Studio → Collection → Edit. Account: yes. Wallet: sometimes. Risk: medium/high. Control: Base chain, contract, supply and official links. Status: `[ ] manual/read-only pending`.
+3. **Listing cancellations** — File: `ops/marketplace/inventory-release.csv`. Menu: Studio → Items → Listings → Cancel. Account: yes. Wallet: often. Risk: high/irreversible order state. Control: inspect order hash, token, price and gas; user signs. Status: `[ ] not executed`.
+4. **IPFS** — Files: `metadata-v2/`, `scripts/generate-metadata.mjs`, `ops/audit/ipfs-verification.md`. Menu: provider dashboard/API. Account: yes. Wallet: no. Risk: medium. Control: count 1000 JSON, parse, sample gateways and compare CIDs. Status: `[ ] not uploaded`.
+5. **Base URI** — Files: `data/collection.json`, new CID. Menu: Basescan Contract → Write or owner tooling. Account: yes. Wallet: yes. Risk: critical. Control: verify chain 8453, contract, setter, CID, gas and read-back URI. Status: `[ ] not executed`.
+6. **Discord** — File: `ops/community/discord-setup.md`. Menu: Server Settings → Channels/Roles/Integrations. Account: yes. Wallet: no or bot-dependent. Risk: medium/high. Control: two human moderators, scoped bot permissions, scam warning. Status: `[ ] manual`.
+7. **Final live check** — Files: `ops/audit/checkout-scenarios.md`, screenshots and this register. Menu: public URLs/browser/wallet. Account: no for site; yes for services. Wallet: only purchase. Risk: critical for purchase. Control: HTTP routes, 320–1440 widths, API error paths, user-reviewed transaction target/value. Status: `[ ] evidence pending`.

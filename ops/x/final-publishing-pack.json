@@ -1,0 +1,1422 @@
+{
+  "generatedAt": "2026-08-02T07:53:20.666Z",
+  "profile": {
+    "displayName": "DecayLabs | Half-Life Archive",
+    "username": "@Decaylabss",
+    "bio": "Everything decays. Proof remains.\nThe Half-Life Archive — 1,000 Subjects on Base.\nLore, provenance, and an honest build log.",
+    "website": "https://decaylabs.online",
+    "location": "Vanta / Base",
+    "avatar": "public/x-avatar.png",
+    "banner": "public/x-banner.jpg",
+    "ogImage": "public/og-v2.png"
+  },
+  "pinnedThread": [
+    "DecayLabs — Everything Decays. Proof Remains.",
+    "Half-Life Archive: 1,000 Subjects, five factions, one sealed city called Vanta.",
+    "Every Subject is a witness with a record, a memory fragment and a chapter connection.",
+    "The collection, lore, contract and safer checkout are public. No invented rarity. No guaranteed utility.",
+    "Enter the archive: https://decaylabs.online — verify first, then choose your next witness."
+  ],
+  "firstSevenDays": [
+    {
+      "day": 1,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 1: ",
+      "time": "- Time: 18:30 TRT\n- Hook: `Everything decays. Proof remains.`\n- Main: `Decay Labs is reopening as The Half-Life Archive: 1,000 altered witnesses on Base, a sealed city called Vanta and one question—who owns a memory after its owner is gone?`\n- CTA: `Enter the archive: https://decaylabs.online`\n- Visual: `public/og-v2.png`\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 2,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 2: ",
+      "time": "- Time: 18:30 TRT\n- Hook: `Most NFT roadmaps ask you to trust the future. Ours starts with what you can verify today.`\n- Main: `1,000 founder-created Subjects. Ownership on Base. Media on IPFS. Public contract. No active mint. No invented rarity. No guaranteed utility.`\n- CTA: `Audit the project yourself: https://decaylabs.online/trust`\n- Visual: contract card using `public/social-card-template.png`\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 3,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 3: ",
+      "time": "- Time: 18:30 TRT\n- Hook: `Subject #0007 woke while watching footage of his own funeral.`\n- Main: `DECAY LOG 001 — FUNERAL PLAYBACK. The timestamp was tomorrow. The mourners had no faces. One person in the recording looked directly into the camera and whispered: “Do not remember me.”`\n- CTA: `What is the first thing you would verify: the body, the date or the witness?`\n- Visual: `public/nft-7.png` with chapter label\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 4,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 4: ",
+      "time": "- Time: 18:30 TRT\n- Hook: `A PFP is decoration. A witness carries evidence.`\n- Main: `Every Decay Labs Subject receives a faction, callsign, memory fragment and chapter connection. These are narrative records—not fake rarity scores.`\n- CTA: `Search any ID from 1–1000: https://decaylabs.online/collection`\n- Visual: three Subject cards from the collection page\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 5,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 5: ",
+      "time": "- Time: 18:30 TRT\n- Hook: `I made the mistake of presenting Decay Labs like inventory.`\n- Main: `The art existed. The contract existed. But the reason to care was buried. I rebuilt the project around the part that deserves attention: the world, the evidence and the people willing to witness it.`\n- CTA: `If you have rebuilt a project in public, what did you remove first?`\n- Visual: before/after website crop\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 6,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 6: ",
+      "time": "- Time: 18:30 TRT\n- Hook: `Five factions survived Vanta. None agree on what decay means.`\n- Main: `Rustbound replace what memory takes. Sporekin treat mutation as language. Glass Saints imprison memories to save them. Staticborn hear erased timelines. Bone Cartographers map the forgotten.`\n- CTA: `Choose one—and tell me why it is right.`\n- Visual: five-faction color chart\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 7,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 7: ",
+      "time": "- Time: 18:30 TRT\n- Hook: `Week 1: shipped, not promised.`\n- Main: `A new public archive, 100 chapter hooks, individual Subject records, contract transparency, safer checkout validation and a complete metadata rewrite.`\n- CTA: `What should I document next: art process, contract anatomy or lore structure?`\n- Visual: build log checklist\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    }
+  ],
+  "days30": [
+    {
+      "day": 1,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 1: ",
+      "time": "- Time: 18:30 TRT\n- Hook: `Everything decays. Proof remains.`\n- Main: `Decay Labs is reopening as The Half-Life Archive: 1,000 altered witnesses on Base, a sealed city called Vanta and one question—who owns a memory after its owner is gone?`\n- CTA: `Enter the archive: https://decaylabs.online`\n- Visual: `public/og-v2.png`\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 2,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 2: ",
+      "time": "- Time: 18:30 TRT\n- Hook: `Most NFT roadmaps ask you to trust the future. Ours starts with what you can verify today.`\n- Main: `1,000 founder-created Subjects. Ownership on Base. Media on IPFS. Public contract. No active mint. No invented rarity. No guaranteed utility.`\n- CTA: `Audit the project yourself: https://decaylabs.online/trust`\n- Visual: contract card using `public/social-card-template.png`\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 3,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 3: ",
+      "time": "- Time: 18:30 TRT\n- Hook: `Subject #0007 woke while watching footage of his own funeral.`\n- Main: `DECAY LOG 001 — FUNERAL PLAYBACK. The timestamp was tomorrow. The mourners had no faces. One person in the recording looked directly into the camera and whispered: “Do not remember me.”`\n- CTA: `What is the first thing you would verify: the body, the date or the witness?`\n- Visual: `public/nft-7.png` with chapter label\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 4,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 4: ",
+      "time": "- Time: 18:30 TRT\n- Hook: `A PFP is decoration. A witness carries evidence.`\n- Main: `Every Decay Labs Subject receives a faction, callsign, memory fragment and chapter connection. These are narrative records—not fake rarity scores.`\n- CTA: `Search any ID from 1–1000: https://decaylabs.online/collection`\n- Visual: three Subject cards from the collection page\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 5,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 5: ",
+      "time": "- Time: 18:30 TRT\n- Hook: `I made the mistake of presenting Decay Labs like inventory.`\n- Main: `The art existed. The contract existed. But the reason to care was buried. I rebuilt the project around the part that deserves attention: the world, the evidence and the people willing to witness it.`\n- CTA: `If you have rebuilt a project in public, what did you remove first?`\n- Visual: before/after website crop\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 6,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 6: ",
+      "time": "- Time: 18:30 TRT\n- Hook: `Five factions survived Vanta. None agree on what decay means.`\n- Main: `Rustbound replace what memory takes. Sporekin treat mutation as language. Glass Saints imprison memories to save them. Staticborn hear erased timelines. Bone Cartographers map the forgotten.`\n- CTA: `Choose one—and tell me why it is right.`\n- Visual: five-faction color chart\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 7,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 7: ",
+      "time": "- Time: 18:30 TRT\n- Hook: `Week 1: shipped, not promised.`\n- Main: `A new public archive, 100 chapter hooks, individual Subject records, contract transparency, safer checkout validation and a complete metadata rewrite.`\n- CTA: `What should I document next: art process, contract anatomy or lore structure?`\n- Visual: build log checklist\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 8,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 8: ",
+      "time": "- Time: 18:30 TRT\n- Hook: `The Vault contains 1,000 capsules. Only 997 are occupied.`\n- Main: `DECAY LOG 002 — THREE OPEN CAPSULES. No alarm was triggered. No door was opened. Yet wet footprints begin inside each empty capsule and end at the same sealed wall.`\n- CTA: `Who left first: a prisoner, a scientist or something that was never human?`\n- Visual: dark capsule corridor illustration\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 9,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 9: ",
+      "time": "- Time: 21:30 TRT\n- Hook: `Onchain provenance matters. Onchain hype does not.`\n- Main: `A contract can prove ownership. It cannot prove taste, community or future effort. Those still have to be earned in public.`\n- CTA: `What is one NFT claim the chain can never verify?`\n- Visual: minimal type card\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 10,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 10: ",
+      "time": "- Time: 18:30 TRT\n- Hook: `The Rustbound do not repair the body. They replace the memory of needing it.`\n- Main: `Their oath is simple: “Replace what memory takes.” Every machine graft keeps a function alive while its original reason disappears.`\n- CTA: `Would you trade one irreplaceable memory to keep your body working?`\n- Visual: rust-toned Subject\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 11,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 11: ",
+      "time": "- Time: 18:30 TRT\n- Hook: `A collection becomes a brand when owning one piece changes how you read the whole world.`\n- Main: `Decay Labs Subjects are entry points into the same archive. The goal is not 1,000 isolated profile pictures. It is 1,000 conflicting testimonies.`\n- CTA: `Browse and tell me which witness you would question first: https://decaylabs.online/collection`\n- Visual: 3x3 curated grid\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 12,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 12: ",
+      "time": "- Time: 18:30 TRT\n- Hook: `The warning only appears when nobody is looking.`\n- Main: `DECAY LOG 003 — DO NOT REMEMBER. Every camera records a blank wall. Every witness remembers three words. By morning, a fourth word has appeared: “MARA.”`\n- CTA: `Follow the archive before Log 004 rewrites this one.`\n- Visual: warning wall, analog grain\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 13,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 13: ",
+      "time": "- Time: 18:30 TRT\n- Hook: `Here is how one visual becomes a piece of evidence.`\n- Main: `Shape gives us the condition. Materials imply the faction. Damage suggests the memory. The story is written from what the artwork can support—not pasted on afterward.`\n- CTA: `Reply with a Subject ID. I will decode one tomorrow.`\n- Visual: annotated Subject art\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 14,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 14: ",
+      "time": "- Time: 21:30 TRT\n- Hook: `Theory Lab 01: there are 1,000 tokens—but the experiment log records Subject 1001.`\n- Main: `Possibility A: an erased witness. B: the Vault itself. C: every holder collectively. D: something worse.`\n- CTA: `Choose A/B/C/D and defend it in one sentence.`\n- Visual: redacted Subject 1001 file\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 15,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 15: ",
+      "time": "- Time: 18:30 TRT\n- Hook: `Would you preserve your happiest memory if you could never experience it again?`\n- Main: `Glass Saints crystallize memories before the Bloom can alter them. The memory survives perfectly. Its owner loses access forever.`\n- CTA: `Preservation or imprisonment?`\n- Visual: glass-blue Subject close-up\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 16,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 16: ",
+      "time": "- Time: 18:30 TRT\n- Hook: `Before you collect anything, verify these four things.`\n- Main: `1. Correct chain. 2. Correct contract. 3. Official marketplace link. 4. What the creator is—and is not—promising. Decay Labs publishes all four.`\n- CTA: `Save this checklist. Verify here: https://decaylabs.online/trust`\n- Visual: four-step safety card\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 17,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 17: ",
+      "time": "- Time: 18:30 TRT\n- Hook: `Nail remembers a childhood that belongs to someone else.`\n- Main: `DECAY LOG 004 — BORROWED GRIEF. The bedroom is familiar. The parents are strangers. On the desk sits a drawing signed in Nail’s handwriting—dated nine years before he was born.`\n- CTA: `Whose memory is it?`\n- Visual: fragmented bedroom/archive file\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 18,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 18: ",
+      "time": "- Time: 18:30 TRT\n- Hook: `The Staticborn do not predict the future. They remember futures Vanta deleted.`\n- Main: `Their receivers capture broadcasts from timelines that no longer exist. Every accurate message makes the present less stable.`\n- CTA: `Would you listen if knowing changed the result?`\n- Visual: violet CRT-static Subject\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 19,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 19: ",
+      "time": "- Time: 18:30 TRT\n- Hook: `“Game. Staking. AI.” Three words are not a roadmap.`\n- Main: `Decay Labs will label those as research until there is a working prototype. The public status is simple: live, building, or not promised.`\n- CTA: `What proof should creators show before calling something a utility?`\n- Visual: LIVE / BUILDING / NOT PROMISED board\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 20,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 20: ",
+      "time": "- Time: 18:30 TRT\n- Hook: `SUBJECT FILE #0404 — the witness whose history is for sale.`\n- Main: `Faction: Staticborn. Condition: desynchronized. Memory fragment: “I heard the bid before the market opened.” Archive connection: Chapter 44, LOT 404.`\n- CTA: `Open the record: https://decaylabs.online/subject?id=404`\n- Visual: dynamic Subject #0404 card\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 21,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 21: ",
+      "time": "- Time: 18:30 TRT\n- Hook: `Week 3 proof: the archive is becoming a system.`\n- Main: `Profile system complete. Marketplace truth copy complete. Discord safety architecture complete. Thirty-day publishing system active. No follower purchase. No engagement ring.`\n- CTA: `Builders: what did you ship this week? One link only.`\n- Visual: build log card\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 22,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 22: ",
+      "time": "- Time: 18:30 TRT\n- Hook: `The first exterior door opens onto a sky that should not exist.`\n- Main: `DECAY LOG 005 — THE RED MOON. Vanta’s records show daylight. The witnesses see permanent night. Above them, a red moon pulses at the same rhythm as the Vault.`\n- CTA: `Is the moon outside—or is the city inside it?`\n- Visual: Vanta skyline and red moon\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 23,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 23: ",
+      "time": "- Time: 18:30 TRT\n- Hook: `Every body leaves a map. The Bone Cartographers learned to read it.`\n- Main: `They reconstruct streets from fractures, borders from scar tissue and erased districts from the dead nobody recorded.`\n- CTA: `What place would your body remember?`\n- Visual: bone-white map overlay\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 24,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 24: ",
+      "time": "- Time: 21:30 TRT\n- Hook: `Ask me the hardest question about Decay Labs.`\n- Main: `Contract, supply, founder inventory, art process, lore, what failed, what exists today—nothing is off limits. I will answer with evidence or say “not built.”`\n- CTA: `One question per reply.`\n- Visual: open archive dossier\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 25,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 25: ",
+      "time": "- Time: 18:30 TRT\n- Hook: `Artificial scarcity is easy. Meaningful selection is harder.`\n- Main: `Founder inventory will be released in small, story-linked sets—not a wall of identical listings. A promoted Subject must have a reason to be seen beyond its price.`\n- CTA: `Would you rather discover by visual, faction or chapter?`\n- Visual: 24 curated slots board\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 26,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 26: ",
+      "time": "- Time: 18:30 TRT\n- Hook: `A dead scientist keeps repeating one sentence over the radio: MARA IS ALIVE.`\n- Main: `DECAY LOG 006. The voiceprint is a perfect match. The transmission source is beneath Floor Thirteen—a floor absent from every plan.`\n- CTA: `Would you descend or destroy the radio?`\n- Visual: waveform and sealed elevator\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 27,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 27: ",
+      "time": "- Time: 18:30 TRT\n- Hook: `What if infection is not damage—but a message?`\n- Main: `The Sporekin believe the Bloom communicates through mutation. Their bodies are not victims. They are unfinished sentences.`\n- CTA: `Translate this doctrine in one word.`\n- Visual: toxic-lime fungal Subject\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 28,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 28: ",
+      "time": "- Time: 18:30 TRT\n- Hook: `Decay Labs needs collaborators, not paid applause.`\n- Main: `I am looking for one Base-native builder, one lore editor and one community host who care about verifiable, story-first work. No vague “partnership” announcement—start with one small artifact.`\n- CTA: `Reply with what you have shipped, not your follower count.`\n- Visual: three open roles dossier\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 29,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 29: ",
+      "time": "- Time: 18:30 TRT\n- Hook: `The elevator reveals a floor missing from every architectural record.`\n- Main: `DECAY LOG 007 — FLOOR THIRTEEN. The button has no number. Every witness remembers pressing it before waking. Inside waits a table set for 1,001 people.`\n- CTA: `Who is the extra seat for?`\n- Visual: elevator / long table image\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    },
+    {
+      "day": 30,
+      "hook": "",
+      "tweet": "\n\n",
+      "cta": "",
+      "visual": "",
+      "altText": "DecayLabs archive visual for day 30: ",
+      "time": "- Time: 21:30 TRT\n- Hook: `The first decision is approaching. One door opens. The other starts screaming.`\n- Main: `At Chapter 10, the archive reaches its first canon checkpoint. The community will choose which exit the witnesses take. The rejected path will not disappear.`\n- CTA: `Follow + enable notifications. The evidence for both doors begins tomorrow.`\n- Visual: split orange/lime door composition\n",
+      "purpose": "discover + trust + conversation",
+      "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
+      "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
+    }
+  ],
+  "ideas100": [
+    {
+      "id": 1,
+      "hook": "You wake with someone else’s happiest memory. Do you return it if doing so erases you?",
+      "tweet": "You wake with someone else’s happiest memory. Do you return it if doing so erases you?",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: You wake with someone else’s happiest memory. Do you return it if doing so erases you?",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 2,
+      "hook": "Three capsules are empty. No door opened. What escaped?",
+      "tweet": "Three capsules are empty. No door opened. What escaped?",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Three capsules are empty. No door opened. What escaped?",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 3,
+      "hook": "A warning appears only when nobody is looking. How do you prove it exists?",
+      "tweet": "A warning appears only when nobody is looking. How do you prove it exists?",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: A warning appears only when nobody is looking. How do you prove it exists?",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 4,
+      "hook": "Your funeral is dated tomorrow. Who do you call first?",
+      "tweet": "Your funeral is dated tomorrow. Who do you call first?",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Your funeral is dated tomorrow. Who do you call first?",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 5,
+      "hook": "One city. Five factions. Which theory of decay would you trust with your identity?",
+      "tweet": "One city. Five factions. Which theory of decay would you trust with your identity?",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: One city. Five factions. Which theory of decay would you trust with your identity?",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 6,
+      "hook": "Would you trade one childhood memory to keep your body working?",
+      "tweet": "Would you trade one childhood memory to keep your body working?",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Would you trade one childhood memory to keep your body working?",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 7,
+      "hook": "Preserve a memory forever—or retain the ability to feel it once more?",
+      "tweet": "Preserve a memory forever—or retain the ability to feel it once more?",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Preserve a memory forever—or retain the ability to feel it once more?",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 8,
+      "hook": "A radio uses a dead scientist’s voice. Do you answer?",
+      "tweet": "A radio uses a dead scientist’s voice. Do you answer?",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: A radio uses a dead scientist’s voice. Do you answer?",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 9,
+      "hook": "A train can return you to a place erased from history. Where do you go?",
+      "tweet": "A train can return you to a place erased from history. Where do you go?",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: A train can return you to a place erased from history. Where do you go?",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 10,
+      "hook": "Your mother is alive, younger, and certain you never existed. What evidence could change her mind?",
+      "tweet": "Your mother is alive, younger, and certain you never existed. What evidence could change her mind?",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Your mother is alive, younger, and certain you never existed. What evidence could change her mind?",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 11,
+      "hook": "Subject 1001 appears in every photo but casts no shadow. Give it a name.",
+      "tweet": "Subject 1001 appears in every photo but casts no shadow. Give it a name.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Subject 1001 appears in every photo but casts no shadow. Give it a name.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 12,
+      "hook": "Would you rather know a false past or no past?",
+      "tweet": "Would you rather know a false past or no past?",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Would you rather know a false past or no past?",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 13,
+      "hook": "If ownership stabilizes a memory, does transfer count as forgetting?",
+      "tweet": "If ownership stabilizes a memory, does transfer count as forgetting?",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: If ownership stabilizes a memory, does transfer count as forgetting?",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 14,
+      "hook": "Your future self asks you not to become him. Is that warning proof you already did?",
+      "tweet": "Your future self asks you not to become him. Is that warning proof you already did?",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Your future self asks you not to become him. Is that warning proof you already did?",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 15,
+      "hook": "A cure saves your body but removes you from every record. Take it?",
+      "tweet": "A cure saves your body but removes you from every record. Take it?",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: A cure saves your body but removes you from every record. Take it?",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 16,
+      "hook": "The last verified morning before the apocalypse is for sale. What is your maximum bid—in memories?",
+      "tweet": "The last verified morning before the apocalypse is for sale. What is your maximum bid—in memories?",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: The last verified morning before the apocalypse is for sale. What is your maximum bid—in memories?",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 17,
+      "hook": "Every purchased memory belongs to somebody else. Is the market theft or rescue?",
+      "tweet": "Every purchased memory belongs to somebody else. Is the market theft or rescue?",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Every purchased memory belongs to somebody else. Is the market theft or rescue?",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 18,
+      "hook": "The city border loops back from the opposite direction. Are you trapped or infinite?",
+      "tweet": "The city border loops back from the opposite direction. Are you trapped or infinite?",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: The city border loops back from the opposite direction. Are you trapped or infinite?",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 19,
+      "hook": "One faction must control Vanta for ten chapters. Choose: Rust / Spore / Glass / Static / Bone.",
+      "tweet": "One faction must control Vanta for ten chapters. Choose: Rust / Spore / Glass / Static / Bone.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: One faction must control Vanta for ten chapters. Choose: Rust / Spore / Glass / Static / Bone.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 20,
+      "hook": "The moon opens like a door. What is on the other side?",
+      "tweet": "The moon opens like a door. What is on the other side?",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: The moon opens like a door. What is on the other side?",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 21,
+      "hook": "A smart contract proves ownership. It does not prove a community exists.",
+      "tweet": "A smart contract proves ownership. It does not prove a community exists.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: A smart contract proves ownership. It does not prove a community exists.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 22,
+      "hook": "“Game + AI + staking” is not a roadmap. It is three nouns.",
+      "tweet": "“Game + AI + staking” is not a roadmap. It is three nouns.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: “Game + AI + staking” is not a roadmap. It is three nouns.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 23,
+      "hook": "If rarity was invented after mint, it is marketing metadata—not history.",
+      "tweet": "If rarity was invented after mint, it is marketing metadata—not history.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: If rarity was invented after mint, it is marketing metadata—not history.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 24,
+      "hook": "The NFT market does not need more Discords. It needs more reasons to return tomorrow.",
+      "tweet": "The NFT market does not need more Discords. It needs more reasons to return tomorrow.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: The NFT market does not need more Discords. It needs more reasons to return tomorrow.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 25,
+      "hook": "Most “utility” is a substitute for identity. The strongest collections are understood without a rewards table.",
+      "tweet": "Most “utility” is a substitute for identity. The strongest collections are understood without a rewards table.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Most “utility” is a substitute for identity. The strongest collections are understood without a rewards table.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 26,
+      "hook": "Founder transparency is more valuable than founder mystique in 2026.",
+      "tweet": "Founder transparency is more valuable than founder mystique in 2026.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Founder transparency is more valuable than founder mystique in 2026.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 27,
+      "hook": "A 10K collection with no narrative system is not a universe. It is a folder.",
+      "tweet": "A 10K collection with no narrative system is not a universe. It is a folder.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: A 10K collection with no narrative system is not a universe. It is a folder.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 28,
+      "hook": "The floor price is a market signal, not a creative brief.",
+      "tweet": "The floor price is a market signal, not a creative brief.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: The floor price is a market signal, not a creative brief.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 29,
+      "hook": "Delisting supply can create scarcity. It cannot create demand.",
+      "tweet": "Delisting supply can create scarcity. It cannot create demand.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Delisting supply can create scarcity. It cannot create demand.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 30,
+      "hook": "Bots can inflate a launch and permanently poison the audience model.",
+      "tweet": "Bots can inflate a launch and permanently poison the audience model.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Bots can inflate a launch and permanently poison the audience model.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 31,
+      "hook": "The best holder benefit is evidence that the creator is still creating.",
+      "tweet": "The best holder benefit is evidence that the creator is still creating.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: The best holder benefit is evidence that the creator is still creating.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 32,
+      "hook": "If your roadmap depends on mint revenue that no longer exists, publish a smaller roadmap.",
+      "tweet": "If your roadmap depends on mint revenue that no longer exists, publish a smaller roadmap.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: If your roadmap depends on mint revenue that no longer exists, publish a smaller roadmap.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 33,
+      "hook": "Collectors do not owe projects patience. Projects owe collectors clarity.",
+      "tweet": "Collectors do not owe projects patience. Projects owe collectors clarity.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Collectors do not owe projects patience. Projects owe collectors clarity.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 34,
+      "hook": "“Community-led” without decision boundaries is usually founder avoidance.",
+      "tweet": "“Community-led” without decision boundaries is usually founder avoidance.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: “Community-led” without decision boundaries is usually founder avoidance.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 35,
+      "hook": "A project should publish what is live, building and not promised. Every week.",
+      "tweet": "A project should publish what is live, building and not promised. Every week.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: A project should publish what is live, building and not promised. Every week.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 36,
+      "hook": "Token-gated does not automatically mean valuable.",
+      "tweet": "Token-gated does not automatically mean valuable.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Token-gated does not automatically mean valuable.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 37,
+      "hook": "Lore fails when it explains the art instead of creating unanswered questions.",
+      "tweet": "Lore fails when it explains the art instead of creating unanswered questions.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Lore fails when it explains the art instead of creating unanswered questions.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 38,
+      "hook": "The strongest Web3 brands can remove the word NFT from the hero section and still be interesting.",
+      "tweet": "The strongest Web3 brands can remove the word NFT from the hero section and still be interesting.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: The strongest Web3 brands can remove the word NFT from the hero section and still be interesting.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 39,
+      "hook": "A marketplace page is a checkout—not a homepage.",
+      "tweet": "A marketplace page is a checkout—not a homepage.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: A marketplace page is a checkout—not a homepage.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 40,
+      "hook": "Organic growth is slower because it is made of people you can actually keep.",
+      "tweet": "Organic growth is slower because it is made of people you can actually keep.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Organic growth is slower because it is made of people you can actually keep.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 41,
+      "hook": "Four checks before collecting any NFT: chain, contract, official link, creator promises.",
+      "tweet": "Four checks before collecting any NFT: chain, contract, official link, creator promises.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Four checks before collecting any NFT: chain, contract, official link, creator promises.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 42,
+      "hook": "A simple NFT trust page template: supply / contract / storage / inventory / risks / official links.",
+      "tweet": "A simple NFT trust page template: supply / contract / storage / inventory / risks / official links.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: A simple NFT trust page template: supply / contract / storage / inventory / risks / official links.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 43,
+      "hook": "Five signs a project metric is invented: no source, no timestamp, round numbers, constant values, unexplained methodology.",
+      "tweet": "Five signs a project metric is invented: no source, no timestamp, round numbers, constant values, unexplained methodology.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Five signs a project metric is invented: no source, no timestamp, round numbers, constant values, unexplained methodology.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 44,
+      "hook": "The 3-layer lore test: premise you can repeat / conflict that can escalate / question that cannot be answered immediately.",
+      "tweet": "The 3-layer lore test: premise you can repeat / conflict that can escalate / question that cannot be answered immediately.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: The 3-layer lore test: premise you can repeat / conflict that can escalate / question that cannot be answered immediately.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 45,
+      "hook": "A better roadmap vocabulary: LIVE / BUILDING / RESEARCH / NOT PROMISED.",
+      "tweet": "A better roadmap vocabulary: LIVE / BUILDING / RESEARCH / NOT PROMISED.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: A better roadmap vocabulary: LIVE / BUILDING / RESEARCH / NOT PROMISED.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 46,
+      "hook": "How to write a collectible spotlight: visual evidence → memory fragment → world consequence → verified link.",
+      "tweet": "How to write a collectible spotlight: visual evidence → memory fragment → world consequence → verified link.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: How to write a collectible spotlight: visual evidence → memory fragment → world consequence → verified link.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 47,
+      "hook": "The safest marketplace CTA is “verify the contract,” not “ape now.”",
+      "tweet": "The safest marketplace CTA is “verify the contract,” not “ape now.”",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: The safest marketplace CTA is “verify the contract,” not “ape now.”",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 48,
+      "hook": "A seven-day community rhythm creators can sustain with zero ad budget.",
+      "tweet": "A seven-day community rhythm creators can sustain with zero ad budget.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: A seven-day community rhythm creators can sustain with zero ad budget.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 49,
+      "hook": "Before opening Discord: 2FA, official-links channel, scam copy, two moderators, tested verification.",
+      "tweet": "Before opening Discord: 2FA, official-links channel, scam copy, two moderators, tested verification.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Before opening Discord: 2FA, official-links channel, scam copy, two moderators, tested verification.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 50,
+      "hook": "Five content jobs: discover / understand / trust / participate / collect.",
+      "tweet": "Five content jobs: discover / understand / trust / participate / collect.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Five content jobs: discover / understand / trust / participate / collect.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 51,
+      "hook": "A no-budget partnership starts with one shared artifact—not two logos on a graphic.",
+      "tweet": "A no-budget partnership starts with one shared artifact—not two logos on a graphic.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: A no-budget partnership starts with one shared artifact—not two logos on a graphic.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 52,
+      "hook": "Track quality, not vanity: meaningful replies, returning commenters, link clicks, collector conversations.",
+      "tweet": "Track quality, not vanity: meaningful replies, returning commenters, link clicks, collector conversations.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Track quality, not vanity: meaningful replies, returning commenters, link clicks, collector conversations.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 53,
+      "hook": "Why 24 curated listings communicate more intent than 700 identical listings.",
+      "tweet": "Why 24 curated listings communicate more intent than 700 identical listings.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Why 24 curated listings communicate more intent than 700 identical listings.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 54,
+      "hook": "A lore checkpoint needs options, stakes, duration, anti-bot rule and permanent decision record.",
+      "tweet": "A lore checkpoint needs options, stakes, duration, anti-bot rule and permanent decision record.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: A lore checkpoint needs options, stakes, duration, anti-bot rule and permanent decision record.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 55,
+      "hook": "Your pinned thread should answer: what / why / proof / difference / next action.",
+      "tweet": "Your pinned thread should answer: what / why / proof / difference / next action.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Your pinned thread should answer: what / why / proof / difference / next action.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 56,
+      "hook": "How to disclose a future feature: problem, prototype, limitation, next test—never guaranteed date.",
+      "tweet": "How to disclose a future feature: problem, prototype, limitation, next test—never guaranteed date.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: How to disclose a future feature: problem, prototype, limitation, next test—never guaranteed date.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 57,
+      "hook": "NFT metadata checklist: unique name, clean description, IPFS image, external URL, consistent attributes.",
+      "tweet": "NFT metadata checklist: unique name, clean description, IPFS image, external URL, consistent attributes.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: NFT metadata checklist: unique name, clean description, IPFS image, external URL, consistent attributes.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 58,
+      "hook": "Reply strategy: add data, frame a tradeoff, ask a precise question. Never “great project.”",
+      "tweet": "Reply strategy: add data, frame a tradeoff, ask a precise question. Never “great project.”",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Reply strategy: add data, frame a tradeoff, ask a precise question. Never “great project.”",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 59,
+      "hook": "One creator security rule: no moderator DMs first, ever.",
+      "tweet": "One creator security rule: no moderator DMs first, ever.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: One creator security rule: no moderator DMs first, ever.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 60,
+      "hook": "What a weekly build log should contain: shipped link, screenshot, failure, next test.",
+      "tweet": "What a weekly build log should contain: shipped link, screenshot, failure, next test.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: What a weekly build log should contain: shipped link, screenshot, failure, next test.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 61,
+      "hook": "SUBJECT AUTOPSY: show one artwork and ask followers to infer its faction before revealing it.",
+      "tweet": "SUBJECT AUTOPSY: show one artwork and ask followers to infer its faction before revealing it.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: SUBJECT AUTOPSY: show one artwork and ask followers to infer its faction before revealing it.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 62,
+      "hook": "MEMORY FRAGMENT: post one sentence without the art; reveal the owner six hours later.",
+      "tweet": "MEMORY FRAGMENT: post one sentence without the art; reveal the owner six hours later.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: MEMORY FRAGMENT: post one sentence without the art; reveal the owner six hours later.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 63,
+      "hook": "TWO WITNESSES, ONE MEMORY: followers decide which record is false.",
+      "tweet": "TWO WITNESSES, ONE MEMORY: followers decide which record is false.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: TWO WITNESSES, ONE MEMORY: followers decide which record is false.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 64,
+      "hook": "CONDITION REPORT: zoom into three visual details and connect each to the lore.",
+      "tweet": "CONDITION REPORT: zoom into three visual details and connect each to the lore.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: CONDITION REPORT: zoom into three visual details and connect each to the lore.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 65,
+      "hook": "ARCHIVE ID roulette: ask for 1–1000, generate the record, then let the commenter name it.",
+      "tweet": "ARCHIVE ID roulette: ask for 1–1000, generate the record, then let the commenter name it.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: ARCHIVE ID roulette: ask for 1–1000, generate the record, then let the commenter name it.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 66,
+      "hook": "FACTION DRAFT: five Subjects, five factions, no labels. Community matches them.",
+      "tweet": "FACTION DRAFT: five Subjects, five factions, no labels. Community matches them.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: FACTION DRAFT: five Subjects, five factions, no labels. Community matches them.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 67,
+      "hook": "BEFORE THE BLOOM: reconstruct a Subject’s ordinary profession from its damage.",
+      "tweet": "BEFORE THE BLOOM: reconstruct a Subject’s ordinary profession from its damage.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: BEFORE THE BLOOM: reconstruct a Subject’s ordinary profession from its damage.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 68,
+      "hook": "AFTER TRANSFER: write a micro-story about what the Subject notices when a new witness arrives.",
+      "tweet": "AFTER TRANSFER: write a micro-story about what the Subject notices when a new witness arrives.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: AFTER TRANSFER: write a micro-story about what the Subject notices when a new witness arrives.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 69,
+      "hook": "RED FILE: one censored attribute becomes next week’s reveal.",
+      "tweet": "RED FILE: one censored attribute becomes next week’s reveal.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: RED FILE: one censored attribute becomes next week’s reveal.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 70,
+      "hook": "WITNESS STATEMENT: 280-character first-person testimony from a Subject.",
+      "tweet": "WITNESS STATEMENT: 280-character first-person testimony from a Subject.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: WITNESS STATEMENT: 280-character first-person testimony from a Subject.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 71,
+      "hook": "OBJECT EVIDENCE: one tool, photo or recording found beside a capsule.",
+      "tweet": "OBJECT EVIDENCE: one tool, photo or recording found beside a capsule.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: OBJECT EVIDENCE: one tool, photo or recording found beside a capsule.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 72,
+      "hook": "FALSE METADATA: show two conflicting records and ask which belongs onchain.",
+      "tweet": "FALSE METADATA: show two conflicting records and ask which belongs onchain.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: FALSE METADATA: show two conflicting records and ask which belongs onchain.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 73,
+      "hook": "THE UNLISTED: spotlight a Subject that is not for sale to prove story is not inventory-dependent.",
+      "tweet": "THE UNLISTED: spotlight a Subject that is not for sale to prove story is not inventory-dependent.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: THE UNLISTED: spotlight a Subject that is not for sale to prove story is not inventory-dependent.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 74,
+      "hook": "COLLECTOR CURATION: let a collector choose a three-Subject exhibition and explain the link.",
+      "tweet": "COLLECTOR CURATION: let a collector choose a three-Subject exhibition and explain the link.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: COLLECTOR CURATION: let a collector choose a three-Subject exhibition and explain the link.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 75,
+      "hook": "FACTION CROSSOVER: one Subject carries evidence of two factions; followers decide why.",
+      "tweet": "FACTION CROSSOVER: one Subject carries evidence of two factions; followers decide why.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: FACTION CROSSOVER: one Subject carries evidence of two factions; followers decide why.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 76,
+      "hook": "ONE PIXEL CLUE: hide a chapter clue in a high-resolution artwork crop.",
+      "tweet": "ONE PIXEL CLUE: hide a chapter clue in a high-resolution artwork crop.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: ONE PIXEL CLUE: hide a chapter clue in a high-resolution artwork crop.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 77,
+      "hook": "ARCHIVE RESTORATION: show sketch → final → narrative record in one carousel.",
+      "tweet": "ARCHIVE RESTORATION: show sketch → final → narrative record in one carousel.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: ARCHIVE RESTORATION: show sketch → final → narrative record in one carousel.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 78,
+      "hook": "SUBJECT VS CREATOR: explain one interpretation the community discovered that you did not plan.",
+      "tweet": "SUBJECT VS CREATOR: explain one interpretation the community discovered that you did not plan.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: SUBJECT VS CREATOR: explain one interpretation the community discovered that you did not plan.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 79,
+      "hook": "VOICEPRINT: pair a Subject with a ten-second analog transmission.",
+      "tweet": "VOICEPRINT: pair a Subject with a ten-second analog transmission.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: VOICEPRINT: pair a Subject with a ten-second analog transmission.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 80,
+      "hook": "CASE CLOSED? Reopen an earlier mystery using evidence from a later Subject.",
+      "tweet": "CASE CLOSED? Reopen an earlier mystery using evidence from a later Subject.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: CASE CLOSED? Reopen an earlier mystery using evidence from a later Subject.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 81,
+      "hook": "Show the exact fake metric you removed and why truthful emptiness is better.",
+      "tweet": "Show the exact fake metric you removed and why truthful emptiness is better.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Show the exact fake metric you removed and why truthful emptiness is better.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 82,
+      "hook": "Publish one checkout security test and what attack it prevents.",
+      "tweet": "Publish one checkout security test and what attack it prevents.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Publish one checkout security test and what attack it prevents.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 83,
+      "hook": "Show the old generic homepage beside the new narrative homepage.",
+      "tweet": "Show the old generic homepage beside the new narrative homepage.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Show the old generic homepage beside the new narrative homepage.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 84,
+      "hook": "Release one section of the 100-chapter architecture without spoiling its answer.",
+      "tweet": "Release one section of the 100-chapter architecture without spoiling its answer.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Release one section of the 100-chapter architecture without spoiling its answer.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 85,
+      "hook": "Post the metadata before/after: empty attributes versus narrative record.",
+      "tweet": "Post the metadata before/after: empty attributes versus narrative record.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Post the metadata before/after: empty attributes versus narrative record.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 86,
+      "hook": "Share a failed banner concept and the brand rule it violated.",
+      "tweet": "Share a failed banner concept and the brand rule it violated.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Share a failed banner concept and the brand rule it violated.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 87,
+      "hook": "Publish the contract address as a designed verification card.",
+      "tweet": "Publish the contract address as a designed verification card.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Publish the contract address as a designed verification card.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 88,
+      "hook": "Show a five-minute screen capture of browsing all 1,000 Subject records.",
+      "tweet": "Show a five-minute screen capture of browsing all 1,000 Subject records.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Show a five-minute screen capture of browsing all 1,000 Subject records.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 89,
+      "hook": "Invite developers to review one small open-source checkout function.",
+      "tweet": "Invite developers to review one small open-source checkout function.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Invite developers to review one small open-source checkout function.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 90,
+      "hook": "Post a monthly “what did not ship” report alongside completed work.",
+      "tweet": "Post a monthly “what did not ship” report alongside completed work.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Post a monthly “what did not ship” report alongside completed work.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 91,
+      "hook": "Run “Name the Missing Subject”: 24 hours, one winning name enters a non-financial canon note.",
+      "tweet": "Run “Name the Missing Subject”: 24 hours, one winning name enters a non-financial canon note.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Run “Name the Missing Subject”: 24 hours, one winning name enters a non-financial canon note.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 92,
+      "hook": "Host Vanta Radio: “Can digital ownership preserve culture—or only provenance?”",
+      "tweet": "Host Vanta Radio: “Can digital ownership preserve culture—or only provenance?”",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Host Vanta Radio: “Can digital ownership preserve culture—or only provenance?”",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 93,
+      "hook": "Hold a five-faction art prompt with equal visibility, not winner-takes-all hype.",
+      "tweet": "Hold a five-faction art prompt with equal visibility, not winner-takes-all hype.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Hold a five-faction art prompt with equal visibility, not winner-takes-all hype.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 94,
+      "hook": "Invite one Base artist to reinterpret a memory fragment; exchange process, not audiences.",
+      "tweet": "Invite one Base artist to reinterpret a memory fragment; exchange process, not audiences.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Invite one Base artist to reinterpret a memory fragment; exchange process, not audiences.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 95,
+      "hook": "Do a live website/contract verification walkthrough for new collectors.",
+      "tweet": "Do a live website/contract verification walkthrough for new collectors.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Do a live website/contract verification walkthrough for new collectors.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 96,
+      "hook": "Ask holders for a 60-second voice note from their Subject; compile with permission.",
+      "tweet": "Ask holders for a 60-second voice note from their Subject; compile with permission.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Ask holders for a 60-second voice note from their Subject; compile with permission.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 97,
+      "hook": "Run a “one sentence, one clue” collaborative chapter in replies.",
+      "tweet": "Run a “one sentence, one clue” collaborative chapter in replies.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Run a “one sentence, one clue” collaborative chapter in replies.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 98,
+      "hook": "Publish a public canon checkpoint with a post-vote decision record.",
+      "tweet": "Publish a public canon checkpoint with a post-vote decision record.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Publish a public canon checkpoint with a post-vote decision record.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 99,
+      "hook": "Curate a weekly list of five dark-art creators and explain each selection.",
+      "tweet": "Curate a weekly list of five dark-art creators and explain each selection.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: Curate a weekly list of five dark-art creators and explain each selection.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    },
+    {
+      "id": 100,
+      "hook": "End every 30-day cycle with “What should Decay Labs stop doing?” and implement one defensible answer.",
+      "tweet": "End every 30-day cycle with “What should Decay Labs stop doing?” and implement one defensible answer.",
+      "visual": "Minimal archive type card or relevant Subject artwork",
+      "altText": "DecayLabs post visual: End every 30-day cycle with “What should Decay Labs stop doing?” and implement one defensible answer.",
+      "cta": "Reply with your reading and share the evidence.",
+      "purpose": "conversation + saves + discovery"
+    }
+  ],
+  "replies50": [
+    "The strongest part is the constraint. What did you deliberately leave out of the first release?",
+    "Base makes the transaction accessible; the harder work is giving people a reason to return.",
+    "I like when provenance is treated as a starting point instead of the whole story.",
+    "What would you publish if the floor price disappeared tomorrow?",
+    "A useful build log names the failure as clearly as the feature.",
+    "This is a good reminder that community is a practice, not a Discord channel.",
+    "Which detail is verifiable today, and which part is still research?",
+    "The visual clue works because it leaves room for the reader to be wrong.",
+    "I would test the smallest version first and publish the result either way.",
+    "An onchain record can preserve the receipt; people preserve the meaning.",
+    "The question is stronger than a promise here. What answer surprised you most?",
+    "If holders can explain why they chose a piece, the collection has started to travel.",
+    "What is the one metric you would keep if every vanity metric vanished?",
+    "This feels like a builder update, not a launch announcement. That difference matters.",
+    "The safest CTA is the one that lets someone verify before they decide.",
+    "I would love to see the rejected version too. Constraints become useful when documented.",
+    "Lore gets durable when each answer creates a better question.",
+    "A small, finished artifact beats a large untested roadmap.",
+    "Which assumption did the first users challenge?",
+    "The contract is important, but the habit of checking it is the real education.",
+    "This is the kind of transparency that compounds quietly.",
+    "Can you show the exact test that protects this interaction?",
+    "The best collaborations begin with a shared object, not a shared logo.",
+    "I would choose the option with the clearest downside and document it.",
+    "A faction system gives collectors a language for discussing the work.",
+    "What happens to the canon when the community disagrees?",
+    "The restraint around unbuilt utility is refreshing.",
+    "One precise example would make this principle easier to apply.",
+    "The archive framing makes the collection feel connected without flattening every piece.",
+    "How do you decide which community theory becomes canon?",
+    "Good reminder: an audience that can verify is more valuable than an audience that only amplifies.",
+    "I would save this checklist for every marketplace link I open.",
+    "The most convincing roadmap item is the one with a working link.",
+    "What would make a newcomer feel safe in the first five minutes?",
+    "This is a strong use of scarcity: attention follows context, not manufactured panic.",
+    "The unanswered detail is doing more work than a paragraph of exposition.",
+    "A creator saying ‘not built’ is useful product information.",
+    "Which part of the system is intentionally boring but essential?",
+    "The reply prompt is specific enough to invite a real answer.",
+    "I would rather see one honest limitation than five vague benefits.",
+    "This could become a great public test case for new collectors.",
+    "The visual and the copy agree on the same question, which makes the post memorable.",
+    "What is the smallest next proof you can ship?",
+    "A living archive needs version history. Will you keep the old records visible?",
+    "The distinction between owner, witness and reader is fascinating.",
+    "This is a healthy way to use FOMO: invite attention, never pressure a purchase.",
+    "If the community can add evidence, the lore becomes a shared instrument.",
+    "I would start with the public contract page before making any buying decision.",
+    "The strongest projects make the next action obvious and the risks visible.",
+    "What did you learn from the part that did not work?"
+  ]
+}

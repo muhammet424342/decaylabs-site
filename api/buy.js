@@ -2,6 +2,7 @@ const SLUG = "decaylabs-395322216";
 const CHAIN_ID = 8453;
 const OS = "https://api.opensea.io/api/v2";
 const DEFAULT_CURATED = Array.from({ length: 24 }, (_, index) => index + 1);
+const CONTRACT = "0x65F5e8006F4eF730d6984836F606a5C5c516CdC8";
 let cachedKey = null;
 
 function allowedTokenIds() {
@@ -23,6 +24,7 @@ export function selectListing(listings, requestedTokenId, curated = allowedToken
   const candidates = listings.filter((listing) => {
     const tokenId = tokenIdFromListing(listing);
     if (!tokenId) return false;
+    if (priceWei(listing) <= 0n) return false;
     return requested ? tokenId === requested : curated.has(tokenId);
   });
   candidates.sort((a, b) => priceWei(a) < priceWei(b) ? -1 : priceWei(a) > priceWei(b) ? 1 : 0);
@@ -55,6 +57,8 @@ function headersFor(key) {
 
 export default async function handler(req, res) {
   res.setHeader("Cache-Control", "no-store");
+  res.setHeader("Access-Control-Allow-Origin", "https://decaylabs.online");
+  res.setHeader("Referrer-Policy", "no-referrer");
   res.setHeader("X-Content-Type-Options", "nosniff");
   if (req.method && req.method !== "GET") {
     res.setHeader("Allow", "GET");
@@ -117,6 +121,8 @@ export default async function handler(req, res) {
     const priceEth = price?.value == null ? null : Number(price.value) / (10 ** decimals);
     return res.status(200).json({
       to: transaction.to,
+      protocolAddress: listing.protocol_address || "",
+      contract: CONTRACT,
       valueHex: transaction.value_hex || `0x${BigInt(transaction.value).toString(16)}`,
       valueWei: String(transaction.value),
       parameters: transaction.input_data.parameters,
