@@ -3,7 +3,9 @@
  * lives only in sessionStorage so a single visit can be stitched into a funnel.
  */
 
-const ENDPOINT = "/api/ev";
+// Keeps the .js extension: cleanUrls rewrites static pages, not functions, so
+// the deployed route really is /api/ev.js — same as /api/buy.js.
+const ENDPOINT = "/api/ev.js";
 
 export const EVENTS = [
   "page_view",
