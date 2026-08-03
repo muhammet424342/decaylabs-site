@@ -1,5 +1,6 @@
 import { executeCheckout, CheckoutError } from "./checkout-client.mjs";
 import { friendlyCheckoutMessage } from "./checkout-rules.mjs";
+import { track } from "/analytics.js";
 
 const OPENSEA_COLLECTION = "https://opensea.io/collection/decaylabs-395322216";
 const CONTRACT = "0x65F5e8006F4eF730d6984836F606a5C5c516CdC8";
@@ -58,15 +59,24 @@ async function checkout(button) {
   const label = button.querySelector("span") || button;
   const originalLabel = label.textContent;
   button.disabled = true;
+  track("buy_button_clicked", { token: requestedToken || 0 });
   try {
     status("Connecting to your wallet...");
+    track("wallet_connect_started", { token: requestedToken || 0 });
     const provider = await getProvider();
-    if (!provider) return fallback("No compatible wallet was found.", requestedToken);
-    const accounts = await provider.request({ method: "eth_requestAccounts" });
+    if (!provider) {
+      track("wallet_connect_failed", { code: "no_provider" });
+      return fallback("No compatible wallet was found.", requestedToken);
+    }
+    let accounts;
+    try { accounts = await provider.request({ method: "eth_requestAccounts" }); }
+    catch (error) { track("wallet_connect_failed", { code: error?.code === 4001 ? "user_rejected" : "request_failed" }); throw error; }
     const buyer = accounts?.[0];
-    if (!buyer) throw new Error("no_wallet_account");
+    if (!buyer) { track("wallet_connect_failed", { code: "no_account" }); throw new Error("no_wallet_account"); }
+    track("wallet_connected", { token: requestedToken || 0 });
     const { encodeFunctionData } = await import("https://esm.sh/viem@2.45.0");
-    const result = await executeCheckout({ provider, buyer, tokenId: requestedToken, onStatus: status, encodeFunctionData });
+    const result = await executeCheckout({ provider, buyer, tokenId: requestedToken, onStatus: status, encodeFunctionData, onEvent: track });
+    track("purchase_success", { token: Number(result.data.tokenId) || 0, eth: result.data.priceEth });
     label.textContent = `Subject ${String(result.data.tokenId).padStart(4, "0")} / ${result.data.priceEth} ETH`;
     status(`Purchase submitted. <a href="https://basescan.org/tx/${result.hash}" target="_blank" rel="noopener noreferrer">Verify transaction &nearr;</a>`, true);
   } catch (error) {

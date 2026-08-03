@@ -1,4 +1,5 @@
 import { buildSubjectProfile } from "/subject-model.js";
+import { initializeAnalytics } from "/analytics.js";
 
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
@@ -109,6 +110,7 @@ async function initializeMiniApp() {
   }
 }
 
+initializeAnalytics();
 initializeNavigation();
 initializeCopyButtons();
 renderHomeSubjects();
