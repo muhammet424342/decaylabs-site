@@ -38,7 +38,7 @@ async function quote(fetchImpl, buyer, tokenId, expectedPriceWei = null) {
   let data;
   try { data = await response.json(); } catch (_) { throw new CheckoutError("api_error"); }
   if (!response.ok || data.error) {
-    const code = ["token_not_listed", "no_curated_listings", "price_changed", "invalid_token_id", "invalid_address"].includes(data.error) ? data.error : "api_error";
+    const code = ["token_not_listed", "no_curated_listings", "price_changed", "invalid_token_id", "invalid_address", "upstream_timeout", "opensea_unavailable"].includes(data.error) ? data.error : "api_error";
     throw new CheckoutError(code);
   }
   return data;

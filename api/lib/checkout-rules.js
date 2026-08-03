@@ -57,6 +57,8 @@ export function friendlyCheckoutMessage(code) {
     invalid_transaction_target: "The transaction target failed DecayLabs safety checks.",
     price_out_of_range: "The live price failed the checkout safety limit.",
     token_mismatch: "The selected Subject changed before checkout. Please refresh.",
+    upstream_timeout: "OpenSea did not respond in time. Nothing was charged — please try again.",
+    opensea_unavailable: "OpenSea is temporarily unavailable. Nothing was charged — please try again shortly.",
     checkout_unavailable: "In-app checkout is temporarily unavailable."
   };
   return messages[code] || messages.checkout_unavailable;

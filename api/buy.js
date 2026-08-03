@@ -63,11 +63,65 @@ export function selectListing(listings, requestedTokenId, curated = allowedToken
   return candidates[0] || null;
 }
 
-async function timedFetch(url, init = {}) {
+/* Healthy OpenSea calls answer in 0.4-1.4s. A call that reaches several seconds
+ * is not slow, it is stuck, so each attempt is cut short and retried rather than
+ * waited out. REQUEST_BUDGET_MS keeps the whole handler inside the platform's
+ * execution limit so a stall always returns a described error, never a bare 500. */
+export const ATTEMPT_TIMEOUT_MS = 3500;
+export const REQUEST_BUDGET_MS = 8500;
+export const MAX_ATTEMPTS = 3;
+const RETRYABLE_STATUS = new Set([429, 500, 502, 503, 504]);
+
+export class UpstreamError extends Error {
+  constructor(label, kind, status = 0) {
+    super(`${label}_${kind}`);
+    this.label = label;
+    this.kind = kind;
+    this.status = status;
+  }
+}
+
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+async function timedFetch(url, init = {}, { label = "opensea", timeoutMs = ATTEMPT_TIMEOUT_MS, fetchImpl = fetch } = {}) {
   const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), 9000);
-  try { return await fetch(url, { ...init, signal: controller.signal }); }
-  finally { clearTimeout(timer); }
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    return await fetchImpl(url, { ...init, signal: controller.signal });
+  } catch (error) {
+    const kind = error?.name === "AbortError" ? "timeout" : "network_error";
+    console.error(`[buy-api] upstream ${label} ${kind} after ${timeoutMs}ms`);
+    throw new UpstreamError(label, kind);
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+/* Retries only what is worth retrying: a stall, a network drop, a 429 or a
+ * transient 5xx. A 400/401/403/404 is an answer, not a hiccup, and is returned
+ * to the caller untouched. */
+export async function withRetry(label, run, { attempts = MAX_ATTEMPTS, baseDelayMs = 200, deadline = Infinity, now = () => Date.now(), sleepImpl = sleep } = {}) {
+  let lastError = null;
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    if (now() >= deadline) break;
+    try {
+      const response = await run(attempt);
+      if (RETRYABLE_STATUS.has(response?.status) && attempt < attempts) {
+        console.error(`[buy-api] upstream ${label} status ${response.status}, attempt ${attempt}/${attempts}`);
+        lastError = new UpstreamError(label, "status", response.status);
+        await sleepImpl(baseDelayMs * 2 ** (attempt - 1));
+        continue;
+      }
+      return response;
+    } catch (error) {
+      if (!(error instanceof UpstreamError)) throw error;
+      lastError = error;
+      if (attempt >= attempts) break;
+      console.error(`[buy-api] upstream ${label} ${error.kind}, retry ${attempt}/${attempts - 1}`);
+      await sleepImpl(baseDelayMs * 2 ** (attempt - 1));
+    }
+  }
+  throw lastError || new UpstreamError(label, "timeout");
 }
 
 async function mintKey() {
@@ -75,7 +129,7 @@ async function mintKey() {
     method: "POST",
     headers: { accept: "application/json", "content-type": "application/json" },
     body: "{}"
-  });
+  }, { label: "auth_keys" });
   if (!response.ok) throw new Error(`api_key_unavailable_${response.status}`);
   const key = (await response.json()).api_key;
   if (!key) throw new Error("api_key_missing");
@@ -106,18 +160,21 @@ export default async function handler(req, res) {
   const expectedPriceWei = req.query.expectedPriceWei == null || req.query.expectedPriceWei === "" ? null : normalizeWei(req.query.expectedPriceWei);
   if (req.query.expectedPriceWei != null && req.query.expectedPriceWei !== "" && expectedPriceWei == null) return res.status(400).json({ error: "invalid_expected_price" });
 
+  const deadline = Date.now() + REQUEST_BUDGET_MS;
   try {
     let key = cachedKey || process.env.OPENSEA_API_KEY || await mintKey();
     let headers = headersFor(key);
-    const call = async (url, init = {}) => {
-      let response = await timedFetch(url, { ...init, headers });
+    const call = (url, init = {}, label = "listings") => withRetry(label, async () => {
+      const remaining = deadline - Date.now();
+      const timeoutMs = Math.max(500, Math.min(ATTEMPT_TIMEOUT_MS, remaining));
+      let response = await timedFetch(url, { ...init, headers }, { label, timeoutMs });
       if (response.status === 401 || response.status === 403) {
         key = await mintKey();
         headers = headersFor(key);
-        response = await timedFetch(url, { ...init, headers });
+        response = await timedFetch(url, { ...init, headers }, { label, timeoutMs });
       }
       return response;
-    };
+    }, { deadline });
 
     let cursor = "";
     let listing = null;
@@ -127,7 +184,7 @@ export default async function handler(req, res) {
      * past the pages we scan, and walking the feed for the generic case ran
      * past the fetch timeout. Asking for named tokens directly fixes both. */
     const bestFor = async (id) => {
-      const response = await call(`${OS}/listings/collection/${SLUG}/nfts/${id}/best`);
+      const response = await call(`${OS}/listings/collection/${SLUG}/nfts/${id}/best`, {}, "listing_best");
       if (!response.ok) return null;
       const body = await response.json().catch(() => null);
       const candidate = body && (Array.isArray(body.listings) ? body.listings[0] : body.order_hash ? body : null);
@@ -136,19 +193,26 @@ export default async function handler(req, res) {
     };
 
     if (tokenParam != null) {
-      listing = await bestFor(tokenParam).catch(() => null);
+      listing = await bestFor(tokenParam);
     } else {
-      const curated = [...allowedTokenIds()].slice(0, 8);
-      const found = (await Promise.all(curated.map((id) => bestFor(id).catch(() => null)))).filter(Boolean);
+      /* Three curated ids in flight instead of eight: the extra five only added
+       * load on an API that answers in about a second anyway, and every one of
+       * them was another chance to stall. */
+      const curated = [...allowedTokenIds()].slice(0, 3);
+      const settled = await Promise.allSettled(curated.map((id) => bestFor(id)));
+      const found = settled.filter((entry) => entry.status === "fulfilled" && entry.value).map((entry) => entry.value);
+      if (!found.length && settled.every((entry) => entry.status === "rejected")) {
+        throw settled[0].reason;
+      }
       found.sort((a, b) => (priceWei(a) < priceWei(b) ? -1 : priceWei(a) > priceWei(b) ? 1 : 0));
       listing = found[0] || null;
     }
 
-    for (let page = 0; page < 5 && !listing; page += 1) {
+    for (let page = 0; page < 2 && !listing && Date.now() < deadline; page += 1) {
       const url = new URL(`${OS}/listings/collection/${SLUG}/best`);
       url.searchParams.set("limit", "100");
       if (cursor) url.searchParams.set("next", cursor);
-      const response = await call(url.toString());
+      const response = await call(url.toString(), {}, "listing_feed");
       if (!response.ok) return res.status(502).json({ error: "listings_unavailable" });
       const body = await response.json();
       listing = selectListing(body.listings || [], tokenParam);
@@ -167,7 +231,7 @@ export default async function handler(req, res) {
         listing: { hash: listing.order_hash, chain: listing.chain, protocol_address: listing.protocol_address },
         fulfiller: { address: buyer }
       })
-    });
+    }, "fulfillment_data");
     if (!fulfillment.ok) return res.status(502).json({ error: "fulfillment_unavailable" });
     const fulfillmentBody = await fulfillment.json();
     const transaction = fulfillmentBody.fulfillment_data?.transaction;
@@ -197,6 +261,17 @@ export default async function handler(req, res) {
       listingHash: listing.order_hash
     });
   } catch (error) {
+    if (error instanceof UpstreamError) {
+      /* Name the request that failed and answer with something the client can
+       * act on. A stall used to surface as a bare 500 checkout_unavailable,
+       * which told neither the buyer nor us anything. */
+      console.error(`[buy-api] upstream ${error.label} gave up: ${error.kind}${error.status ? ` (${error.status})` : ""}`);
+      const timedOut = error.kind === "timeout";
+      return res.status(timedOut ? 504 : 502).json({
+        error: timedOut ? "upstream_timeout" : "opensea_unavailable",
+        upstream: error.label
+      });
+    }
     console.error("[buy-api]", error);
     return res.status(500).json({ error: "checkout_unavailable" });
   }
