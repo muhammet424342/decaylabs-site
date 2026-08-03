@@ -123,18 +123,25 @@ export default async function handler(req, res) {
     let listing = null;
 
     /* Every Subject is listed at the same price, so the collection-wide "best"
-     * feed returns them in an arbitrary order and a specific token often sits
-     * past the pages we scan. Asking for that one token directly is what makes
-     * a Subject page reliably buyable. */
+     * feed returns them in an arbitrary order: a specific token routinely sits
+     * past the pages we scan, and walking the feed for the generic case ran
+     * past the fetch timeout. Asking for named tokens directly fixes both. */
+    const bestFor = async (id) => {
+      const response = await call(`${OS}/listings/collection/${SLUG}/nfts/${id}/best`);
+      if (!response.ok) return null;
+      const body = await response.json().catch(() => null);
+      const candidate = body && (Array.isArray(body.listings) ? body.listings[0] : body.order_hash ? body : null);
+      if (!candidate || tokenIdFromListing(candidate) !== String(id) || priceWei(candidate) <= 0n) return null;
+      return candidate;
+    };
+
     if (tokenParam != null) {
-      const single = await call(`${OS}/listings/collection/${SLUG}/nfts/${tokenParam}/best`);
-      if (single.ok) {
-        const body = await single.json().catch(() => null);
-        const candidate = body && (Array.isArray(body.listings) ? body.listings[0] : body.order_hash ? body : null);
-        if (candidate && tokenIdFromListing(candidate) === String(tokenParam) && priceWei(candidate) > 0n) {
-          listing = candidate;
-        }
-      }
+      listing = await bestFor(tokenParam).catch(() => null);
+    } else {
+      const curated = [...allowedTokenIds()].slice(0, 8);
+      const found = (await Promise.all(curated.map((id) => bestFor(id).catch(() => null)))).filter(Boolean);
+      found.sort((a, b) => (priceWei(a) < priceWei(b) ? -1 : priceWei(a) > priceWei(b) ? 1 : 0));
+      listing = found[0] || null;
     }
 
     for (let page = 0; page < 5 && !listing; page += 1) {
