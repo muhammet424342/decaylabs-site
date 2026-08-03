@@ -1,6 +1,9 @@
-// Imported from inside api/ on purpose: a "../" import is not bundled into the
-// serverless function, which took the whole checkout down with a 500 on 2 Aug.
-import { BASE_CHAIN_ID, EXPECTED_CONTRACT, isAddress, isAllowedProtocol, normalizeTokenId, normalizeWei } from "./checkout-rules.mjs";
+// Must stay a ".js" file under api/lib/: @vercel/node compiles this handler to
+// CommonJS, and require() of a .mjs ES module throws ERR_REQUIRE_ESM at boot —
+// that is what returned 500 for every checkout request from 2 Aug onwards.
+// api/lib/ is outside the "api/*.js" function glob, so it is bundled as a
+// dependency rather than deployed as its own endpoint.
+import { BASE_CHAIN_ID, EXPECTED_CONTRACT, isAddress, isAllowedProtocol, normalizeTokenId, normalizeWei } from "./lib/checkout-rules.js";
 
 const SLUG = "decaylabs-395322216";
 const CHAIN_ID = BASE_CHAIN_ID;
