@@ -1,4 +1,4 @@
-import { executeCheckout, CheckoutError } from "./checkout-client.mjs";
+import { executeCheckout, waitForReceipt, CheckoutError } from "./checkout-client.mjs";
 import { friendlyCheckoutMessage } from "./checkout-rules.mjs";
 import { track } from "/analytics.js";
 
@@ -58,6 +58,7 @@ async function checkout(button) {
   const requestedToken = button.dataset.buyToken ? Number(button.dataset.buyToken) : null;
   const label = button.querySelector("span") || button;
   const originalLabel = label.textContent;
+  let submitted = false;
   button.disabled = true;
   track("buy_button_clicked", { token: requestedToken || 0 });
   try {
@@ -76,9 +77,15 @@ async function checkout(button) {
     track("wallet_connected", { token: requestedToken || 0 });
     const { encodeFunctionData } = await import("https://esm.sh/viem@2.45.0");
     const result = await executeCheckout({ provider, buyer, tokenId: requestedToken, onStatus: status, encodeFunctionData, onEvent: track });
-    track("purchase_success", { token: Number(result.data.tokenId) || 0, eth: result.data.priceEth });
+    const token = Number(result.data.tokenId) || 0;
+    submitted = true;
     label.textContent = `Subject ${String(result.data.tokenId).padStart(4, "0")} / ${result.data.priceEth} ETH`;
-    status(`Purchase submitted. <a href="https://basescan.org/tx/${result.hash}" target="_blank" rel="noopener noreferrer">Verify transaction &nearr;</a>`, true);
+    const explorer = `<a href="https://basescan.org/tx/${result.hash}" target="_blank" rel="noopener noreferrer">Verify transaction &nearr;</a>`;
+    status(`Purchase submitted. Waiting for Base to confirm... ${explorer}`, true);
+    const { confirmed } = await waitForReceipt(provider, result.hash, { onEvent: track, token, eth: result.data.priceEth });
+    status(confirmed
+      ? `Confirmed on Base. Subject ${String(result.data.tokenId).padStart(4, "0")} is yours. ${explorer}`
+      : `Submitted, but Base has not confirmed it yet. ${explorer}`, true);
   } catch (error) {
     const code = error?.code || "checkout_unavailable";
     if (["token_not_listed", "no_curated_listings", "sold"].includes(code)) fallback(friendlyCheckoutMessage(code), requestedToken);
@@ -86,7 +93,7 @@ async function checkout(button) {
     console.error("[checkout]", { code, message: error?.message });
   } finally {
     button.disabled = false;
-    if (!/Purchase submitted/.test(document.getElementById("buyStatus")?.textContent || "")) label.textContent = originalLabel;
+    if (!submitted) label.textContent = originalLabel;
   }
 }
 

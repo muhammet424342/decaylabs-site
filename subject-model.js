@@ -53,7 +53,7 @@ export function buildSubjectProfile(id, lore, collection) {
   const condition = CONDITIONS[(seed >>> 4) % CONDITIONS.length];
   const callsign = CALLSIGNS[(seed >>> 8) % CALLSIGNS.length];
   const chapter = ((id - 1) % 100) + 1;
-  const localImage = collection.curatedTokenIds.includes(id);
+  const localImage = collection.curatedTokenIds.includes(id) || (collection.showcaseTokenIds || []).includes(id);
   const image = localImage
     ? `/public/nft-${id}.png`
     : `https://ipfs.io/ipfs/${collection.storage.imageCid}/${id}.png`;

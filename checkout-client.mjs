@@ -77,5 +77,26 @@ export async function executeCheckout({ provider, buyer, tokenId = null, fetchIm
     throw new CheckoutError(code);
   }
   if (!hash || typeof hash !== "string") { onEvent("transaction_failed", { code: "no_hash" }); throw new CheckoutError("transaction_submit_failed"); }
+  onEvent("purchase_submitted", { token: Number(refreshed.tokenId) || 0, eth: refreshed.priceEth });
   return { hash, data: refreshed, calldata };
+}
+
+/* A submitted transaction is not a sale. Base can still revert it, and counting
+ * submissions as purchases would report revenue that never happened. Only a
+ * receipt with status 0x1 is a confirmed purchase. */
+export async function waitForReceipt(provider, hash, { onEvent = () => {}, token = 0, eth = null, timeoutMs = 180000, intervalMs = 3000, now = () => Date.now(), sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms)) } = {}) {
+  const deadline = now() + timeoutMs;
+  while (now() < deadline) {
+    let receipt = null;
+    try { receipt = await provider.request({ method: "eth_getTransactionReceipt", params: [hash] }); }
+    catch (_) { receipt = null; }
+    if (receipt && receipt.status != null) {
+      const ok = String(receipt.status).toLowerCase() === "0x1";
+      onEvent(ok ? "purchase_success" : "transaction_failed", ok ? { token, eth } : { code: "reverted", token });
+      return { confirmed: ok, receipt };
+    }
+    await sleep(intervalMs);
+  }
+  onEvent("transaction_failed", { code: "receipt_timeout", token });
+  return { confirmed: false, receipt: null };
 }

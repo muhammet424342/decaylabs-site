@@ -88,7 +88,9 @@ async function renderHomeSubjects() {
       loadJson("/data/lore.json"),
       loadJson("/data/collection.json")
     ]);
-    const featured = [7, 13, 4, 21, 9, 18, 2, 24];
+    /* Picked by structural clustering over all 1,000 images so the grid shows
+     * eight visibly different Subjects rather than eight recolours. */
+    const featured = (collection.showcaseTokenIds || []).slice(1, 9); // 0846 already fills the hero
     const fragment = document.createDocumentFragment();
     featured.map((id) => buildSubjectProfile(id, lore, collection)).forEach((profile) => {
       fragment.append(subjectCard(profile));

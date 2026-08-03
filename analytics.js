@@ -19,6 +19,7 @@ export const EVENTS = [
   "network_switch_succeeded",
   "network_switch_failed",
   "purchase_started",
+  "purchase_submitted",
   "wallet_rejected",
   "listing_validation_failed",
   "transaction_failed",
