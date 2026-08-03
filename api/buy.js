@@ -121,6 +121,22 @@ export default async function handler(req, res) {
 
     let cursor = "";
     let listing = null;
+
+    /* Every Subject is listed at the same price, so the collection-wide "best"
+     * feed returns them in an arbitrary order and a specific token often sits
+     * past the pages we scan. Asking for that one token directly is what makes
+     * a Subject page reliably buyable. */
+    if (tokenParam != null) {
+      const single = await call(`${OS}/listings/collection/${SLUG}/nfts/${tokenParam}/best`);
+      if (single.ok) {
+        const body = await single.json().catch(() => null);
+        const candidate = body && (Array.isArray(body.listings) ? body.listings[0] : body.order_hash ? body : null);
+        if (candidate && tokenIdFromListing(candidate) === String(tokenParam) && priceWei(candidate) > 0n) {
+          listing = candidate;
+        }
+      }
+    }
+
     for (let page = 0; page < 5 && !listing; page += 1) {
       const url = new URL(`${OS}/listings/collection/${SLUG}/best`);
       url.searchParams.set("limit", "100");
