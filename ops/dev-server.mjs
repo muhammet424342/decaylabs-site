@@ -32,7 +32,8 @@ const server = createServer(async (req, res) => {
   let path = normalize(decodeURIComponent(url.pathname)).replace(/^(\.\.[/\\])+/, "").replace(/\\/g, "/");
   if (!path.startsWith("/")) path = "/" + path;
 
-  if (path.startsWith("/api/")) {
+  // Mirrors vercel.json: only api/*.js are functions, everything else is static.
+  if (path.startsWith("/api/") && /\.js$/.test(path)) {
     const name = path.replace("/api/", "").replace(/\.js$/, "");
     try {
       const mod = await import(new URL(`../api/${name}.js`, import.meta.url).href + `?t=${Date.now()}`);

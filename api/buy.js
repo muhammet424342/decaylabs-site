@@ -1,4 +1,6 @@
-import { BASE_CHAIN_ID, EXPECTED_CONTRACT, isAddress, isAllowedProtocol, normalizeTokenId, normalizeWei } from "../checkout-rules.mjs";
+// Imported from inside api/ on purpose: a "../" import is not bundled into the
+// serverless function, which took the whole checkout down with a 500 on 2 Aug.
+import { BASE_CHAIN_ID, EXPECTED_CONTRACT, isAddress, isAllowedProtocol, normalizeTokenId, normalizeWei } from "./checkout-rules.mjs";
 
 const SLUG = "decaylabs-395322216";
 const CHAIN_ID = BASE_CHAIN_ID;
