@@ -7,6 +7,16 @@ const DEFAULT_CURATED = Array.from({ length: 24 }, (_, index) => index + 1);
 const CONTRACT = EXPECTED_CONTRACT;
 let cachedKey = null;
 
+function configuredApiKey() {
+  const key = String(process.env.OPENSEA_API_KEY || "").trim();
+  if (!key) {
+    const error = new Error("opensea_not_configured");
+    error.code = "OPENSEA_NOT_CONFIGURED";
+    throw error;
+  }
+  return key;
+}
+
 function allowedTokenIds() {
   const raw = String(process.env.CURATED_TOKEN_IDS || "").trim();
   if (!raw) return new Set(DEFAULT_CURATED.map(String));
@@ -65,19 +75,6 @@ async function timedFetch(url, init = {}) {
   finally { clearTimeout(timer); }
 }
 
-async function mintKey() {
-  const response = await timedFetch(`${OS}/auth/keys`, {
-    method: "POST",
-    headers: { accept: "application/json", "content-type": "application/json" },
-    body: "{}"
-  });
-  if (!response.ok) throw new Error(`api_key_unavailable_${response.status}`);
-  const key = (await response.json()).api_key;
-  if (!key) throw new Error("api_key_missing");
-  cachedKey = key;
-  return key;
-}
-
 function headersFor(key) {
   return { accept: "application/json", "content-type": "application/json", "x-api-key": key };
 }
@@ -102,14 +99,14 @@ export default async function handler(req, res) {
   if (req.query.expectedPriceWei != null && req.query.expectedPriceWei !== "" && expectedPriceWei == null) return res.status(400).json({ error: "invalid_expected_price" });
 
   try {
-    let key = cachedKey || process.env.OPENSEA_API_KEY || await mintKey();
+    let key = cachedKey || configuredApiKey();
     let headers = headersFor(key);
     const call = async (url, init = {}) => {
       let response = await timedFetch(url, { ...init, headers });
       if (response.status === 401 || response.status === 403) {
-        key = await mintKey();
-        headers = headersFor(key);
-        response = await timedFetch(url, { ...init, headers });
+        const error = new Error("opensea_api_key_rejected");
+        error.code = "OPENSEA_API_KEY_REJECTED";
+        throw error;
       }
       return response;
     };
