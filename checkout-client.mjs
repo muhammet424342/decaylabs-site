@@ -1,7 +1,7 @@
 import { BASE_CHAIN_ID, EXPECTED_CONTRACT, friendlyCheckoutMessage, validateCheckoutPayload, classifyProviderError } from "./checkout-rules.mjs";
 
 export const BASE_CHAIN_HEX = "0x2105";
-export const OPENSEA_COLLECTION = "https://opensea.io/collection/decaylabs-395322216";
+export const OPENSEA_COLLECTION = "https://opensea.io/collection/decaylabs-archive";
 export const MAX_CHECKOUT_ETH = 0.25;
 export const BUILDER_SUFFIX = "62635f796236636d6562660b0080218021802180218021802180218021";
 export const ABI = [{ type: "function", name: "fulfillBasicOrder_efficient_6GL6yc", stateMutability: "payable", inputs: [{ name: "parameters", type: "tuple", components: [

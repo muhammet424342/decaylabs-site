@@ -1,4 +1,4 @@
-const SLUG = "decaylabs-395322216";
+const SLUG = "decaylabs-archive";
 
 export default async function handler(req, res) {
   res.setHeader("Cache-Control", "s-maxage=300, stale-while-revalidate=600");

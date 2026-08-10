@@ -1,6 +1,6 @@
 import { BASE_CHAIN_ID, EXPECTED_CONTRACT, isAddress, isAllowedProtocol, normalizeTokenId, normalizeWei } from "../checkout-rules.mjs";
 
-const SLUG = "decaylabs-395322216";
+const SLUG = "decaylabs-archive";
 const CHAIN_ID = BASE_CHAIN_ID;
 const OS = "https://api.opensea.io/api/v2";
 const DEFAULT_CURATED = Array.from({ length: 24 }, (_, index) => index + 1);

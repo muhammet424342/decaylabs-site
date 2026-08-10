@@ -1,7 +1,7 @@
 import { executeCheckout, CheckoutError } from "./checkout-client.mjs";
 import { friendlyCheckoutMessage } from "./checkout-rules.mjs";
 
-const OPENSEA_COLLECTION = "https://opensea.io/collection/decaylabs-395322216";
+const OPENSEA_COLLECTION = "https://opensea.io/collection/decaylabs-archive";
 const CONTRACT = "0x65F5e8006F4eF730d6984836F606a5C5c516CdC8";
 const BASE_CHAIN_ID = 8453;
 const BASE_CHAIN_HEX = "0x2105";

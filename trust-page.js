@@ -21,7 +21,7 @@ async function loadStats() {
     time.textContent = `Retrieved ${new Date().toLocaleString("en", { dateStyle: "medium", timeStyle: "short" })}.`;
   } catch (error) {
     title.textContent = "No fresh marketplace snapshot";
-    copy.innerHTML = 'The API did not return current values, so this page is intentionally showing none. <a class="verified-link" href="https://opensea.io/collection/decaylabs-395322216" target="_blank" rel="noopener noreferrer">Inspect OpenSea directly &nearr;</a>';
+    copy.innerHTML = 'The API did not return current values, so this page is intentionally showing none. <a class="verified-link" href="https://opensea.io/collection/decaylabs-archive" target="_blank" rel="noopener noreferrer">Inspect OpenSea directly &nearr;</a>';
     time.textContent = "Missing data is not replaced with a marketing estimate.";
     console.warn("[stats]", error);
   }
