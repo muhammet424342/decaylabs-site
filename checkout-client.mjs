@@ -1,7 +1,7 @@
 import { BASE_CHAIN_ID, EXPECTED_CONTRACT, friendlyCheckoutMessage, validateCheckoutPayload, classifyProviderError } from "./checkout-rules.mjs";
 
 export const BASE_CHAIN_HEX = "0x2105";
-export const OPENSEA_COLLECTION = "https://opensea.io/collection/decaylabs-395322216";
+export const OPENSEA_COLLECTION = "https://opensea.io/collection/decaylabs-archive";
 export const MAX_CHECKOUT_ETH = 0.25;
 export const BUILDER_SUFFIX = "62635f796236636d6562660b0080218021802180218021802180218021";
 export const ABI = [{ type: "function", name: "fulfillBasicOrder_efficient_6GL6yc", stateMutability: "payable", inputs: [{ name: "parameters", type: "tuple", components: [
@@ -38,7 +38,7 @@ async function quote(fetchImpl, buyer, tokenId, expectedPriceWei = null) {
   let data;
   try { data = await response.json(); } catch (_) { throw new CheckoutError("api_error"); }
   if (!response.ok || data.error) {
-    const code = ["token_not_listed", "no_curated_listings", "price_changed", "invalid_token_id", "invalid_address", "upstream_timeout", "opensea_unavailable"].includes(data.error) ? data.error : "api_error";
+    const code = ["token_not_listed", "no_curated_listings", "price_changed", "invalid_token_id", "invalid_address", "upstream_timeout", "opensea_unavailable", "opensea_api_key_required"].includes(data.error) ? data.error : "api_error";
     throw new CheckoutError(code);
   }
   return data;

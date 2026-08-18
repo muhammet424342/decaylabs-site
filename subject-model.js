@@ -54,12 +54,18 @@ export function buildSubjectProfile(id, lore, collection) {
   const callsign = CALLSIGNS[(seed >>> 8) % CALLSIGNS.length];
   const chapter = ((id - 1) % 100) + 1;
   const localImage = collection.curatedTokenIds.includes(id) || (collection.showcaseTokenIds || []).includes(id);
-  const image = localImage
-    ? `/public/nft-${id}.png`
+  // imageBaseUrl exists because the pinned copy behind imageCid went offline with the
+  // old IPFS node; a plain HTTPS mirror keeps the artwork visible. Drop it from
+  // collection.json and the IPFS gateway takes over again.
+  const remoteImage = collection.storage.imageBaseUrl
+    ? `${collection.storage.imageBaseUrl}/${id}.png`
     : `https://ipfs.io/ipfs/${collection.storage.imageCid}/${id}.png`;
+  const image = localImage ? `/public/nft-${id}.png` : remoteImage;
 
+  const tokenId = id - 1;
   return {
     id,
+    tokenId,
     paddedId: padSubject(id),
     name: `${callsign}-${padSubject(id)}`,
     faction,
@@ -69,7 +75,7 @@ export function buildSubjectProfile(id, lore, collection) {
     signal: `VANTA/${faction.id.toUpperCase()}/${padSubject(id)}`,
     image,
     localImage,
-    openseaUrl: `https://opensea.io/assets/base/${collection.contract}/${id}`,
+    openseaUrl: `https://opensea.io/assets/base/${collection.contract}/${tokenId}`,
     basescanUrl: `${collection.basescanUrl}?a=${id}`
   };
 }

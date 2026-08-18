@@ -21,9 +21,17 @@ test("builds stable, narrative-only Subject records", () => {
   const second = buildSubjectProfile(404, lore, collection);
   assert.deepEqual(first, second);
   assert.equal(first.paddedId, "0404");
+  assert.equal(first.tokenId, 403);
   assert.equal(first.chapter, 4);
-  assert.match(first.openseaUrl, /\/404$/);
+  assert.match(first.openseaUrl, /\/403$/);
   assert.ok(lore.factions.some((faction) => faction.id === first.faction.id));
+});
+
+test("maps human Subject numbers to zero-based onchain token IDs", () => {
+  assert.equal(buildSubjectProfile(1, lore, collection).tokenId, 0);
+  assert.match(buildSubjectProfile(1, lore, collection).openseaUrl, /\/0$/);
+  assert.equal(buildSubjectProfile(1000, lore, collection).tokenId, 999);
+  assert.match(buildSubjectProfile(1000, lore, collection).openseaUrl, /\/999$/);
 });
 
 test("pads Subject numbers consistently", () => {

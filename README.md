@@ -24,6 +24,23 @@ The production source for [decaylabs.online](https://decaylabs.online): a hand-i
 - Factions and memory fragments are narrative classifications, not rarity or price claims.
 - Games, staking, tokens and financial returns are not represented as delivered or promised.
 
+## Technical proof
+
+- Static, mobile-first JavaScript frontend deployed on Vercel.
+- Base mainnet ERC-721 collection with 1,000 IPFS-backed metadata records.
+- Farcaster Mini App manifest, exact Subject deep links and editable cast sharing.
+- Server-side OpenSea listing lookup and Seaport fulfillment preparation.
+- Privacy-limited funnel events that never send wallet addresses to analytics.
+- Automated tests for listing identity, price refresh, wallet failures, receipt confirmation and the human Subject/onchain token-ID boundary.
+
+## Transaction safety
+
+Browsing art and lore never requires a wallet. Before presenting a purchase to the wallet, the checkout cross-checks the Base chain, collection contract, requested token, seller, protocol target and current price. A changed or stale listing stops the flow; a submitted transaction is not reported as purchased until a successful receipt is confirmed.
+
+## Current status
+
+The archive, Subject pages, lore, Base ownership verification and marketplace flow are live. There is no active mint. Product changes are tested locally before production deployment; financial and collection-management actions remain owner-controlled.
+
 ## Local development
 
 ```powershell
@@ -37,6 +54,6 @@ Open <http://127.0.0.1:4173>. Static pages work locally; Vercel serverless route
 Pushes to the configured production branch deploy through Vercel. Required environment variables:
 
 - `OPENSEA_API_KEY`: server-side marketplace API key.
-- `CURATED_TOKEN_IDS`: optional comma-separated set used by the generic in-app purchase button. Defaults to `1..24`.
+- `CURATED_TOKEN_IDS`: optional comma-separated zero-based onchain token IDs used by the generic in-app purchase button. Defaults to `0..23` (Subjects 1..24).
 
 No secrets belong in this repository.

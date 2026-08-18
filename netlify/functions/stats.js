@@ -2,7 +2,7 @@
 // Set OPENSEA_API_KEY in Netlify: Site settings → Environment variables.
 // Without a key it returns known-real fallback values (site never breaks).
 
-const SLUG = "decaylabs-395322216";
+const SLUG = "decaylabs-archive";
 
 exports.handler = async () => {
   const headers = { "content-type": "application/json", "cache-control": "public, max-age=300" };

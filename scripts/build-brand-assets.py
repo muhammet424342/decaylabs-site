@@ -87,6 +87,9 @@ def open_graph(source: Image.Image):
     draw.text((60, 454), "An onchain archive of 1,000 altered subjects on Base.", font=font(22), fill=(207, 204, 191))
     draw.text((60, 494), "Story first. Verifiable provenance. No invented promises.", font=font(19), fill=(164, 164, 154))
     canvas.convert("RGB").save(PUBLIC / "og-v2.png", optimize=True)
+    canvas.convert("RGB").resize((1200, 628), Image.Resampling.LANCZOS).save(
+        PUBLIC / "base-app-thumbnail.jpg", quality=88, optimize=True, progressive=True
+    )
 
 
 def avatar():
@@ -127,7 +130,7 @@ def main():
     open_graph(source)
     avatar()
     social_template(source)
-    print("Built x-banner.jpg, x-avatar.png, og-v2.png, social-card-template.png and app icons.")
+    print("Built x-banner.jpg, x-avatar.png, og-v2.png, Base App thumbnail, social-card-template.png and app icons.")
 
 
 if __name__ == "__main__":

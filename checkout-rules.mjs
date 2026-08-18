@@ -10,16 +10,16 @@ export function isAllowedProtocol(value) { return isAddress(value) && ALLOWED_SE
 export function normalizeTokenId(value) {
   if (value === null || value === undefined || value === "") return null;
   const text = String(value).trim();
-  if (!/^[1-9][0-9]*$/.test(text)) return null;
+  if (!/^(0|[1-9][0-9]*)$/.test(text)) return null;
   const id = Number(text);
-  return Number.isSafeInteger(id) && id <= 1000 ? id : null;
+  return Number.isSafeInteger(id) && id < 1000 ? id : null;
 }
 export function validateCheckoutPayload(data, requestedToken = null, expectedPriceWei = null) {
   if (!data || data.chainId !== BASE_CHAIN_ID) return "chain_mismatch";
   if (data.contract?.toLowerCase() !== EXPECTED_CONTRACT.toLowerCase()) return "invalid_contract";
   if (!isAllowedProtocol(data.protocolAddress) || String(data.protocolAddress).toLowerCase() !== String(data.to || "").toLowerCase()) return "invalid_protocol_target";
   if (requestedToken !== null && Number(data.tokenId) !== requestedToken) return "token_mismatch";
-  if (!normalizeTokenId(data.tokenId)) return "invalid_token_id";
+  if (normalizeTokenId(data.tokenId) === null) return "invalid_token_id";
   if (!isAddress(data.seller)) return "invalid_seller";
   const price = normalizeWei(data.priceWei); const value = normalizeWei(data.valueWei);
   if (price === null || value === null || price <= 0n || value !== price || price > MAX_CHECKOUT_WEI) return "price_out_of_range";
@@ -59,6 +59,7 @@ export function friendlyCheckoutMessage(code) {
     token_mismatch: "The selected Subject changed before checkout. Please refresh.",
     upstream_timeout: "OpenSea did not respond in time. Nothing was charged — please try again.",
     opensea_unavailable: "OpenSea is temporarily unavailable. Nothing was charged — please try again shortly.",
+    opensea_api_key_required: "In-app checkout is temporarily unavailable. You can still verify this Subject on OpenSea.",
     checkout_unavailable: "In-app checkout is temporarily unavailable."
   };
   return messages[code] || messages.checkout_unavailable;

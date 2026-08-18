@@ -70,6 +70,15 @@ for (const status of [400, 401, 403, 404]) {
   });
 }
 
+test("an authentication UpstreamError is never retried", async () => {
+  let calls = 0;
+  await assert.rejects(withRetry("auth", async () => {
+    calls += 1;
+    throw new UpstreamError("auth", "authentication", 401);
+  }, noSleep), /auth_authentication/);
+  assert.equal(calls, 1);
+});
+
 test("retries stop once the request budget is spent", async () => {
   let calls = 0;
   let clock = 0;

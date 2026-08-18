@@ -5,17 +5,20 @@
 // dependency rather than deployed as its own endpoint.
 import { BASE_CHAIN_ID, EXPECTED_CONTRACT, isAddress, isAllowedProtocol, normalizeTokenId, normalizeWei } from "./lib/checkout-rules.js";
 
-const SLUG = "decaylabs-395322216";
+const SLUG = "decaylabs-archive";
 const CHAIN_ID = BASE_CHAIN_ID;
 const OS = "https://api.opensea.io/api/v2";
-const DEFAULT_CURATED = Array.from({ length: 24 }, (_, index) => index + 1);
+const DEFAULT_CURATED = Array.from({ length: 24 }, (_, index) => index);
 const CONTRACT = EXPECTED_CONTRACT;
-let cachedKey = null;
+function log(level, message, details = {}) {
+  const writer = level === "error" ? console.error : level === "warning" ? console.warn : console.log;
+  writer(JSON.stringify({ level, message, route: "/api/buy.js", ...details }));
+}
 
 function allowedTokenIds() {
   const raw = String(process.env.CURATED_TOKEN_IDS || "").trim();
   if (!raw) return new Set(DEFAULT_CURATED.map(String));
-  const parsed = raw.split(",").map((item) => Number(item.trim())).filter((id) => Number.isInteger(id) && id >= 1 && id <= 1000);
+  const parsed = raw.split(",").map((item) => Number(item.trim())).filter((id) => Number.isInteger(id) && id >= 0 && id < 1000);
   return new Set((parsed.length ? parsed : DEFAULT_CURATED).map(String));
 }
 export function tokenIdFromListing(listing) {
@@ -115,6 +118,7 @@ export async function withRetry(label, run, { attempts = MAX_ATTEMPTS, baseDelay
       return response;
     } catch (error) {
       if (!(error instanceof UpstreamError)) throw error;
+      if (error.kind === "authentication") throw error;
       lastError = error;
       if (attempt >= attempts) break;
       console.error(`[buy-api] upstream ${label} ${error.kind}, retry ${attempt}/${attempts - 1}`);
@@ -124,24 +128,13 @@ export async function withRetry(label, run, { attempts = MAX_ATTEMPTS, baseDelay
   throw lastError || new UpstreamError(label, "timeout");
 }
 
-async function mintKey() {
-  const response = await timedFetch(`${OS}/auth/keys`, {
-    method: "POST",
-    headers: { accept: "application/json", "content-type": "application/json" },
-    body: "{}"
-  }, { label: "auth_keys" });
-  if (!response.ok) throw new Error(`api_key_unavailable_${response.status}`);
-  const key = (await response.json()).api_key;
-  if (!key) throw new Error("api_key_missing");
-  cachedKey = key;
-  return key;
-}
-
 function headersFor(key) {
   return { accept: "application/json", "content-type": "application/json", "x-api-key": key };
 }
 
 export default async function handler(req, res) {
+  const startedAt = Date.now();
+  const requestId = String(req.headers?.["x-vercel-id"] || "").slice(0, 80);
   res.setHeader("Cache-Control", "no-store");
   res.setHeader("Access-Control-Allow-Origin", "https://decaylabs.online");
   res.setHeader("Referrer-Policy", "no-referrer");
@@ -160,19 +153,20 @@ export default async function handler(req, res) {
   const expectedPriceWei = req.query.expectedPriceWei == null || req.query.expectedPriceWei === "" ? null : normalizeWei(req.query.expectedPriceWei);
   if (req.query.expectedPriceWei != null && req.query.expectedPriceWei !== "" && expectedPriceWei == null) return res.status(400).json({ error: "invalid_expected_price" });
 
+  if (!process.env.OPENSEA_API_KEY) {
+    log("warning", "checkout_api_key_missing", { requestId, ms: Date.now() - startedAt });
+    return res.status(503).json({ error: "opensea_api_key_required" });
+  }
+
   const deadline = Date.now() + REQUEST_BUDGET_MS;
   try {
-    let key = cachedKey || process.env.OPENSEA_API_KEY || await mintKey();
+    const key = process.env.OPENSEA_API_KEY;
     let headers = headersFor(key);
     const call = (url, init = {}, label = "listings") => withRetry(label, async () => {
       const remaining = deadline - Date.now();
       const timeoutMs = Math.max(500, Math.min(ATTEMPT_TIMEOUT_MS, remaining));
       let response = await timedFetch(url, { ...init, headers }, { label, timeoutMs });
-      if (response.status === 401 || response.status === 403) {
-        key = await mintKey();
-        headers = headersFor(key);
-        response = await timedFetch(url, { ...init, headers }, { label, timeoutMs });
-      }
+      if (response.status === 401 || response.status === 403) throw new UpstreamError(label, "authentication", response.status);
       return response;
     }, { deadline });
 
@@ -244,6 +238,7 @@ export default async function handler(req, res) {
     const price = listing.price?.current;
     const decimals = Number(price?.decimals ?? 18);
     const priceEth = price?.value == null ? null : Number(price.value) / (10 ** decimals);
+    log("info", "checkout_quote_ready", { requestId, tokenId, ms: Date.now() - startedAt });
     return res.status(200).json({
       to: transaction.to,
       protocolAddress: listing.protocol_address || "",
@@ -265,14 +260,14 @@ export default async function handler(req, res) {
       /* Name the request that failed and answer with something the client can
        * act on. A stall used to surface as a bare 500 checkout_unavailable,
        * which told neither the buyer nor us anything. */
-      console.error(`[buy-api] upstream ${error.label} gave up: ${error.kind}${error.status ? ` (${error.status})` : ""}`);
+      log("error", "checkout_upstream_failed", { requestId, upstream: error.label, kind: error.kind, status: error.status || 0, ms: Date.now() - startedAt });
       const timedOut = error.kind === "timeout";
       return res.status(timedOut ? 504 : 502).json({
         error: timedOut ? "upstream_timeout" : "opensea_unavailable",
         upstream: error.label
       });
     }
-    console.error("[buy-api]", error);
+    log("error", "checkout_failed", { requestId, error: error instanceof Error ? error.message : String(error), ms: Date.now() - startedAt });
     return res.status(500).json({ error: "checkout_unavailable" });
   }
 }

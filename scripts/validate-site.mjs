@@ -3,8 +3,8 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const pages = ["index.html", "lore.html", "collection.html", "subject.html", "trust.html", "faq.html", "links.html", "404.html"];
-const scripts = ["app.js", "lore-page.js", "collection-page.js", "subject-page.js", "subject-model.js", "miniapp-buy.js", "api/buy.js", "api/collection-stats.js"];
+const pages = ["index.html", "lore.html", "collection.html", "subject.html", "find-your-subject.html", "trust.html", "faq.html", "links.html", "404.html"];
+const scripts = ["app.js", "lore-page.js", "collection-page.js", "subject-page.js", "subject-model.js", "subject-match.js", "find-your-subject.js", "miniapp-buy.js", "api/buy.js", "api/collection-stats.js", "api/subject-share.js"];
 const banned = [/minted out/i, /trending survivors/i, /web scraping for hire/i, /trait family/i, /design based on a template/i];
 
 const failures = [];
@@ -31,6 +31,27 @@ if (lore.factions.length !== 5) failures.push(`Lore must contain 5 factions, fou
 const collection = JSON.parse(await readFile(path.join(root, "data", "collection.json"), "utf8"));
 if (collection.supply !== 1000) failures.push("Collection supply must be 1000");
 if (!/^0x[0-9a-fA-F]{40}$/.test(collection.contract)) failures.push("Collection contract address is invalid");
+
+const farcaster = JSON.parse(await readFile(path.join(root, ".well-known", "farcaster.json"), "utf8"));
+const miniapp = farcaster.miniapp;
+if (!farcaster.accountAssociation?.header || !farcaster.accountAssociation?.payload || !farcaster.accountAssociation?.signature) {
+  failures.push("Farcaster manifest is missing its signed account association");
+}
+for (const field of ["version", "name", "homeUrl", "iconUrl", "splashImageUrl", "splashBackgroundColor", "subtitle", "description", "primaryCategory", "heroImageUrl", "tagline", "ogTitle", "ogDescription", "ogImageUrl", "canonicalDomain"]) {
+  if (!miniapp?.[field]) failures.push(`Farcaster manifest is missing miniapp.${field}`);
+}
+if (miniapp?.tagline?.length > 30) failures.push("Farcaster tagline must be 30 characters or fewer");
+if (miniapp?.canonicalDomain !== "decaylabs.online") failures.push("Farcaster canonicalDomain must be decaylabs.online");
+if (!miniapp?.requiredChains?.includes("eip155:8453")) failures.push("Farcaster manifest must declare Base (eip155:8453)");
+if (!miniapp?.iconUrl?.endsWith("/x-avatar.png")) failures.push("Farcaster discovery icon must use the 1024x1024 PNG asset");
+
+const avatar = await readFile(path.join(root, "public", "x-avatar.png"));
+if (avatar.length < 24 || avatar.toString("ascii", 1, 4) !== "PNG") failures.push("Farcaster discovery icon must be a PNG");
+else {
+  const width = avatar.readUInt32BE(16);
+  const height = avatar.readUInt32BE(20);
+  if (width !== 1024 || height !== 1024) failures.push(`Farcaster discovery icon must be 1024x1024, found ${width}x${height}`);
+}
 
 try {
   const metadataFiles = await readdir(path.join(root, "metadata-v2"));

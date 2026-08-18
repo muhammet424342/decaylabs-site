@@ -1,4 +1,6 @@
-# Discord implementation blueprint
+# Discord implementation blueprint — Deferred / Not Active
+
+> Legacy planning asset. The 2026 Farcaster audit found no verified holder community that needs Discord yet. Do not create or promote this server until recurring collectors/users need a persistent support or lore space. Empty channels would reduce trust. Retained for reference; not an active operating plan.
 
 Do not publicly promote the server until every item in the launch gate is complete.
 

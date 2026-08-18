@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <script>
       if (location.hostname.endsWith(".vercel.app")) {
@@ -53,7 +53,8 @@
         },
         "sameAs": [
           "https://x.com/Decaylabss",
-          "https://opensea.io/collection/decaylabs-395322216",
+          "https://farcaster.xyz/decaylabs",
+          "https://opensea.io/collection/decaylabs-archive",
           "https://basescan.org/address/0x65F5e8006F4eF730d6984836F606a5C5c516CdC8",
           "https://github.com/muhammet424342/base-miniapp-buy-starter"
         ]
@@ -80,7 +81,7 @@
         <a href="/trust">Trust</a>
         <a href="/links">Links</a>
       </nav>
-      <a class="button button--quiet header-cta" href="https://x.com/Decaylabss" target="_blank" rel="noopener noreferrer">Follow the signal</a>
+      <a class="button button--quiet header-cta" href="https://farcaster.xyz/decaylabs" target="_blank" rel="noopener noreferrer">Follow on Farcaster</a>
     </header>
 
     <main id="main">
@@ -92,10 +93,11 @@
           <h1 id="hero-title">Everything decays.<br><em>Proof<br>remains.</em></h1>
           <p class="hero-lede">1,000 hand-illustrated undead survivors from the sealed city of Vanta. Choose a Subject and collect it directly on Base without leaving this site.</p>
           <div class="hero-actions">
-            <button class="button button--primary" id="buyBtn" type="button" data-buy-token="">
+            <a class="button button--primary" href="/find-your-subject">Find your Subject</a>
+            <button class="button button--secondary" id="buyBtn" type="button" data-buy-token="">
               <span id="buyBtnLabel">Collect a Subject &mdash; 0.005 ETH</span>
             </button>
-            <a class="button button--secondary" href="/lore">Read the story first</a>
+            <a class="text-link" href="/lore">Read the story first</a>
           </div>
           <p class="transaction-status" id="buyStatus" role="status" aria-live="polite"></p>
           <ul class="proof-list" aria-label="What ownership gives you">
@@ -150,8 +152,9 @@
         </div>
         <div class="subject-grid" data-subject-grid aria-live="polite"></div>
         <div class="section-actions">
+          <a class="button button--primary" href="/find-your-subject">Find your Subject</a>
           <a class="button button--secondary" href="/collection">Explore all Subject records</a>
-          <a class="text-link" href="https://opensea.io/collection/decaylabs-395322216" target="_blank" rel="noopener noreferrer">View current listings on OpenSea <span aria-hidden="true">&nearr;</span></a>
+          <a class="text-link" href="https://opensea.io/collection/decaylabs-archive" target="_blank" rel="noopener noreferrer">View current listings on OpenSea <span aria-hidden="true">&nearr;</span></a>
         </div>
       </section>
 
@@ -231,10 +234,11 @@
         <div>
           <p class="kicker">Follow the signal</p>
           <h2 id="dispatch-title">The archive opens in public.</h2>
-          <p>New chapters, Subject files and shipped product updates are published on X. No engagement bait. No surprise mint links.</p>
+          <p>New chapters, Subject files and shipped product updates are published natively on Farcaster, with adapted releases on X. No engagement bait. No surprise mint links.</p>
         </div>
         <div class="dispatch-actions">
-          <a class="button button--primary" href="https://x.com/Decaylabss" target="_blank" rel="noopener noreferrer">Follow @Decaylabss</a>
+          <a class="button button--primary" href="https://farcaster.xyz/decaylabs" target="_blank" rel="noopener noreferrer">Follow @decaylabs</a>
+          <a class="button button--quiet" href="https://x.com/Decaylabss" target="_blank" rel="noopener noreferrer">View X</a>
           <a class="button button--secondary" href="/trust">Read the safety rules</a>
         </div>
       </section>

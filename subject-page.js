@@ -1,7 +1,50 @@
 import { buildSubjectProfile, validSubjectId } from "/subject-model.js";
+import { track } from "/analytics.js";
 
 const id = Number(new URLSearchParams(location.search).get("id"));
 const record = document.querySelector("[data-subject-record]");
+
+function openSubject(nextId, method) {
+  track("subject_next", { from: id, to: nextId, method });
+  location.href = `/subject?id=${nextId}`;
+}
+
+async function shareSubject(profile, chapter) {
+  const status = document.getElementById("shareStatus");
+  const shareUrl = `https://decaylabs.online/api/subject-share.js?id=${profile.id}&utm_source=farcaster&utm_campaign=subject_share&utm_content=${profile.id}`;
+  const text = `Subject #${profile.paddedId} carries a record from ${chapter.title}. I opened it in The Half-Life Archive.`;
+  track("share_clicked", { id: profile.id });
+  try {
+    const { sdk } = await import("https://esm.sh/@farcaster/miniapp-sdk");
+    if (sdk?.isInMiniApp && await sdk.isInMiniApp()) {
+      const result = await sdk.actions.composeCast({ text, embeds: [shareUrl] });
+      if (result?.cast) {
+        track("share_completed", { id: profile.id, client: "farcaster" });
+        status.textContent = "Subject shared to Farcaster.";
+      } else {
+        track("share_cancelled", { id: profile.id, client: "farcaster" });
+        status.textContent = "Share cancelled.";
+      }
+      return;
+    }
+  } catch (_) {
+    // Normal browsers continue to the native share sheet or clipboard.
+  }
+  try {
+    if (navigator.share) {
+      await navigator.share({ title: `Subject #${profile.paddedId} | Decay Labs`, text, url: shareUrl });
+      track("share_completed", { id: profile.id, client: "native" });
+      status.textContent = "Share sheet opened.";
+    } else {
+      await navigator.clipboard.writeText(`${text}\n${shareUrl}`);
+      track("share_completed", { id: profile.id, client: "clipboard" });
+      status.textContent = "Subject link copied. You can edit the text before casting.";
+    }
+  } catch (_) {
+    track("share_cancelled", { id: profile.id, client: "native" });
+    status.textContent = "Share cancelled.";
+  }
+}
 
 async function initialize() {
   if (!validSubjectId(id)) {
@@ -35,7 +78,15 @@ async function initialize() {
     document.querySelector("[data-opensea]").href = profile.openseaUrl;
     document.querySelector("[data-basescan]").href = collection.basescanUrl;
     const buy = document.querySelector("[data-buy-token]");
-    buy.dataset.buyToken = String(profile.id);
+    buy.dataset.buyToken = String(profile.tokenId);
+    document.querySelector("[data-previous-subject]").addEventListener("click", () => openSubject(id === 1 ? 1000 : id - 1, "previous"));
+    document.querySelector("[data-next-subject]").addEventListener("click", () => openSubject(id === 1000 ? 1 : id + 1, "next"));
+    document.querySelector("[data-random-subject]").addEventListener("click", () => {
+      let nextId = id;
+      while (nextId === id) nextId = Math.floor(Math.random() * 1000) + 1;
+      openSubject(nextId, "random");
+    });
+    document.querySelector("[data-share-subject]").addEventListener("click", () => shareSubject(profile, chapter));
   } catch (error) {
     record.innerHTML = '<div class="warning-box"><strong>Signal interrupted.</strong> Verify this token using the official contract link.</div>';
     console.error("[subject]", error);

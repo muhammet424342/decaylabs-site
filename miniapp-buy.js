@@ -2,7 +2,7 @@ import { executeCheckout, waitForReceipt, CheckoutError } from "./checkout-clien
 import { friendlyCheckoutMessage } from "./checkout-rules.mjs";
 import { track } from "/analytics.js";
 
-const OPENSEA_COLLECTION = "https://opensea.io/collection/decaylabs-395322216";
+const OPENSEA_COLLECTION = "https://opensea.io/collection/decaylabs-archive";
 const CONTRACT = "0x65F5e8006F4eF730d6984836F606a5C5c516CdC8";
 const BASE_CHAIN_ID = 8453;
 const BASE_CHAIN_HEX = "0x2105";
@@ -46,7 +46,11 @@ async function ensureBase(provider) {
 }
 
 function marketplaceLink(tokenId) {
-  return tokenId ? `https://opensea.io/assets/base/${CONTRACT}/${tokenId}` : OPENSEA_COLLECTION;
+  return tokenId !== null && tokenId !== undefined ? `https://opensea.io/assets/base/${CONTRACT}/${tokenId}` : OPENSEA_COLLECTION;
+}
+
+function subjectNumber(tokenId) {
+  return Number(tokenId) + 1;
 }
 
 function fallback(message, tokenId) {
@@ -79,16 +83,16 @@ async function checkout(button) {
     const result = await executeCheckout({ provider, buyer, tokenId: requestedToken, onStatus: status, encodeFunctionData, onEvent: track });
     const token = Number(result.data.tokenId) || 0;
     submitted = true;
-    label.textContent = `Subject ${String(result.data.tokenId).padStart(4, "0")} / ${result.data.priceEth} ETH`;
+    label.textContent = `Subject ${String(subjectNumber(result.data.tokenId)).padStart(4, "0")} / ${result.data.priceEth} ETH`;
     const explorer = `<a href="https://basescan.org/tx/${result.hash}" target="_blank" rel="noopener noreferrer">Verify transaction &nearr;</a>`;
     status(`Purchase submitted. Waiting for Base to confirm... ${explorer}`, true);
     const { confirmed } = await waitForReceipt(provider, result.hash, { onEvent: track, token, eth: result.data.priceEth });
     status(confirmed
-      ? `Confirmed on Base. Subject ${String(result.data.tokenId).padStart(4, "0")} is yours. ${explorer}`
+      ? `Confirmed on Base. Subject ${String(subjectNumber(result.data.tokenId)).padStart(4, "0")} is yours. ${explorer}`
       : `Submitted, but Base has not confirmed it yet. ${explorer}`, true);
   } catch (error) {
     const code = error?.code || "checkout_unavailable";
-    if (["token_not_listed", "no_curated_listings", "sold"].includes(code)) fallback(friendlyCheckoutMessage(code), requestedToken);
+    if (["token_not_listed", "no_curated_listings", "sold", "upstream_timeout", "opensea_unavailable", "opensea_api_key_required", "api_error"].includes(code)) fallback(friendlyCheckoutMessage(code), requestedToken);
     else status(friendlyCheckoutMessage(code));
     console.error("[checkout]", { code, message: error?.message });
   } finally {

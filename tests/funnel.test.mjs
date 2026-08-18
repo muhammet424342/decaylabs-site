@@ -16,6 +16,12 @@ test("reads DL_EVENT lines out of surrounding log noise", () => {
   assert.equal(events[1].props.token, 7);
 });
 
+test("reads structured Vercel conversion logs", () => {
+  const event = { ev: "subject_match_completed", sid: "m", props: { id: 846 } };
+  const events = parseEvents([JSON.stringify({ level: "info", message: "conversion_event", route: "/api/ev.js", event })]);
+  assert.deepEqual(events, [event]);
+});
+
 test("counts sessions per step, not repeated clicks", () => {
   const funnel = buildFunnel(parseEvents([
     line({ ev: "page_view", sid: "a" }),

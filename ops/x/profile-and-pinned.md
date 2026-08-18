@@ -74,7 +74,7 @@ Visual: `public/og-v2.png`
 
 `Browse the archive: https://decaylabs.online/collection`
 
-`Official marketplace: https://opensea.io/collection/decaylabs-395322216`
+`Official marketplace: https://opensea.io/collection/decaylabs-archive`
 
 ## First reply under every lore post
 

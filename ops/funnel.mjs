@@ -12,6 +12,8 @@ import { createReadStream } from "node:fs";
 
 export const STEPS = [
   { key: "visit", label: "Visit", events: ["page_view"] },
+  { key: "match", label: "Completed a Subject match", events: ["subject_match_completed"] },
+  { key: "share", label: "Shared a Subject", events: ["share_completed", "subject_match_shared"] },
   { key: "nft", label: "Looked at a Subject", events: ["nft_view", "collection_view"] },
   { key: "buy", label: "Clicked buy", events: ["buy_button_clicked"] },
   { key: "wallet", label: "Connected a wallet", events: ["wallet_connected"] },
@@ -29,10 +31,14 @@ export function parseEvents(lines) {
   const events = [];
   for (const line of lines) {
     const at = line.indexOf("DL_EVENT ");
-    if (at === -1) continue;
-    const brace = line.indexOf("{", at);
+    const structuredAt = line.indexOf('{"level"');
+    const brace = at === -1 ? structuredAt : line.indexOf("{", at);
     if (brace === -1) continue;
-    try { events.push(JSON.parse(line.slice(brace))); } catch (_) { /* truncated line */ }
+    try {
+      const parsed = JSON.parse(line.slice(brace));
+      if (parsed.message === "conversion_event" && parsed.event) events.push(parsed.event);
+      else if (parsed.ev) events.push(parsed);
+    } catch (_) { /* truncated line */ }
   }
   return events;
 }

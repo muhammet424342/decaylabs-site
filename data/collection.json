@@ -7,15 +7,17 @@
   "supply": 1000,
   "contract": "0x65F5e8006F4eF730d6984836F606a5C5c516CdC8",
   "founderWallet": "0x9072954ead2b42d8bc992861e22ec170a622eb06",
-  "collectionSlug": "decaylabs-395322216",
-  "openseaUrl": "https://opensea.io/collection/decaylabs-395322216",
+  "collectionSlug": "decaylabs-archive",
+  "openseaUrl": "https://opensea.io/collection/decaylabs-archive",
   "basescanUrl": "https://basescan.org/address/0x65F5e8006F4eF730d6984836F606a5C5c516CdC8",
   "githubUrl": "https://github.com/muhammet424342/base-miniapp-buy-starter",
   "xUrl": "https://x.com/Decaylabss",
+  "farcasterUrl": "https://farcaster.xyz/decaylabs",
   "storage": {
     "metadata": "IPFS",
     "media": "IPFS",
-    "imageCid": "QmcNKaghAM636EiW9zQeirxz25s7fU1eJ8tN8PzLgK7qP"
+    "imageCid": "Qmb5cxL3Qf3vZU7Fk5z9Cg7Vv4AzygWMUY3WEKB6HEsZPd",
+    "imageBaseUrl": "https://ev.decaylabs.online/img"
   },
   "truth": {
     "status": "All 1,000 tokens were created by the founder and initially remain founder-held unless transferred onchain.",

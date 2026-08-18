@@ -8,6 +8,13 @@ const ALLOWED = new Set([
   "page_view",
   "collection_view",
   "nft_view",
+  "subject_next",
+  "subject_match_started",
+  "subject_match_completed",
+  "subject_match_shared",
+  "share_clicked",
+  "share_completed",
+  "share_cancelled",
   "buy_button_clicked",
   "wallet_connect_started",
   "wallet_connected",
@@ -75,6 +82,8 @@ export function normalizeEvent(payload) {
 }
 
 export default async function handler(req, res) {
+  const startedAt = Date.now();
+  const requestId = String(req.headers?.["x-vercel-id"] || "").slice(0, 80);
   res.setHeader("Cache-Control", "no-store");
   res.setHeader("Access-Control-Allow-Origin", "https://decaylabs.online");
   res.setHeader("Referrer-Policy", "no-referrer");
@@ -90,22 +99,32 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "method_not_allowed" });
   }
 
+  const origin = String(req.headers?.origin || "");
+  if (origin && origin !== "https://decaylabs.online") return res.status(403).json({ error: "origin_not_allowed" });
+  if (!String(req.headers?.["content-type"] || "").toLowerCase().startsWith("application/json")) {
+    return res.status(415).json({ error: "json_required" });
+  }
+
   const event = normalizeEvent(await readBody(req));
   if (!event) return res.status(400).json({ error: "invalid_event" });
 
-  console.log("DL_EVENT " + JSON.stringify(event));
+  console.log(JSON.stringify({ level: "info", message: "conversion_event", route: "/api/ev.js", requestId, ms: Date.now() - startedAt, event }));
 
   const webhook = process.env.EVENT_WEBHOOK_URL;
   if (webhook) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 1500);
     try {
       await fetch(webhook, {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify(event)
+        body: JSON.stringify(event),
+        signal: controller.signal
       });
-    } catch (_) {
+    } catch (error) {
+      console.warn(JSON.stringify({ level: "warning", message: "event_webhook_failed", route: "/api/ev.js", requestId, error: error?.name === "AbortError" ? "timeout" : "network_error" }));
       // Measurement must never break the page.
-    }
+    } finally { clearTimeout(timer); }
   }
   return res.status(204).end();
 }
