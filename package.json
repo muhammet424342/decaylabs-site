@@ -7,9 +7,17 @@
     "test": "node --test tests/*.test.mjs",
     "check": "node scripts/validate-site.mjs",
     "metadata": "node scripts/generate-metadata.mjs",
-    "brand": "python scripts/build-brand-assets.py"
+    "brand": "python scripts/build-brand-assets.py",
+    "contract:build": "node scripts/compile-contract.mjs",
+    "contract:deploy": "node scripts/deploy-contract.mjs deploy",
+    "report:card": "python scripts/build-report-card.py"
   },
   "engines": {
     "node": ">=20"
+  },
+  "devDependencies": {
+    "@openzeppelin/contracts": "^5.1.0",
+    "solc": "^0.8.28",
+    "viem": "^2.21.55"
   }
 }

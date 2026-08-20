@@ -92,6 +92,14 @@
           <p class="kicker"><span class="signal-dot"></span> Hand-drawn NFT collection / Base / 0.005 ETH</p>
           <h1 id="hero-title">Everything decays.<br><em>Proof<br>remains.</em></h1>
           <p class="hero-lede">1,000 hand-illustrated undead survivors from the sealed city of Vanta. Choose a Subject and collect it directly on Base without leaving this site.</p>
+          <div class="report-claim" id="reportClaim" hidden>
+            <p class="report-claim__kicker">This week in the archive</p>
+            <button class="button button--primary" id="reportBtn" type="button">
+              <span id="reportBtnLabel">Claim the Field Report &mdash; free</span>
+            </button>
+            <p class="report-claim__note">Free open edition on Base. You pay gas only &mdash; one per wallet.</p>
+            <p class="transaction-status" id="reportStatus" role="status" aria-live="polite"></p>
+          </div>
           <div class="hero-actions">
             <a class="button button--primary" href="/find-your-subject">Find your Subject</a>
             <button class="button button--secondary" id="buyBtn" type="button" data-buy-token="">
@@ -269,5 +277,6 @@
 
     <script type="module" src="/app.js?v=10"></script>
     <script type="module" src="/miniapp-buy.js?v=10"></script>
+    <script type="module" src="/miniapp-report.js?v=1"></script>
   </body>
 </html>

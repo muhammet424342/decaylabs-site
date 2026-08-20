@@ -13,3 +13,12 @@ api/stats.js
 node_modules
 package-lock.json
 package.json
+
+# ic dokumanlar / gelistirme araclari - canliya cikmamali (19 Agu 2026)
+CLAUDE_DEVAM.md
+NEXT_SESSION_CHECKPOINT.md
+DECAY_LABS_MASTER_RESOURCE_INVENTORY.md
+ops
+scripts
+metadata-v2
+contracts
