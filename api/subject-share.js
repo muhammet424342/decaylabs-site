@@ -2,7 +2,7 @@ const SITE = "https://decaylabs.online";
 // Mirrors data/collection.json → storage.imageBaseUrl. Social crawlers fetch this
 // URL directly, so it has to be a host that answers fast; the IPFS copy behind
 // Qmb5cxL3Qf3vZU7Fk5z9Cg7Vv4AzygWMUY3WEKB6HEsZPd went offline with the old node.
-const IMAGE_BASE = "https://ev.decaylabs.online/img";
+const IMAGE_BASE = "https://decaylabs.online/public/img";
 
 function subjectId(value) {
   const id = Number(value);
@@ -29,7 +29,7 @@ export default function handler(request, response) {
 
   const padded = String(id).padStart(4, "0");
   const subjectUrl = `${SITE}/subject?id=${id}`;
-  const imageUrl = `${IMAGE_BASE}/${id}.png`;
+  const imageUrl = `${IMAGE_BASE}/${id}.webp`;
   const title = `Subject #${padded} | The Half-Life Archive`;
   const description = `Open Subject #${padded}, one of 1,000 altered witnesses recorded on Base.`;
   const miniapp = JSON.stringify({
@@ -59,6 +59,6 @@ export default function handler(request, response) {
 <meta name="twitter:title" content="${escapeHtml(title)}"><meta name="twitter:description" content="${escapeHtml(description)}">
 <meta name="twitter:image" content="${escapeHtml(imageUrl)}"><meta name="fc:miniapp" content='${escapeHtml(miniapp)}'>
 <meta name="fc:frame" content='${escapeHtml(miniapp.replace("launch_miniapp", "launch_frame"))}'>
-<meta http-equiv="refresh" content="0;url=${escapeHtml(subjectUrl)}"><script>location.replace(${JSON.stringify(subjectUrl)});</script>
-</head><body><p>Opening <a href="${escapeHtml(subjectUrl)}">Subject #${padded}</a>…</p></body></html>`);
+<script>location.replace(${JSON.stringify(subjectUrl)});</script>
+</head><body><p>Opening <a href="${escapeHtml(subjectUrl)}">Subject #${padded}</a>… If nothing happens, use the link.</p></body></html>`);
 }

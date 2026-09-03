@@ -18,7 +18,7 @@ test("renders exact Subject metadata and launches the canonical record", () => {
   handler({ query: { id: "846" } }, response);
   assert.equal(response.statusCode, 200);
   assert.match(response.body, /Subject #0846/);
-  assert.match(response.body, /\/846\.png/);
+  assert.match(response.body, /\/846\.webp/);
   assert.match(response.body, /\/subject\?id=846/);
   assert.match(response.body, /launch_miniapp/);
   assert.equal(response.headers["X-Robots-Tag"], "noindex, follow");

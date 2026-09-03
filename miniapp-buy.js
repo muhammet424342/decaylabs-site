@@ -101,5 +101,8 @@ async function checkout(button) {
   }
 }
 
-const buttons = Array.from(new Set([...document.querySelectorAll("[data-buy-token]"), document.getElementById("buyBtn")].filter(Boolean)));
-buttons.forEach((button) => button.addEventListener("click", () => checkout(button)));
+document.addEventListener("click", (event) => {
+  const button = event.target.closest("button[data-buy-token], button#buyBtn");
+  if (!button) return;
+  checkout(button);
+});

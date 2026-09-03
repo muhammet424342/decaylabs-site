@@ -1,0 +1,31 @@
+BASESCAN — VANTA FIELD REPORTS DOĞRULAMA BİLGİLERİ
+==================================================
+Sayfa: https://basescan.org/verifyContract?a=0x894b1d8d5a4c7869ddc2553fcfabeb03e3c0e081
+
+1) Contract Address
+0x894b1d8d5a4c7869ddc2553fcfabeb03e3c0e081
+
+2) Compiler Type
+Solidity (Standard-Json-Input)
+
+3) Compiler Version
+v0.8.28+commit.7893614a
+
+4) Open Source License Type
+MIT
+
+--- SONRAKİ EKRAN ---
+
+5) Yüklenecek dosya
+vanta-standard-json.json      (bu klasörde, 20 kaynak dosya içeriyor)
+
+6) Constructor Arguments ABI-encoded   (BAŞINDAKİ 0x OLMADAN yapıştır)
+000000000000000000000000bb2a9f48288efc8f8e4e245074ce47b5d76b75000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000002068747470733a2f2f64656361796c6162732e6f6e6c696e652f7265706f72742f
+
+   (Açılımı: initialOwner = 0xBB2a9f48...76B7500
+             baseUri_     = https://decaylabs.online/report/ )
+
+==================================================
+DOĞRULAMA: yerel derleme, zincirdeki deploy bytecode'u ile BİREBİR eşleşti.
+Ayarlar: optimizer AÇIK / runs 200 / evmVersion cancun
+(Standard-Json-Input seçilirse bu ayarlar dosyanın içinde, ayrıca girilmez.)

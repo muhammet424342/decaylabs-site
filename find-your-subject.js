@@ -24,10 +24,14 @@ function resultMarkup(profile) {
     <p><strong>${profile.faction.motto}</strong> Your choices point to a witness who carries ${profile.memory}. Current condition: ${profile.condition}.</p>
     <p class="match-explanation">This is a deterministic archive match, not a rarity score or financial recommendation. The same choices always recover the same Subject.</p>
     <div class="record-actions">
-      <a class="button button--primary" href="/subject?id=${profile.id}&utm_source=site&utm_campaign=find_your_subject&utm_content=${profile.id}">Open the full record</a>
-      <button class="button button--secondary" type="button" data-share-match>Share this match</button>
+      <button class="button button--primary" type="button" id="buyBtn" data-buy-token="${profile.tokenId}">
+        <span id="buyBtnLabel">Collect Subject #${profile.paddedId} — 0.005 ETH</span>
+      </button>
+      <a class="button button--secondary" href="/subject?id=${profile.id}&utm_source=site&utm_campaign=find_your_subject&utm_content=${profile.id}">Open the full record</a>
+      <button class="button button--quiet" type="button" data-share-match>Share this match</button>
       <button class="button button--quiet" type="button" data-retry-match>Try another path</button>
     </div>
+    <p class="transaction-status" id="buyStatus" role="status" aria-live="polite"></p>
     <p class="search-message" role="status" data-match-status></p>
   </div>`;
 }

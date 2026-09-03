@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Deploy Vanta Field Reports</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin: 0; padding: 2.5rem 1.5rem; background: #090a08; color: #f1eee6; font: 15px/1.55 ui-monospace, Consolas, monospace; }
+  main { max-width: 780px; margin: 0 auto; }
+  h1 { font-size: 1.35rem; margin: 0 0 .35rem; }
+  p.lede { color: #9b9a92; margin: 0 0 2rem; }
+  section { border: 1px solid rgba(241,238,230,.13); border-radius: 10px; padding: 1.1rem 1.25rem; margin-bottom: 1rem; }
+  h2 { font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: #b7d65a; margin: 0 0 .8rem; }
+  button { background: #f06a48; color: #090a08; border: 0; border-radius: 999px; padding: .6rem 1.15rem; font: inherit; font-weight: 700; cursor: pointer; }
+  button:disabled { opacity: .45; cursor: default; }
+  .out { margin-top: .8rem; color: #9b9a92; white-space: pre-wrap; word-break: break-all; }
+  .ok { color: #b7d65a; }
+  .bad { color: #f06a48; }
+  a { color: #b7d65a; }
+  code { color: #f1eee6; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Vanta Field Reports — deploy</h1>
+  <p class="lede">Local tool. Signs with the wallet in this browser; no private key is ever typed anywhere.</p>
+
+  <section>
+    <h2>1 — Wallet</h2>
+    <button id="connect">Connect wallet</button>
+    <div class="out" id="walletOut"></div>
+  </section>
+
+  <section>
+    <h2>2 — Deploy contract</h2>
+    <button id="deploy" disabled>Deploy to Base</button>
+    <div class="out" id="deployOut"></div>
+  </section>
+
+  <section>
+    <h2>3 — Open report 001</h2>
+    <button id="open" disabled>openReport(1)</button>
+    <div class="out" id="openOut"></div>
+  </section>
+
+  <section>
+    <h2>4 — Hand ownership to the archive wallet</h2>
+    <button id="transfer" disabled>transferOwnership(0x9072...eb06)</button>
+    <div class="out" id="transferOut">Sign with the current owner. Afterwards only 0x9072...eb06 can open or close reports.</div>
+  </section>
+</main>
+
+<script type="module">
+import { encodeDeployData, encodeFunctionData, createPublicClient, http, formatEther } from "https://esm.sh/viem@2.21.55";
+import { base } from "https://esm.sh/viem@2.21.55/chains";
+
+const EXPECTED_OWNER = "0x9072954ead2b42d8bc992861e22ec170a622eb06";
+const BASE_URI = "https://decaylabs.online/report/";
+const BASE_CHAIN_HEX = "0x2105";
+const BUILDER_SUFFIX = "62635f796236636d6562660b0080218021802180218021802180218021";
+
+const publicClient = createPublicClient({ chain: base, transport: http("https://mainnet.base.org") });
+const artifact = await (await fetch("/contracts/out/VantaFieldReports.json")).json();
+const $ = (id) => document.getElementById(id);
+const say = (id, message, cls = "") => { $(id).innerHTML = cls ? `<span class="${cls}">${message}</span>` : message; };
+
+let provider = null;
+let account = null;
+let deployed = localStorage.getItem("vfr_address") || "0x894b1d8d5a4c7869ddc2553fcfabeb03e3c0e081";
+if (deployed) { say("openOut", `known address: ${deployed}`); $("open").disabled = false; }
+
+$("connect").addEventListener("click", async () => {
+  provider = window.ethereum;
+  if (!provider) { say("walletOut", "No injected wallet found in this browser.", "bad"); return; }
+  try {
+    [account] = await provider.request({ method: "eth_requestAccounts" });
+    const chainId = await provider.request({ method: "eth_chainId" });
+    if (chainId !== BASE_CHAIN_HEX) {
+      await provider.request({ method: "wallet_switchEthereumChain", params: [{ chainId: BASE_CHAIN_HEX }] });
+    }
+    const balance = await publicClient.getBalance({ address: account });
+    const match = account.toLowerCase() === EXPECTED_OWNER;
+    say("walletOut", `${account}\n${formatEther(balance)} ETH on Base\n${match ? "matches the Decay Labs owner wallet" : "WARNING: not the Decay Labs owner wallet (0x9072...eb06)"}`, match ? "ok" : "bad");
+    $("deploy").disabled = false;
+    $("transfer").disabled = false;
+  } catch (error) {
+    say("walletOut", error?.message || String(error), "bad");
+  }
+});
+
+$("deploy").addEventListener("click", async () => {
+  $("deploy").disabled = true;
+  try {
+    const data = encodeDeployData({ abi: artifact.abi, bytecode: artifact.bytecode, args: [account, BASE_URI] });
+    const gas = await publicClient.estimateGas({ account, data });
+    const gasPrice = await publicClient.getGasPrice();
+    say("deployOut", `estimated ${gas} gas (~${formatEther(gas * gasPrice)} ETH) — confirm in your wallet`);
+
+    // OKX fails to estimate contract creation, so the limit travels with the request.
+    const gasLimit = `0x${((gas * 12n) / 10n).toString(16)}`;
+    const hash = await provider.request({ method: "eth_sendTransaction", params: [{ from: account, data, gas: gasLimit }] });
+    say("deployOut", `tx ${hash}\nwaiting for the receipt...`);
+    const receipt = await publicClient.waitForTransactionReceipt({ hash });
+    if (receipt.status !== "success") { say("deployOut", `reverted: ${hash}`, "bad"); return; }
+
+    deployed = receipt.contractAddress;
+    localStorage.setItem("vfr_address", deployed);
+    const onchain = await publicClient.getBytecode({ address: deployed });
+    const verified = onchain === artifact.deployedBytecode;
+    say("deployOut", `contract ${deployed}\nbytecode matches artifact: ${verified}\n<a href="https://basescan.org/address/${deployed}" target="_blank" rel="noopener">open on Basescan</a>`, verified ? "ok" : "bad");
+    $("open").disabled = false;
+  } catch (error) {
+    say("deployOut", error?.message || String(error), "bad");
+    $("deploy").disabled = false;
+  }
+});
+
+$("transfer").addEventListener("click", async () => {
+  $("transfer").disabled = true;
+  try {
+    const data = encodeFunctionData({ abi: artifact.abi, functionName: "transferOwnership", args: [EXPECTED_OWNER] }) + BUILDER_SUFFIX;
+    const gas = await publicClient.estimateGas({ account, to: deployed, data });
+    const hash = await provider.request({
+      method: "eth_sendTransaction",
+      params: [{ from: account, to: deployed, data, gas: `0x${((gas * 12n) / 10n).toString(16)}` }]
+    });
+    say("transferOut", `tx ${hash}\nwaiting...`);
+    const receipt = await publicClient.waitForTransactionReceipt({ hash });
+    const owner = await publicClient.readContract({ address: deployed, abi: artifact.abi, functionName: "owner" });
+    say("transferOut", `status: ${receipt.status}\nowner is now ${owner}`, receipt.status === "success" ? "ok" : "bad");
+  } catch (error) {
+    say("transferOut", error?.message || String(error), "bad");
+    $("transfer").disabled = false;
+  }
+});
+
+$("open").addEventListener("click", async () => {
+  $("open").disabled = true;
+  try {
+    const data = encodeFunctionData({ abi: artifact.abi, functionName: "openReport", args: [1n] }) + BUILDER_SUFFIX;
+    const gas = await publicClient.estimateGas({ account, to: deployed, data });
+    const gasLimit = `0x${((gas * 12n) / 10n).toString(16)}`;
+    const hash = await provider.request({ method: "eth_sendTransaction", params: [{ from: account, to: deployed, data, gas: gasLimit }] });
+    say("openOut", `tx ${hash}\nwaiting...`);
+    const receipt = await publicClient.waitForTransactionReceipt({ hash });
+    say("openOut", `report 001 open: ${receipt.status === "success"}\n<a href="https://basescan.org/tx/${hash}" target="_blank" rel="noopener">view tx</a>`, receipt.status === "success" ? "ok" : "bad");
+  } catch (error) {
+    say("openOut", error?.message || String(error), "bad");
+    $("open").disabled = false;
+  }
+});
+</script>
+</body>
+</html>

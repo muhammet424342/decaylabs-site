@@ -2,6 +2,16 @@ import { BUILDER_SUFFIX, CheckoutError, ensureBase, waitForReceipt } from "./che
 
 export const BASE_RPC_URL = "https://mainnet.base.org";
 
+// 24 Aug 2026: a single RPC meant one network hiccup silently removed the claim
+// offer from the page (reveal() swallowed the error). Reads now fall through a
+// list, so a rate-limited or unreachable endpoint no longer hides the card.
+export const BASE_RPC_URLS = [
+  BASE_RPC_URL,
+  "https://base.llamarpc.com",
+  "https://base-rpc.publicnode.com",
+  "https://1rpc.io/base"
+];
+
 // Vanta Field Reports — free open edition, one claim per wallet per report.
 // Deploy with `npm run contract:deploy`, then paste the address here.
 export const REPORT_CONTRACT = "0x894b1d8d5a4c7869ddc2553fcfabeb03e3c0e081";
@@ -31,14 +41,22 @@ function encodeAddress(value) {
 /// Reads work without a wallet too, so the page can show the claim state on first paint.
 async function call(provider, contract, data, fetchImpl = fetch) {
   if (provider) return provider.request({ method: "eth_call", params: [{ to: contract, data }, "latest"] });
-  const response = await fetchImpl(BASE_RPC_URL, {
-    method: "POST",
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify({ jsonrpc: "2.0", id: 1, method: "eth_call", params: [{ to: contract, data }, "latest"] })
-  });
-  const body = await response.json();
-  if (body.error) throw new CheckoutError("rpc_error", body.error.message || "Base RPC call failed.");
-  return body.result;
+  let lastError = null;
+  for (const url of BASE_RPC_URLS) {
+    try {
+      const response = await fetchImpl(url, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ jsonrpc: "2.0", id: 1, method: "eth_call", params: [{ to: contract, data }, "latest"] })
+      });
+      const body = await response.json();
+      if (body.error) { lastError = new CheckoutError("rpc_error", body.error.message || "Base RPC call failed."); continue; }
+      return body.result;
+    } catch (error) {
+      lastError = error;
+    }
+  }
+  throw lastError || new CheckoutError("rpc_error", "Base RPC call failed.");
 }
 
 /// Reads the contract so the UI can say "already claimed" before asking for a signature.

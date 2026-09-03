@@ -66,12 +66,27 @@ async function reveal() {
   if (!isReportLive()) return;
 
   let state;
-  try { state = await readReportState(null, null, REPORT_CONTRACT); }
-  catch (_) { return; }
-  if (!state.open) return;
+  try {
+    state = await readReportState(null, null, REPORT_CONTRACT);
+  } catch (error) {
+    // 24 Aug 2026: this used to `return`, which quietly deleted the claim offer
+    // from the page whenever a read failed. The visitor saw nothing, we logged
+    // nothing, and "0 claims" looked like nobody wanted it. A failed read is not
+    // proof the report is closed, so show the card and let the claim attempt
+    // surface a real error instead of hiding the door.
+    track("report_reveal_degraded", { code: String(error?.code || "rpc_unreachable") });
+    label.textContent = "Claim the open Field Report — free";
+    status("Could not verify the report state just now — you can still try to claim.");
+    block.hidden = false;
+    button.addEventListener("click", claim);
+    return;
+  }
+
+  if (!state.open) { track("report_reveal_closed"); return; }
 
   label.textContent = `Claim ${reportName(state.reportId)} — free`;
   block.hidden = false;
+  track("report_reveal_shown", { report: String(state.reportId) });
   button.addEventListener("click", claim);
 }
 

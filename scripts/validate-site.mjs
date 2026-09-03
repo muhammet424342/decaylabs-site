@@ -3,7 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const pages = ["index.html", "lore.html", "collection.html", "subject.html", "find-your-subject.html", "trust.html", "faq.html", "links.html", "404.html"];
+const pages = ["index.html", "lore.html", "collection.html", "subject.html", "find-your-subject.html", "trust.html", "faq.html", "links.html", "report.html", "404.html"];
 const scripts = ["app.js", "lore-page.js", "collection-page.js", "subject-page.js", "subject-model.js", "subject-match.js", "find-your-subject.js", "miniapp-buy.js", "api/buy.js", "api/collection-stats.js", "api/subject-share.js"];
 const banned = [/minted out/i, /trending survivors/i, /web scraping for hire/i, /trait family/i, /design based on a template/i];
 

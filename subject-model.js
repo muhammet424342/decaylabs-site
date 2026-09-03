@@ -58,7 +58,7 @@ export function buildSubjectProfile(id, lore, collection) {
   // old IPFS node; a plain HTTPS mirror keeps the artwork visible. Drop it from
   // collection.json and the IPFS gateway takes over again.
   const remoteImage = collection.storage.imageBaseUrl
-    ? `${collection.storage.imageBaseUrl}/${id}.png`
+    ? `${collection.storage.imageBaseUrl}/${id}.webp`
     : `https://ipfs.io/ipfs/${collection.storage.imageCid}/${id}.png`;
   const image = localImage ? `/public/nft-${id}.png` : remoteImage;
 
