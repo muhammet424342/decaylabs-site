@@ -19,7 +19,22 @@ test("selects the requested token, not a different cheap token", () => {
   assert.equal(tokenIdFromListing(picked), "7");
 });
 
-test("generic checkout selects the cheapest curated token only", () => {
+test("generic checkout honours a shortlist when one is given", () => {
   const picked = selectListing([listing(999, 1n), listing(8, 3n), listing(7, 5n)], null, new Set(["7", "8"]));
+  assert.equal(tokenIdFromListing(picked), "8");
+});
+
+test("generic checkout sells the collection floor when no shortlist is given", () => {
+  const picked = selectListing([listing(999, 1n), listing(8, 3n), listing(7, 5n)], null, null);
+  assert.equal(tokenIdFromListing(picked), "999");
+});
+
+test("a requested token wins over a cheaper one even with no shortlist", () => {
+  const picked = selectListing([listing(999, 1n), listing(7, 5n)], 7, null);
+  assert.equal(tokenIdFromListing(picked), "7");
+});
+
+test("listings with no price are never selected", () => {
+  const picked = selectListing([listing(999, 0n), listing(8, 3n)], null, null);
   assert.equal(tokenIdFromListing(picked), "8");
 });

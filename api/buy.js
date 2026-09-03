@@ -54,13 +54,18 @@ export function validateListingFulfillment(listing, transaction, fulfillmentBody
   return null;
 }
 
+/* `curated` narrows the generic (no token requested) case to a shortlist.
+ * Pass null to consider every listing, which is what the collection-wide floor
+ * needs: the shortlist can sell out while hundreds of Subjects are still for
+ * sale, and it can also sit above the real floor once prices stop being uniform. */
 export function selectListing(listings, requestedTokenId, curated = allowedTokenIds()) {
   const requested = requestedTokenId == null ? null : String(requestedTokenId);
   const candidates = listings.filter((listing) => {
     const tokenId = tokenIdFromListing(listing);
     if (!tokenId) return false;
     if (priceWei(listing) <= 0n) return false;
-    return requested ? tokenId === requested : curated.has(tokenId);
+    if (requested) return tokenId === requested;
+    return curated ? curated.has(tokenId) : true;
   });
   candidates.sort((a, b) => priceWei(a) < priceWei(b) ? -1 : priceWei(a) > priceWei(b) ? 1 : 0);
   return candidates[0] || null;
@@ -173,10 +178,11 @@ export default async function handler(req, res) {
     let cursor = "";
     let listing = null;
 
-    /* Every Subject is listed at the same price, so the collection-wide "best"
-     * feed returns them in an arbitrary order: a specific token routinely sits
-     * past the pages we scan, and walking the feed for the generic case ran
-     * past the fetch timeout. Asking for named tokens directly fixes both. */
+    /* A named token still has to be asked for directly: the collection feed is
+     * ordered by price, so any particular Subject routinely sits past the pages
+     * we scan, and hunting for it there ran past the fetch timeout.
+     * (This used to be true of the generic case too, back when every Subject
+     * carried the same price and "sorted by price" meant "arbitrary order".) */
     const bestFor = async (id) => {
       const response = await call(`${OS}/listings/collection/${SLUG}/nfts/${id}/best`, {}, "listing_best");
       if (!response.ok) return null;
@@ -186,12 +192,31 @@ export default async function handler(req, res) {
       return candidate;
     };
 
+    /* The floor: one page of the collection feed, which OpenSea returns sorted
+     * by price. This is the whole answer for the generic case now that Subjects
+     * carry different prices — the first page holds the genuine cheapest. */
+    const cheapestListed = async () => {
+      const url = new URL(`${OS}/listings/collection/${SLUG}/best`);
+      url.searchParams.set("limit", "100");
+      const response = await call(url.toString(), {}, "listing_feed");
+      if (!response.ok) return null;
+      const body = await response.json().catch(() => null);
+      return selectListing(body?.listings || [], null, null);
+    };
+
     if (tokenParam != null) {
       listing = await bestFor(tokenParam);
     } else {
-      /* Three curated ids in flight instead of eight: the extra five only added
-       * load on an API that answers in about a second anyway, and every one of
-       * them was another chance to stall. */
+      /* Sell the real floor, not a fixed shortlist. Two things broke while the
+       * shortlist was the only source: checkout would 404 the moment those few
+       * tokens sold even though hundreds were still listed, and after any
+       * reprice it quoted a number the buyer could beat on OpenSea directly. */
+      listing = await cheapestListed();
+    }
+
+    if (!listing && tokenParam == null) {
+      /* Feed unavailable. Naming a few tokens directly is what worked while
+       * every Subject carried the same price, so it stays as the fallback. */
       const curated = [...allowedTokenIds()].slice(0, 3);
       const settled = await Promise.allSettled(curated.map((id) => bestFor(id)));
       const found = settled.filter((entry) => entry.status === "fulfilled" && entry.value).map((entry) => entry.value);
@@ -209,7 +234,7 @@ export default async function handler(req, res) {
       const response = await call(url.toString(), {}, "listing_feed");
       if (!response.ok) return res.status(502).json({ error: "listings_unavailable" });
       const body = await response.json();
-      listing = selectListing(body.listings || [], tokenParam);
+      listing = selectListing(body.listings || [], tokenParam, null);
       cursor = body.next || "";
       if (!cursor) break;
     }
