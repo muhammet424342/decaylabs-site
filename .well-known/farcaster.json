@@ -9,20 +9,34 @@
     "name": "Decay Labs",
     "iconUrl": "https://decaylabs.online/public/x-avatar.png",
     "homeUrl": "https://decaylabs.online",
-    "imageUrl": "https://decaylabs.online/public/og-v2.png",
+    "imageUrl": "https://decaylabs.online/public/embed-home.png",
     "buttonTitle": "Enter the Archive",
-    "splashImageUrl": "https://decaylabs.online/public/icon-192.png",
+    "splashImageUrl": "https://decaylabs.online/public/splash-200.png",
     "splashBackgroundColor": "#090a08",
     "subtitle": "1,000 witnesses on Base",
     "description": "A hand-illustrated undead archive with an in-app Seaport checkout and a 100-chapter narrative map.",
     "primaryCategory": "art-creativity",
-    "tags": ["nft", "art", "base", "collectibles", "story"],
+    "tags": [
+      "nft",
+      "art",
+      "base",
+      "collectibles",
+      "story"
+    ],
     "heroImageUrl": "https://decaylabs.online/public/og-v2.png",
     "tagline": "Proof survives the decay.",
     "ogTitle": "Decay Labs",
     "ogDescription": "Open a Subject from The Half-Life Archive on Base.",
     "ogImageUrl": "https://decaylabs.online/public/og-v2.png",
-    "requiredChains": ["eip155:8453"],
-    "canonicalDomain": "decaylabs.online"
+    "requiredChains": [
+      "eip155:8453"
+    ],
+    "canonicalDomain": "decaylabs.online",
+    "screenshotUrls": [
+      "https://decaylabs.online/public/screenshot-1.png",
+      "https://decaylabs.online/public/screenshot-2.png",
+      "https://decaylabs.online/public/screenshot-3.png"
+    ],
+    "noindex": false
   }
 }
