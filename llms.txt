@@ -1,0 +1,25 @@
+# Decay Labs
+
+> A hand-illustrated archive of 1,000 Subjects created on Base, with the Half-Life Archive lore and transparent build documentation.
+
+## Canonical pages
+
+- [Home](https://decaylabs.online/): project overview and current build proof.
+- [Lore](https://decaylabs.online/lore): the Half-Life Archive story arcs and chapter hooks.
+- [Collection](https://decaylabs.online/collection): the curated archive and Subject lookup.
+- [Trust](https://decaylabs.online/trust): contract, inventory, storage, and safety disclosures.
+- [FAQ](https://decaylabs.online/faq): plain-language answers.
+- [Links](https://decaylabs.online/links): official destinations.
+
+## Project facts
+
+- The collection contains 1,000 hand-illustrated Subjects.
+- The project is on Base; media and metadata are referenced through IPFS.
+- Factions and memory fragments are narrative classifications, not rarity or price claims.
+- There is no active mint, whitelist, or surprise airdrop.
+- Games, staking, tokens, and financial returns are not represented as delivered or promised.
+
+## Machine-readable discovery
+
+- Sitemap: https://decaylabs.online/sitemap.xml
+- Robots policy: https://decaylabs.online/robots.txt
