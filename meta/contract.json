@@ -1,0 +1,10 @@
+{
+  "name": "Decay Labs",
+  "description": "A collection of 1,000 hand-illustrated characters on Base, with onchain verification and in-app checkout built from scratch.",
+  "image": "https://decaylabs.online/public/icon-512.png",
+  "banner_image": "https://decaylabs.online/public/x-banner.jpg",
+  "featured_image": "https://decaylabs.online/public/og-v2.png",
+  "external_link": "https://decaylabs.online",
+  "seller_fee_basis_points": 1000,
+  "fee_recipient": "0xBB2a9f48288eFC8f8E4e245074ce47b5d76B7500"
+}
