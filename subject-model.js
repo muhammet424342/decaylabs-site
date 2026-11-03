@@ -69,7 +69,7 @@ export function buildSubjectProfile(id, lore, collection) {
     signal: `VANTA/${faction.id.toUpperCase()}/${padSubject(id)}`,
     image,
     localImage,
-    openseaUrl: `https://opensea.io/assets/base/${collection.contract}/${id}`,
+    openseaUrl: `https://opensea.io/item/base/${collection.contract}/${id}`,
     basescanUrl: `${collection.basescanUrl}?a=${id}`
   };
 }

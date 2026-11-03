@@ -1,2 +1,2 @@
 date,post_url,format,content_job,impressions,engagements,meaningful_replies,returning_commenters,profile_visits,new_follows,link_clicks,subject_views,marketplace_intents,sales,notes
-,,,,,,,,,,,,,,
+2026-11-03,,baseline,day0,0,0,0,0,0,0,0,0,0,0,day-0 baseline: onchain owners=1 sales=0 (Base RPC); /go clicks=0; kill rule: <1 sale and <20 clicks by 2026-11-17

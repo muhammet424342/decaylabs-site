@@ -45,7 +45,7 @@ async function ensureBase(provider) {
 }
 
 function marketplaceLink(tokenId) {
-  return tokenId ? `https://opensea.io/assets/base/${CONTRACT}/${tokenId}` : OPENSEA_COLLECTION;
+  return tokenId ? `https://opensea.io/item/base/${CONTRACT}/${tokenId}` : OPENSEA_COLLECTION;
 }
 
 function fallback(message, tokenId) {
