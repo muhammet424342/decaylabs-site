@@ -60,9 +60,69 @@
       }
     </script>
     <link rel="stylesheet" href="/styles.css?v=10">
-  </head>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Anton&display=swap" rel="stylesheet">
+<style>
+:root{--ig-ink:#f4f6f1;--ig-dim:rgba(244,246,241,.62);--ig-toxic:#d9f78a;--ig-bg:#a9ada6}
+.hud,.beat,.callout,.loader{font:500 11px/1.45 "IBM Plex Mono",ui-monospace,monospace;letter-spacing:.02em;color:var(--ig-ink)}
+canvas#gl{z-index:0}.hud,.beat,.callout{z-index:5}
+#main,.site-footer,footer{position:relative;z-index:2;background-color:var(--void)}
+
+canvas#gl{position:fixed;inset:0;width:100vw;height:100vh;display:block}
+#track{height:600vh}
+.hud{position:fixed;z-index:3;text-shadow:0 0 12px rgba(0,0,0,.18);transition:opacity .6s}
+.tl{top:26px;left:30px}.tr{top:26px;right:30px;text-align:right;width:230px}
+.bl{bottom:26px;left:30px}.br{bottom:26px;right:30px;text-align:right}
+.logo{font:400 30px/1 Anton,Impact,sans-serif;letter-spacing:.03em;display:flex;gap:9px;align-items:center}
+.logo img{width:26px;height:26px;filter:brightness(4) grayscale(1)}
+.dim{color:var(--ig-dim)}
+.beat{position:fixed;z-index:3;opacity:0;transition:opacity .5s;pointer-events:none;max-width:300px}
+.beat.on{opacity:1;pointer-events:auto}
+.beat b{display:block;color:var(--ig-toxic);font-weight:500;margin-bottom:8px}
+.beat .big{font:400 clamp(30px,4.4vw,58px)/.95 Anton,Impact,sans-serif;letter-spacing:.02em;text-transform:uppercase;margin:6px 0 10px}
+#b1{left:30px;top:44%}
+#b2{right:30px;top:38%;text-align:right}
+#b3{left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;max-width:none}
+#b4{left:50%;bottom:34px;transform:translateX(-50%);text-align:center;max-width:none}
+.menu a{display:inline-block;margin:0 10px;opacity:.85}
+.menu a:hover{opacity:1;color:var(--ig-toxic)}
+.menu a.main::before{content:"[ "}.menu a.main::after{content:" ]"}
+.callout{position:fixed;z-index:3;left:0;top:0;pointer-events:none;opacity:0;white-space:nowrap}
+.callout i{position:absolute;left:-3px;top:-3px;width:6px;height:6px;border:1px solid var(--ig-ink);border-radius:50%}
+.callout s{position:absolute;left:3px;top:0;width:70px;height:1px;background:var(--ig-ink);transform-origin:0 0;transform:rotate(-28deg)}
+.callout span{position:absolute;left:66px;top:-46px}
+.callout span em{font-style:normal;color:var(--ig-toxic)}
+#sound{background:none;border:0;color:inherit;font:inherit;cursor:pointer;display:flex;gap:7px;align-items:center}
+#sound svg{width:14px;height:14px}
+.loader{position:fixed;inset:0;z-index:9;background:var(--ig-bg);display:grid;place-items:center;transition:opacity 1s}
+.loader.done{opacity:0;pointer-events:none}
+@media (max-width:700px){
+  .tr{display:none}.tl{left:16px;top:18px}.bl{left:16px}.br{right:16px}
+  #b1{left:16px;top:auto;bottom:90px}#b2{right:16px;top:auto;bottom:90px}
+  .menu a{margin:0 6px}
+}
+</style>
+</head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
+
+<div class="loader" id="loader"><span>// exhuming archive <b id="pct">0</b>%</span></div>
+<canvas id="gl" aria-hidden="true"></canvas>
+<div id="track"></div>
+
+<div class="hud tl">
+  <div class="logo"><img src="/public/brand-mark.svg" alt="">DECAY LABS</div>
+  <div class="dim" style="margin-top:9px">// Half-Life Archive<br>Created on Base</div>
+</div>
+<div class="hud tr" id="mani"><span class="dim">////// Manifesto</span><br><span data-scramble>Every Subject hand-drawn. Every one a witness. The city rots. The proof stays onchain.</span></div>
+<div class="hud bl"><span id="hint">Scroll down to<br>discover.</span><br><br><button id="sound" aria-pressed="false"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor"><path d="M2 6h3l4-3v10l-4-3H2z"/><path d="M11.5 5.5a3.5 3.5 0 0 1 0 5" id="wave" opacity=".3"/></svg><span>Sound: OFF</span></button></div>
+<div class="hud br dim" id="chap">00 / 04</div>
+
+<div class="beat" id="b1"><b data-scramble>[01] // The Crypt</b><div class="big" data-scramble>Everything<br>decays.</div><span>Sealed on Base. Every seam is a crack in the archive, and something is still glowing inside.</span></div>
+<div class="beat" id="b2"><b data-scramble>[02] // Witnesses</b><span>Hand-drawn survivors, drifting through the fallout. Each one carries its own half-life.</span></div>
+<div class="beat" id="b3"><b data-scramble>[03] // The Breach</b><div class="big" data-scramble>Proof remains.</div></div>
+<div class="beat" id="b4"><b data-scramble>[04] // Survivor</b><div style="margin-bottom:10px">Keep scrolling to enter the archive &darr;</div><div class="menu"><a class="main" href="#subjects">Collect</a><a href="lore.html">Lore</a><a href="https://opensea.io/collection/decaylabs-archive" target="_blank" rel="noopener">OpenSea</a><a href="https://x.com/Decaylabss" target="_blank" rel="noopener">X</a></div></div>
+
+
 
     <header class="site-header" data-header>
       <a class="brand" href="/" aria-label="Decay Labs home">
@@ -265,5 +325,338 @@
 
     <script type="module" src="/app.js?v=10"></script>
     <script type="module" src="/miniapp-buy.js?v=10"></script>
-  </body>
+  <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import {EffectComposer} from 'three/addons/postprocessing/EffectComposer.js';
+import {RenderPass} from 'three/addons/postprocessing/RenderPass.js';
+import {UnrealBloomPass} from 'three/addons/postprocessing/UnrealBloomPass.js';
+import {ShaderPass} from 'three/addons/postprocessing/ShaderPass.js';
+import {OutputPass} from 'three/addons/postprocessing/OutputPass.js';
+import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+import {DRACOLoader} from 'three/addons/loaders/DRACOLoader.js';
+
+const $ = id => document.getElementById(id);
+const ss = THREE.MathUtils.smoothstep, lerp = THREE.MathUtils.lerp, clamp = THREE.MathUtils.clamp;
+const narrow = () => innerWidth < 700;
+
+/* ---------- text decode ---------- */
+const GLYPHS = '!<>-_\\/[]{}=+*^?#01';
+function scramble(el){
+  const final = el.dataset.final ??= el.innerHTML, text = final.replace(/<br>/g,'\n');
+  let f = 0; const total = 24;
+  (function tick(){
+    el.innerHTML = [...text].map((ch,i)=> ch==='\n'||ch===' '||f/total > i/text.length ? ch : GLYPHS[(Math.random()*GLYPHS.length)|0]).join('').replace(/\n/g,'<br>');
+    if(++f <= total) requestAnimationFrame(tick); else el.innerHTML = final;
+  })();
+}
+
+/* ---------- renderer + post ---------- */
+const renderer = new THREE.WebGLRenderer({canvas:$('gl'), antialias:false, powerPreference:'high-performance'});
+renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));
+renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05;
+const scene = new THREE.Scene();
+scene.fog = new THREE.FogExp2(0xaeb2ab, .03); scene.background = scene.fog.color;
+const camera = new THREE.PerspectiveCamera(40, 1, .1, 400);
+
+const composer = new EffectComposer(renderer);
+composer.addPass(new RenderPass(scene, camera));
+const bloom = new UnrealBloomPass(new THREE.Vector2(256,256), .45, .6, 1.05); composer.addPass(bloom);
+composer.addPass(new OutputPass());
+const finalPass = new ShaderPass({
+  uniforms:{tDiffuse:{value:null},uAb:{value:0},uFlash:{value:0},uTime:{value:0},uRes:{value:new THREE.Vector2(1,1)}},
+  vertexShader:`varying vec2 vUv;void main(){vUv=uv;gl_Position=vec4(position.xy,0.,1.);}`,
+  fragmentShader:`uniform sampler2D tDiffuse;uniform float uAb,uFlash,uTime;uniform vec2 uRes;varying vec2 vUv;
+  float h(vec2 p){return fract(sin(dot(p,vec2(12.9898,78.233)))*43758.5453);}
+  void main(){
+    vec2 uv=vUv, c=uv-.5;
+    float band=step(.5,h(vec2(floor(uv.y*40.),floor(uTime*24.))));      // glitch row offsets on transitions
+    uv.x+=(band-.5)*uAb*.06;
+    vec2 o=c*(.0035+uAb*.05);
+    vec3 col=vec3(texture2D(tDiffuse,uv+o).r,texture2D(tDiffuse,uv).g,texture2D(tDiffuse,uv-o).b);
+    col=mix(col,vec3(.93,.95,.91),uFlash);
+    col+=(h(uv*uRes+fract(uTime)*91.)-.5)*.055;                          // film grain
+    col*=1.-smoothstep(.4,.9,length(c))*.35;                              // vignette
+    gl_FragColor=vec4(col,1.);}`
+});
+composer.addPass(finalPass);
+
+scene.add(new THREE.HemisphereLight(0xeef2ea, 0x5d6058, 1.25));
+const sun = new THREE.DirectionalLight(0xffffff, 1.6); sun.position.set(-8,12,6); scene.add(sun);
+
+/* ---------- shared helpers ---------- */
+function hash(x,y){ const s=Math.sin(x*127.1+y*311.7)*43758.5453; return s-Math.floor(s); }
+function noise(x,y){ const ix=Math.floor(x),iy=Math.floor(y),fx=x-ix,fy=y-iy,u=fx*fx*(3-2*fx),v=fy*fy*(3-2*fy);
+  return lerp(lerp(hash(ix,iy),hash(ix+1,iy),u),lerp(hash(ix,iy+1),hash(ix+1,iy+1),u),v); }
+function fbm(x,y,o=5){ let a=.5,f=1,s=0; for(let i=0;i<o;i++){ s+=a*noise(x*f,y*f); f*=2.03; a*=.5; } return s; }
+const h3 = (x,y,z) => { const s=Math.sin(x*12.9898+y*78.233+z*37.719)*43758.5453; return s-Math.floor(s); };
+function rough(geo, amt){ // displace by position-hash so shared vertices stay welded
+  const p = geo.attributes.position;
+  for(let i=0;i<p.count;i++){ const x=p.getX(i),y=p.getY(i),z=p.getZ(i), k=1+(h3(+x.toFixed(3),+y.toFixed(3),+z.toFixed(3))-.5)*amt; p.setXYZ(i,x*k,y*k,z*k); }
+  geo.computeVertexNormals(); return geo;
+}
+const rock = new THREE.MeshStandardMaterial({color:0x8d918a, roughness:.62, metalness:.08, flatShading:true});
+const GLOW = new THREE.Color(0xe4ffb8).multiplyScalar(4);
+const glowMat = new THREE.MeshBasicMaterial({color:GLOW});
+
+let pending = 0, loadedN = 0;
+const tick = () => { loadedN++; $('pct').textContent = Math.round(loadedN/pending*100); if(loadedN>=pending) $('loader').classList.add('done'); };
+setTimeout(()=>$('loader').classList.add('done'), 7000);
+const tl = new THREE.TextureLoader();
+const tex = src => { pending++; const t = tl.load(src, tick, undefined, tick); t.colorSpace = THREE.SRGBColorSpace; return t; };
+
+/* ================= CH1: the crypt on the ash hill ================= */
+const g1 = new THREE.Group(); scene.add(g1);
+// Blender-built assets (scripts/build-decay-glb.py): terrain w/ baked AO, chipped bricks, cut shards, broken ring
+const draco = new DRACOLoader().setDecoderPath('https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/libs/draco/gltf/');
+pending++;
+const glb = await new GLTFLoader().setDRACOLoader(draco).loadAsync('/public/models/decay.glb').finally(tick);
+const node = n => glb.scene.getObjectByName(n);
+const Y0 = 1.55, HX = 2.1, HZ = 1.6, BH = .4, G = .055, COURSES = 6;
+{
+  const t = node('Terrain'); t.removeFromParent();
+  // lighting is baked in Blender (sun + sky + crypt glow) -> unlit material shows the light map as-is
+  const lm = tex('/public/models/terrain_light.webp'); lm.flipY = false; lm.anisotropy = 8;
+  t.material = new THREE.MeshBasicMaterial({map:lm, color:0xd3d6cf});
+  g1.add(t);
+}
+const brickMat = new THREE.MeshStandardMaterial({color:0xa4a89f, roughness:.95});
+{ const r = node('Rubble'); r.removeFromParent(); r.material = brickMat; g1.add(r); }
+const bricks = glb.scene.children.filter(o=>o.name.startsWith('Brick_'));
+for(const m of bricks){
+  m.removeFromParent(); m.material = brickMat;
+  const dir = new THREE.Vector3(m.position.x, (m.position.y-Y0-1.4)*.6, m.position.z).normalize();
+  m.userData = {home:m.position.clone(), rot:m.rotation.clone(), dir, k:.35+Math.random()*.95, spin:(Math.random()-.5)*1.2};
+  g1.add(m);
+}
+const yTop = Y0+BH/2+COURSES*(BH+G);
+const core = new THREE.Mesh(new THREE.BoxGeometry(2*HX-.5, COURSES*(BH+G)-.1, 2*HZ-.5), new THREE.MeshBasicMaterial({color:new THREE.Color(0xe4ffb8).multiplyScalar(1.5)}));
+core.position.y = Y0 + (COURSES*(BH+G)-.1)/2; g1.add(core);
+const cap = new THREE.Mesh(new THREE.BoxGeometry(2*HX-.2, .12, 2*HZ-.2), brickMat); cap.position.y = yTop-BH/2-.02; g1.add(cap);
+const coreLight = new THREE.PointLight(0xdfffb0, 6, 12, 1.8); coreLight.position.set(0,Y0+1,HZ+.8); g1.add(coreLight);
+
+/* ================= CH2: witnesses frozen in rock shards ================= */
+const g2 = new THREE.Group(); scene.add(g2);
+const shards = [];
+const IDS = [7,13,4,21,2,18,9,24];
+IDS.forEach((id,k)=>{
+  const grp = new THREE.Group();
+  // Blender shard: rock + sunken art face whose UVs follow the break outline
+  const map = tex(`/public/nft-${id}.png`); map.flipY = false;   // glTF UV convention
+  const artMat = new THREE.MeshStandardMaterial({map, roughness:.75, emissive:0xffffff, emissiveMap:map, emissiveIntensity:.3});
+  const src = node(`Shard_${k}`); src.removeFromParent(); src.position.set(0,0,0); src.rotation.set(0,0,0);
+  src.traverse(m=>{ if(m.isMesh) m.material = m.material.name.startsWith('art') ? artMat : rock; });
+  grp.add(src);
+  const side = k%2 ? 1 : -1;
+  grp.position.set(side*(2.1+Math.random()*.8), (Math.random()-.5)*1.6, -6-k*7.5);
+  grp.rotation.set((Math.random()-.5)*.4, -side*.35, (Math.random()-.5)*.5);
+  grp.userData = {id, spin:(Math.random()-.5)*.25, base:grp.rotation.clone(), half:(.12+Math.random()*.8).toFixed(2)};
+  shards.push(grp); g2.add(grp);
+  const el = document.createElement('div'); el.className='callout';
+  el.innerHTML = `<i></i><s></s><span>SUBJECT_${String(id).padStart(3,'0')} <em>●</em><br>half-life ${grp.userData.half}<br><span class="dim" style="position:static">status: witness</span></span>`;
+  document.body.appendChild(el); grp.userData.el = el;
+});
+for(let i=0;i<40;i++){ // small debris shards
+  const m = new THREE.Mesh(node(`Debris_${i%6}`).geometry, rock); m.scale.setScalar(.4+Math.random()*1.1);
+  m.position.set((Math.random()-.5)*16,(Math.random()-.5)*8,-Math.random()*70); m.rotation.set(Math.random()*3,Math.random()*3,0); g2.add(m);
+}
+
+/* ================= CH3: the breach (broken ring portal) ================= */
+const g3 = new THREE.Group(); scene.add(g3);
+const segs = [];
+for(let i=0;i<9;i++){
+  const a = i/9*Math.PI*2;
+  const geo = node(`Seg_${i}`).geometry.clone(); geo.rotateX(Math.PI/2);   // Blender XY ring -> facing camera
+  const seg = new THREE.Mesh(geo, rock);
+  seg.userData = {a:a+.35, k:.6+Math.random()};
+  segs.push(seg); g3.add(seg);
+}
+const inner = new THREE.Mesh(node('InnerRing').geometry.clone().rotateX(Math.PI/2), rock); g3.add(inner);
+const breachCore = new THREE.Mesh(new THREE.IcosahedronGeometry(.42,3), glowMat); g3.add(breachCore);
+const tunnel = [];
+for(let i=0;i<10;i++){
+  const r = new THREE.Mesh(new THREE.TorusGeometry(5+i*.35,.025,4,96), new THREE.MeshBasicMaterial({color:new THREE.Color(0xffffff).multiplyScalar(1.6), transparent:true, opacity:.55}));
+  r.position.z = -4-i*3.2; tunnel.push(r); g3.add(r);
+}
+
+/* ================= CH4: the survivor (particle Subject) ================= */
+const g4 = new THREE.Group(); scene.add(g4);
+g4.add(Object.assign(new THREE.Mesh(new THREE.CircleGeometry(30,96).rotateX(-Math.PI/2), new THREE.MeshStandardMaterial({color:0x9da199, roughness:.75, metalness:.15}))));
+[1.9,2.6,3.6,5,7,9.6,13].forEach(r=>{
+  const m = new THREE.Mesh(new THREE.RingGeometry(r,r+.035,160).rotateX(-Math.PI/2), new THREE.MeshBasicMaterial({color:new THREE.Color(0xffffff).multiplyScalar(1.3)}));
+  m.position.y = .01; g4.add(m);
+});
+const ped = new THREE.Mesh(node('Pedestal').geometry, new THREE.MeshStandardMaterial({color:0xb5b9b1, roughness:.55, metalness:.15, flatShading:true}));
+ped.geometry.computeBoundingBox(); ped.position.y = -ped.geometry.boundingBox.min.y; g4.add(ped);
+const halo = new THREE.Mesh(new THREE.TorusGeometry(4.5,.06,8,160), glowMat); halo.rotation.x = Math.PI/2; halo.position.y = 7.5; g4.add(halo);
+const wall = new THREE.Mesh(new THREE.CylinderGeometry(22,22,20,96,1,true), new THREE.MeshStandardMaterial({color:0x8f938c, side:THREE.BackSide, roughness:.9}));
+wall.position.y = 9; g4.add(wall);
+let fig = null, figBase = null, figPhase = null;
+{
+  pending++;
+  const img = new Image();
+  img.onload = () => {
+    const N = 210, cv = document.createElement('canvas'); cv.width = cv.height = N;
+    const cx = cv.getContext('2d'); cx.drawImage(img,0,0,N,N);
+    const d = cx.getImageData(0,0,N,N).data, bg = [d[0],d[1],d[2]];
+    const pos = [], colr = [];
+    for(let y=0;y<N;y++) for(let x=0;x<N;x++){
+      const i=(y*N+x)*4, dist=Math.abs(d[i]-bg[0])+Math.abs(d[i+1]-bg[1])+Math.abs(d[i+2]-bg[2]);
+      if(dist<70) continue;
+      const u=x/N-.5, v=.5-y/N, bulge=Math.sqrt(Math.max(0,.2-u*u))*.9;
+      for(let r=0;r<2;r++){
+        pos.push(u*3.4+(Math.random()-.5)*.02, v*3.4+2.25+(Math.random()-.5)*.02, (Math.random()-.5)*bulge);
+        const l = (.3*d[i]+.59*d[i+1]+.11*d[i+2])/255, c = .55+l*.75;
+        colr.push(c,c,c*.97);
+      }
+    }
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.Float32BufferAttribute(pos,3));
+    geo.setAttribute('color', new THREE.Float32BufferAttribute(colr,3));
+    figBase = Float32Array.from(pos); figPhase = Float32Array.from({length:pos.length/3},()=>Math.random());
+    fig = new THREE.Points(geo, new THREE.PointsMaterial({size:.026, vertexColors:true, sizeAttenuation:true}));
+    g4.add(fig); tick();
+  };
+  img.onerror = tick; img.src = '/public/nft-7.png';
+}
+
+/* ---------- ash everywhere ---------- */
+const dot = (()=>{ const c=document.createElement('canvas'); c.width=c.height=32; const x=c.getContext('2d');
+  const g=x.createRadialGradient(16,16,0,16,16,16); g.addColorStop(0,'#fff'); g.addColorStop(1,'rgba(255,255,255,0)');
+  x.fillStyle=g; x.fillRect(0,0,32,32); return new THREE.CanvasTexture(c); })();
+const AN = 2200, ashArr = new Float32Array(AN*3);
+for(let i=0;i<AN;i++) ashArr.set([(Math.random()-.5)*50, Math.random()*18-4, (Math.random()-.5)*50], i*3);
+const ashGeo = new THREE.BufferGeometry(); ashGeo.setAttribute('position', new THREE.BufferAttribute(ashArr,3));
+const ash = new THREE.Points(ashGeo, new THREE.PointsMaterial({color:0xffffff, size:.06, map:dot, transparent:true, opacity:.75, depthWrite:false}));
+scene.add(ash);
+
+/* ---------- chapters ---------- */
+// progress ranges; transitions are masked with glitch + flash at the cut points
+const CUT = [.24, .53, .76];
+const FOGS = [[0xa7aba4,.013],[0xcfd2cc,.075],[0xc1c5be,.05],[0x9da19a,.035]];
+const beats = [['b1',.06,.2],['b2',.28,.4],['b3',.6,.72],['b4',.84,1.01]];
+function chapterOf(p){ return p<CUT[0]?0 : p<CUT[1]?1 : p<CUT[2]?2 : 3; }
+
+/* ---------- scroll, pointer, resize ---------- */
+let target = 0, prog = 0; const mouse = {x:0,y:0}, sm = {x:0,y:0};
+let over = 0;
+const onScroll = () => { const max = $('track').offsetHeight-innerHeight; target = clamp(scrollY/max,0,1); over = scrollY-max;
+  const f = 1-ss(over,0,innerHeight*.7); $('gl').style.opacity = f;
+  document.querySelectorAll('.hud').forEach(e=>e.style.visibility = over>0 ? 'hidden' : ''); };
+addEventListener('scroll', onScroll, {passive:true}); onScroll();
+addEventListener('pointermove', e => { mouse.x = e.clientX/innerWidth-.5; mouse.y = e.clientY/innerHeight-.5; });
+function resize(){ const w=innerWidth,h=innerHeight; renderer.setSize(w,h,false); composer.setSize(w,h);
+  camera.aspect=w/h; camera.fov = narrow()?55:40; camera.updateProjectionMatrix();
+  finalPass.uniforms.uRes.value.set(w,h); }
+addEventListener('resize', resize); resize();
+
+/* ---------- sound: synthesized wind (no audio files) ---------- */
+let actx = null, windGain = null;
+$('sound').onclick = () => {
+  if(!actx){
+    actx = new AudioContext();
+    const len = actx.sampleRate*4, buf = actx.createBuffer(1,len,actx.sampleRate), ch = buf.getChannelData(0);
+    let last = 0; for(let i=0;i<len;i++){ last = (last + .02*(Math.random()*2-1))/1.02; ch[i] = last*3.5; } // brown noise
+    const src = actx.createBufferSource(); src.buffer = buf; src.loop = true;
+    const lp = actx.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value = 500;
+    const lfo = actx.createOscillator(), lfoG = actx.createGain(); lfo.frequency.value = .09; lfoG.gain.value = 260; lfo.connect(lfoG).connect(lp.frequency); lfo.start();
+    windGain = actx.createGain(); windGain.gain.value = 0;
+    src.connect(lp).connect(windGain).connect(actx.destination); src.start();
+  }
+  const on = $('sound').getAttribute('aria-pressed') !== 'true';
+  $('sound').setAttribute('aria-pressed', on);
+  $('sound').querySelector('span').textContent = 'Sound: ' + (on ? 'ON' : 'OFF');
+  $('wave').setAttribute('opacity', on ? 1 : .3);
+  actx.resume(); windGain.gain.setTargetAtTime(on ? .5 : 0, actx.currentTime, .4);
+};
+
+/* ---------- loop ---------- */
+const clock = new THREE.Clock(), v = new THREE.Vector3(), look = new THREE.Vector3(), fogC = new THREE.Color();
+let lastChap = -1;
+const shown = new Set();
+function frame(){
+  const dt = Math.min(clock.getDelta(),.05), t = clock.elapsedTime;
+  prog += (target-prog)*.065; const p = prog;
+  sm.x += (mouse.x-sm.x)*.05; sm.y += (mouse.y-sm.y)*.05;
+  const ch = chapterOf(p);
+  g1.visible = ch===0; g2.visible = ch===1; g3.visible = ch===2; g4.visible = ch===3;
+
+  // fog per chapter (cut instantly, flash hides it)
+  fogC.setHex(FOGS[ch][0]); scene.fog.color.copy(fogC); scene.fog.density = FOGS[ch][1];
+
+  // transition glitch + flash
+  let ab = 0; for(const c of CUT) ab = Math.max(ab, Math.exp(-Math.pow((p-c)/.012,2)));
+  finalPass.uniforms.uAb.value = ab + Math.abs(target-prog)*1.2;
+  finalPass.uniforms.uFlash.value = ab*.85;
+  finalPass.uniforms.uTime.value = t;
+
+  const far = narrow() ? 1.45 : 1;
+  if(ch===0){
+    const u = p/CUT[0];
+    const ex = ss(u,.25,.85);
+    for(const b of bricks){ const d=b.userData, a=ex*d.k*.75 + Math.sin(t*1.3+d.k*9)*.015*ex;
+      b.position.copy(d.home).addScaledVector(d.dir,a); b.rotation.set(d.rot.x+d.spin*ex*.4, d.rot.y+d.spin*ex*.5, d.rot.z+d.spin*ex*.3); }
+    coreLight.intensity = 5 + ex*9 + Math.sin(t*2.2);
+    const ang = lerp(.62,-.15,u) + sm.x*.18, rad = lerp(15,8.5,ss(u,0,1))*far;
+    camera.position.set(Math.sin(ang)*rad, Y0+lerp(3.6,2.2,u)-sm.y*.6, Math.cos(ang)*rad);
+    look.set(0, Y0+1.6, 0);
+  } else if(ch===1){
+    const u = (p-CUT[0])/(CUT[1]-CUT[0]);
+    camera.position.set(sm.x*.8, Math.sin(u*Math.PI)*.5-sm.y*.5, lerp(4,-58,u));
+    look.set(sm.x*.4, 0, camera.position.z-10);
+    for(const s of shards){ const d=s.userData; s.rotation.y = d.base.y + Math.sin(t*.3+d.spin*20)*.25; s.position.y += Math.sin(t*.7+d.spin*30)*.0015;
+      v.copy(s.position); v.z += .3; v.project(camera);
+      const dist = camera.position.z - s.position.z;
+      const vis = v.z<1 && dist>2.5 && dist<17 ? ss(dist,2.5,5)*(1-ss(dist,12,17)) : 0;
+      d.el.style.opacity = vis;
+      if(vis>0) d.el.style.transform = `translate(${(v.x*.5+.5)*innerWidth}px,${(-v.y*.5+.5)*innerHeight}px)`;
+    }
+  } else if(ch===2){
+    const u = (p-CUT[1])/(CUT[2]-CUT[1]);
+    const br = ss(u,.4,.95);
+    segs.forEach((s,i)=>{ const d=s.userData; s.rotation.z += dt*(.08+i*.004);
+      s.position.set(Math.cos(d.a)*br*d.k*5, Math.sin(d.a)*br*d.k*5, -br*d.k*2); });
+    inner.rotation.z -= dt*.25; inner.scale.setScalar(1+br*.6);
+    breachCore.scale.setScalar(1 + Math.sin(t*3)*.08 + br*1.2);
+    breachCore.rotation.y += dt*.6;
+    tunnel.forEach((r,i)=>{ r.position.z = -4 - ((i*3.2 + t*2.5) % 32); });
+    camera.position.set(sm.x*.6, -sm.y*.5, lerp(14,3,ss(u,0,1)));
+    look.set(0,0,-10);
+  } else {
+    const u = (p-CUT[2])/(1-CUT[2]);
+    const ang = lerp(-.55,.35,u) + sm.x*.25, rad = lerp(11,6.8,ss(u,0,.7))*far;
+    camera.position.set(Math.sin(ang)*rad, lerp(4.2,2.4,u)-sm.y*.5, Math.cos(ang)*rad);
+    look.set(0, 2, 0);
+    if(fig){ fig.rotation.y = Math.sin(t*.25)*.5;
+      const a = fig.geometry.attributes.position.array;
+      for(let i=0,j=0;i<a.length;i+=3,j++){ const ph=figPhase[j];
+        if(ph<.12){ const f=(t*.12+ph*8)%1; a[i+1]=figBase[i+1]+f*f*2.4; a[i]=figBase[i]+Math.sin(f*6+ph*50)*.15*f; }  // decaying motes drift up
+        else a[i+2]=figBase[i+2]+Math.sin(t*1.5+ph*40)*.01; }
+      fig.geometry.attributes.position.needsUpdate = true; }
+    halo.material.color.copy(GLOW).multiplyScalar(.6+Math.sin(t*1.7)*.15);
+  }
+  if(ch!==1) for(const s of shards) s.userData.el.style.opacity = 0;
+  camera.lookAt(look);
+
+  // ash drifts with the camera
+  ash.position.copy(camera.position); ash.position.y = camera.position.y-6;
+  const a = ashGeo.attributes.position.array;
+  for(let i=1;i<a.length;i+=3){ a[i] -= dt*.35; a[i-1] += Math.sin(t+i)*dt*.08; if(a[i]<-4) a[i]=14; }
+  ashGeo.attributes.position.needsUpdate = true;
+
+  // HUD
+  if(ch!==lastChap){ lastChap = ch; $('chap').textContent = `0${ch+1} / 04`; }
+  $('mani').style.opacity = p<.05 ? 1 : 0; $('hint').style.opacity = p<.03 ? 1 : 0;
+  for(const [id,a0,a1] of beats){ const on = p>=a0 && p<a1 && over<0, el=$(id);
+    el.classList.toggle('on',on);
+    if(on && !shown.has(id)){ shown.add(id); el.querySelectorAll('[data-scramble]').forEach(scramble); }
+    if(!on) shown.delete(id); }
+
+  if(over < innerHeight) composer.render();   // 3D layer fully covered by the archive: skip GPU work
+  requestAnimationFrame(frame);
+}
+document.querySelectorAll('#mani [data-scramble]').forEach(scramble);
+frame();
+</script>
+</body>
 </html>
