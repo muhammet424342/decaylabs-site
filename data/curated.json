@@ -1,0 +1,218 @@
+[
+  {
+    "id": 1,
+    "name": "Decay Labs Subject #0001",
+    "faction": "Rustbound",
+    "record": "Funeral Playback",
+    "image": "/public/nft-1.png",
+    "recordUrl": "/subject?id=1",
+    "openseaUrl": "https://opensea.io/item/base/0x65F5e8006F4eF730d6984836F606a5C5c516CdC8/1"
+  },
+  {
+    "id": 2,
+    "name": "Decay Labs Subject #0002",
+    "faction": "Sporekin",
+    "record": "Three Open Capsules",
+    "image": "/public/nft-2.png",
+    "recordUrl": "/subject?id=2",
+    "openseaUrl": "https://opensea.io/item/base/0x65F5e8006F4eF730d6984836F606a5C5c516CdC8/2"
+  },
+  {
+    "id": 3,
+    "name": "Decay Labs Subject #0003",
+    "faction": "Glass Saints",
+    "record": "Do Not Remember",
+    "image": "/public/nft-3.png",
+    "recordUrl": "/subject?id=3",
+    "openseaUrl": "https://opensea.io/item/base/0x65F5e8006F4eF730d6984836F606a5C5c516CdC8/3"
+  },
+  {
+    "id": 4,
+    "name": "Decay Labs Subject #0004",
+    "faction": "Staticborn",
+    "record": "Borrowed Grief",
+    "image": "/public/nft-4.png",
+    "recordUrl": "/subject?id=4",
+    "openseaUrl": "https://opensea.io/item/base/0x65F5e8006F4eF730d6984836F606a5C5c516CdC8/4"
+  },
+  {
+    "id": 5,
+    "name": "Decay Labs Subject #0005",
+    "faction": "Bone Cartographers",
+    "record": "The Red Moon",
+    "image": "/public/nft-5.png",
+    "recordUrl": "/subject?id=5",
+    "openseaUrl": "https://opensea.io/item/base/0x65F5e8006F4eF730d6984836F606a5C5c516CdC8/5"
+  },
+  {
+    "id": 6,
+    "name": "Decay Labs Subject #0006",
+    "faction": "Rustbound",
+    "record": "Mara Is Alive",
+    "image": "/public/nft-6.png",
+    "recordUrl": "/subject?id=6",
+    "openseaUrl": "https://opensea.io/item/base/0x65F5e8006F4eF730d6984836F606a5C5c516CdC8/6"
+  },
+  {
+    "id": 7,
+    "name": "Decay Labs Subject #0007",
+    "faction": "Sporekin",
+    "record": "Floor Thirteen",
+    "image": "/public/nft-7.png",
+    "recordUrl": "/subject?id=7",
+    "openseaUrl": "https://opensea.io/item/base/0x65F5e8006F4eF730d6984836F606a5C5c516CdC8/7"
+  },
+  {
+    "id": 8,
+    "name": "Decay Labs Subject #0008",
+    "faction": "Glass Saints",
+    "record": "Ledger Skin",
+    "image": "/public/nft-8.png",
+    "recordUrl": "/subject?id=8",
+    "openseaUrl": "https://opensea.io/item/base/0x65F5e8006F4eF730d6984836F606a5C5c516CdC8/8"
+  },
+  {
+    "id": 9,
+    "name": "Decay Labs Subject #0009",
+    "faction": "Staticborn",
+    "record": "The Missing Walk",
+    "image": "/public/nft-9.png",
+    "recordUrl": "/subject?id=9",
+    "openseaUrl": "https://opensea.io/item/base/0x65F5e8006F4eF730d6984836F606a5C5c516CdC8/9"
+  },
+  {
+    "id": 10,
+    "name": "Decay Labs Subject #0010",
+    "faction": "Bone Cartographers",
+    "record": "The First Door",
+    "image": "/public/nft-10.png",
+    "recordUrl": "/subject?id=10",
+    "openseaUrl": "https://opensea.io/item/base/0x65F5e8006F4eF730d6984836F606a5C5c516CdC8/10"
+  },
+  {
+    "id": 11,
+    "name": "Decay Labs Subject #0011",
+    "faction": "Rustbound",
+    "record": "Rust Oath",
+    "image": "/public/nft-11.png",
+    "recordUrl": "/subject?id=11",
+    "openseaUrl": "https://opensea.io/item/base/0x65F5e8006F4eF730d6984836F606a5C5c516CdC8/11"
+  },
+  {
+    "id": 12,
+    "name": "Decay Labs Subject #0012",
+    "faction": "Sporekin",
+    "record": "Language of Spores",
+    "image": "/public/nft-12.png",
+    "recordUrl": "/subject?id=12",
+    "openseaUrl": "https://opensea.io/item/base/0x65F5e8006F4eF730d6984836F606a5C5c516CdC8/12"
+  },
+  {
+    "id": 13,
+    "name": "Decay Labs Subject #0013",
+    "faction": "Glass Saints",
+    "record": "Glass Weapon",
+    "image": "/public/nft-13.png",
+    "recordUrl": "/subject?id=13",
+    "openseaUrl": "https://opensea.io/item/base/0x65F5e8006F4eF730d6984836F606a5C5c516CdC8/13"
+  },
+  {
+    "id": 14,
+    "name": "Decay Labs Subject #0014",
+    "faction": "Staticborn",
+    "record": "Tomorrow's Broadcast",
+    "image": "/public/nft-14.png",
+    "recordUrl": "/subject?id=14",
+    "openseaUrl": "https://opensea.io/item/base/0x65F5e8006F4eF730d6984836F606a5C5c516CdC8/14"
+  },
+  {
+    "id": 15,
+    "name": "Decay Labs Subject #0015",
+    "faction": "Bone Cartographers",
+    "record": "Bone City",
+    "image": "/public/nft-15.png",
+    "recordUrl": "/subject?id=15",
+    "openseaUrl": "https://opensea.io/item/base/0x65F5e8006F4eF730d6984836F606a5C5c516CdC8/15"
+  },
+  {
+    "id": 16,
+    "name": "Decay Labs Subject #0016",
+    "faction": "Rustbound",
+    "record": "Five Records of Nail",
+    "image": "/public/nft-16.png",
+    "recordUrl": "/subject?id=16",
+    "openseaUrl": "https://opensea.io/item/base/0x65F5e8006F4eF730d6984836F606a5C5c516CdC8/16"
+  },
+  {
+    "id": 17,
+    "name": "Decay Labs Subject #0017",
+    "faction": "Sporekin",
+    "record": "The Empty Portrait",
+    "image": "/public/nft-17.png",
+    "recordUrl": "/subject?id=17",
+    "openseaUrl": "https://opensea.io/item/base/0x65F5e8006F4eF730d6984836F606a5C5c516CdC8/17"
+  },
+  {
+    "id": 18,
+    "name": "Decay Labs Subject #0018",
+    "faction": "Glass Saints",
+    "record": "Message from Zero",
+    "image": "/public/nft-18.png",
+    "recordUrl": "/subject?id=18",
+    "openseaUrl": "https://opensea.io/item/base/0x65F5e8006F4eF730d6984836F606a5C5c516CdC8/18"
+  },
+  {
+    "id": 19,
+    "name": "Decay Labs Subject #0019",
+    "faction": "Staticborn",
+    "record": "War for Thirteen",
+    "image": "/public/nft-19.png",
+    "recordUrl": "/subject?id=19",
+    "openseaUrl": "https://opensea.io/item/base/0x65F5e8006F4eF730d6984836F606a5C5c516CdC8/19"
+  },
+  {
+    "id": 20,
+    "name": "Decay Labs Subject #0020",
+    "faction": "Bone Cartographers",
+    "record": "Choose a Shelter",
+    "image": "/public/nft-20.png",
+    "recordUrl": "/subject?id=20",
+    "openseaUrl": "https://opensea.io/item/base/0x65F5e8006F4eF730d6984836F606a5C5c516CdC8/20"
+  },
+  {
+    "id": 21,
+    "name": "Decay Labs Subject #0021",
+    "faction": "Rustbound",
+    "record": "The Stopped Minute",
+    "image": "/public/nft-21.png",
+    "recordUrl": "/subject?id=21",
+    "openseaUrl": "https://opensea.io/item/base/0x65F5e8006F4eF730d6984836F606a5C5c516CdC8/21"
+  },
+  {
+    "id": 22,
+    "name": "Decay Labs Subject #0022",
+    "faction": "Sporekin",
+    "record": "Class Still in Session",
+    "image": "/public/nft-22.png",
+    "recordUrl": "/subject?id=22",
+    "openseaUrl": "https://opensea.io/item/base/0x65F5e8006F4eF730d6984836F606a5C5c516CdC8/22"
+  },
+  {
+    "id": 23,
+    "name": "Decay Labs Subject #0023",
+    "faction": "Glass Saints",
+    "record": "Public Names",
+    "image": "/public/nft-23.png",
+    "recordUrl": "/subject?id=23",
+    "openseaUrl": "https://opensea.io/item/base/0x65F5e8006F4eF730d6984836F606a5C5c516CdC8/23"
+  },
+  {
+    "id": 24,
+    "name": "Decay Labs Subject #0024",
+    "faction": "Staticborn",
+    "record": "The Backward Line",
+    "image": "/public/nft-24.png",
+    "recordUrl": "/subject?id=24",
+    "openseaUrl": "https://opensea.io/item/base/0x65F5e8006F4eF730d6984836F606a5C5c516CdC8/24"
+  }
+]

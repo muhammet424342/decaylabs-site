@@ -13,7 +13,7 @@ function card(profile) {
   article.style.setProperty("--faction", profile.faction.accent);
   article.innerHTML = `
     <div class="subject-card__media"><span class="subject-card__index">SUBJECT / ${profile.paddedId}</span><img src="${profile.image}" alt="Decay Labs Subject ${profile.paddedId}" width="520" height="520" loading="lazy"></div>
-    <div class="subject-card__body"><span class="subject-card__faction">${profile.faction.name}</span><h3>${profile.name}</h3><p>Carries ${profile.memory}.</p><div class="subject-card__links"><a href="/subject?id=${profile.id}">Open record</a><a href="${profile.openseaUrl}" target="_blank" rel="noopener noreferrer">Verify &nearr;</a></div></div>`;
+    <div class="subject-card__body"><span class="subject-card__faction">${profile.faction.name}</span><h3>${profile.name}</h3><p>Archive chapter: ${profile.record}.</p><div class="subject-card__links"><a href="/subject?id=${profile.id}">Open record</a><a href="${profile.openseaUrl}" target="_blank" rel="noopener noreferrer">View on OpenSea &nearr;</a></div></div>`;
   return article;
 }
 
@@ -25,10 +25,14 @@ function render(selected = "all") {
 
 async function initialize() {
   try {
-    const [loreResponse, collectionResponse] = await Promise.all([fetch("/data/lore.json"), fetch("/data/collection.json")]);
-    if (!loreResponse.ok || !collectionResponse.ok) throw new Error("Collection data unavailable");
-    const [lore, collection] = await Promise.all([loreResponse.json(), collectionResponse.json()]);
-    profiles = collection.curatedTokenIds.map((id) => buildSubjectProfile(id, lore, collection));
+    const [loreResponse, collectionResponse, selectionResponse] = await Promise.all([fetch("/data/lore.json"), fetch("/data/collection.json"), fetch("/data/curated.json")]);
+    if (!loreResponse.ok || !collectionResponse.ok || !selectionResponse.ok) throw new Error("Collection data unavailable");
+    const [lore, collection, selection] = await Promise.all([loreResponse.json(), collectionResponse.json(), selectionResponse.json()]);
+    profiles = selection.map((entry) => {
+      const profile = buildSubjectProfile(entry.id, lore, collection);
+      if (entry.faction !== profile.faction.name) throw new Error("Selection faction mismatch");
+      return { ...profile, name: entry.name, record: entry.record, image: entry.image, openseaUrl: entry.openseaUrl };
+    });
     const options = [{ id: "all", name: "All records" }, ...lore.factions];
     options.forEach((option, index) => {
       const button = document.createElement("button");
