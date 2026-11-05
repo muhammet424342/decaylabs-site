@@ -77,7 +77,7 @@
 62. `MEMORY FRAGMENT: post one sentence without the art; reveal the owner six hours later.`
 63. `TWO WITNESSES, ONE MEMORY: followers decide which record is false.`
 64. `CONDITION REPORT: zoom into three visual details and connect each to the lore.`
-65. `ARCHIVE ID roulette: ask for 1–1000, generate the record, then let the commenter name it.`
+65. `ARCHIVE ID roulette: ask for any archive ID, generate the record, then let the commenter name it.`
 66. `FACTION DRAFT: five Subjects, five factions, no labels. Community matches them.`
 67. `BEFORE THE BLOOM: reconstruct a Subject’s ordinary profession from its damage.`
 68. `AFTER TRANSFER: write a micro-story about what the Subject notices when a new witness arrives.`
@@ -103,7 +103,7 @@
 85. `Post the metadata before/after: empty attributes versus narrative record.`
 86. `Share a failed banner concept and the brand rule it violated.`
 87. `Publish the contract address as a designed verification card.`
-88. `Show a five-minute screen capture of browsing all 1,000 Subject records.`
+88. `Show a five-minute screen capture of browsing the Subject records across the archive.`
 89. `Invite developers to review one small open-source checkout function.`
 90. `Post a monthly “what did not ship” report alongside completed work.`
 
