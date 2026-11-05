@@ -58,7 +58,7 @@ STAFF_PRIVATE
 
 `Welcome to Vanta.`
 
-`Decay Labs is a story-first archive of 1,000 altered witnesses on Base. Start with #rules-and-safety, verify every link in #official-links, then choose the faction whose theory of decay you trust most.`
+`Decay Labs is a story-first archive of altered witnesses on Base. Start with #rules-and-safety, verify every link in #official-links, then choose the faction whose theory of decay you trust most.`
 
 `No moderator will DM first. No surprise mint exists. Never sign a transaction sent through a private message.`
 

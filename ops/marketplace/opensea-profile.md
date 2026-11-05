@@ -6,13 +6,13 @@
 
 ## Short description
 
-`1,000 altered witnesses from the sealed city of Vanta. A dark-science archive on Base, built around verifiable provenance and a 100-chapter evolving narrative.`
+`The witnesses from the sealed city of Vanta. A dark-science archive on Base, built around verifiable provenance and a 100-chapter evolving narrative.`
 
 ## Full description
 
 `Everything decays. Proof remains.`
 
-`Decay Labs is a founder-created collection of 1,000 altered Subjects on Base. Each Subject is treated as a witness inside The Half-Life Archive: a dark-science narrative about memory, identity and a sealed city called Vanta.`
+`Decay Labs is a founder-created archive of altered Subjects on Base. Each Subject is treated as a witness inside The Half-Life Archive: a dark-science narrative about memory, identity and a sealed city called Vanta.`
 
 `The collection has no active mint. Acquisition happens only through existing secondary-market listings. Artwork is stored on IPFS and ownership is verifiable through the published Base contract.`
 
