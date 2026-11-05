@@ -1,6 +1,6 @@
 # Decay Labs
 
-The production source for [decaylabs.online](https://decaylabs.online): a hand-illustrated collection of 1,000 Subjects created on Base, the 100-chapter Half-Life Archive, and an in-app Seaport checkout.
+The production source for [decaylabs.online](https://decaylabs.online): a hand-illustrated collection of Subjects created on Base, the 100-chapter Half-Life Archive, and an in-app Seaport checkout.
 
 ## Product surfaces
 
@@ -8,7 +8,7 @@ The production source for [decaylabs.online](https://decaylabs.online): a hand-i
 | --- | --- |
 | `/` | Brand, narrative, curated Subjects and build proof |
 | `/lore` | Ten story arcs and one hundred chapter hooks |
-| `/collection` | Curated archive plus 1-1000 Subject lookup |
+| `/collection` | Curated archive plus Subject lookup by number |
 | `/subject?id=404` | Deterministic narrative record for any token |
 | `/trust` | Contract, inventory, storage and safety disclosure |
 | `/faq` | Plain-language product answers |
@@ -18,7 +18,7 @@ The production source for [decaylabs.online](https://decaylabs.online): a hand-i
 
 ## Truth standard
 
-- All 1,000 tokens were initially created into founder-controlled inventory.
+- The archive tokens were initially created into founder-controlled inventory.
 - There is no active mint, whitelist or surprise airdrop.
 - Ownership lives on Base; media and metadata are referenced through IPFS.
 - Factions and memory fragments are narrative classifications, not rarity or price claims.

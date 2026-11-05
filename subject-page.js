@@ -5,7 +5,7 @@ const record = document.querySelector("[data-subject-record]");
 
 async function initialize() {
   if (!validSubjectId(id)) {
-    record.innerHTML = '<div class="warning-box"><strong>Record not found.</strong> Subject IDs run from 1 to 1000. <a class="verified-link" href="/collection">Return to the archive</a>.</div>';
+    record.innerHTML = '<div class="warning-box"><strong>Record not found.</strong> That Subject record was not found in the archive. <a class="verified-link" href="/collection">Return to the archive</a>.</div>';
     document.title = "Record Not Found | Decay Labs";
     return;
   }

@@ -55,7 +55,7 @@ search.addEventListener("submit", (event) => {
   event.preventDefault();
   const id = Number(new FormData(search).get("subject"));
   if (!validSubjectId(id)) {
-    message.textContent = "Enter a whole number between 1 and 1000.";
+    message.textContent = "Enter a valid Subject record number.";
     return;
   }
   message.textContent = "Opening record...";

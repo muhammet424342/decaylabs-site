@@ -18,7 +18,7 @@
     "imageCid": "QmcNKaghAM636EiW9zQeirxz25s7fU1eJ8tN8PzLgK7qP"
   },
   "truth": {
-    "status": "All 1,000 tokens were created by the founder and initially remain founder-held unless transferred onchain.",
+    "status": "The archive tokens were created by the founder and initially remain founder-held unless transferred onchain.",
     "sale": "There is no active mint or whitelist. Available tokens are secondary listings.",
     "utility": "No token, staking yield, game, airdrop, or financial return is promised.",
     "verification": "Ownership and transfers can be verified independently on BaseScan."

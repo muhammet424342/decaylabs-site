@@ -46,7 +46,7 @@ export function validSubjectId(value) {
 }
 
 export function buildSubjectProfile(id, lore, collection) {
-  if (!validSubjectId(id)) throw new RangeError("Subject ID must be between 1 and 1000.");
+  if (!validSubjectId(id)) throw new RangeError("Subject ID is outside the archive range.");
   const seed = hashNumber(id);
   const faction = lore.factions[(id - 1) % lore.factions.length];
   const memory = MEMORY_OBJECTS[seed % MEMORY_OBJECTS.length];
