@@ -6,7 +6,7 @@ Timezone: Europe/Istanbul. Primary post at 18:30 TRT (15:30 UTC), when European 
 
 - Time: 18:30 TRT
 - Hook: `Everything decays. Proof remains.`
-- Main: `Decay Labs is reopening as The Half-Life Archive: 1,000 altered witnesses on Base, a sealed city called Vanta and one question—who owns a memory after its owner is gone?`
+- Main: `Decay Labs is reopening as The Half-Life Archive: the witnesses on Base, a sealed city called Vanta and one question—who owns a memory after its owner is gone?`
 - CTA: `Enter the archive: https://decaylabs.online`
 - Visual: `public/og-v2.png`
 
@@ -14,7 +14,7 @@ Timezone: Europe/Istanbul. Primary post at 18:30 TRT (15:30 UTC), when European 
 
 - Time: 18:30 TRT
 - Hook: `Most NFT roadmaps ask you to trust the future. Ours starts with what you can verify today.`
-- Main: `1,000 founder-created Subjects. Ownership on Base. Media on IPFS. Public contract. No active mint. No invented rarity. No guaranteed utility.`
+- Main: `Founder-created Subjects. Ownership on Base. Media on IPFS. Public contract. No active mint. No invented rarity. No guaranteed utility.`
 - CTA: `Audit the project yourself: https://decaylabs.online/trust`
 - Visual: contract card using `public/social-card-template.png`
 
@@ -31,7 +31,7 @@ Timezone: Europe/Istanbul. Primary post at 18:30 TRT (15:30 UTC), when European 
 - Time: 18:30 TRT
 - Hook: `A PFP is decoration. A witness carries evidence.`
 - Main: `Every Decay Labs Subject receives a faction, callsign, memory fragment and chapter connection. These are narrative records—not fake rarity scores.`
-- CTA: `Search any ID from 1–1000: https://decaylabs.online/collection`
+- CTA: `Search any Subject record by number: https://decaylabs.online/collection`
 - Visual: three Subject cards from the collection page
 
 ## Day 5 — Founder note
@@ -61,7 +61,7 @@ Timezone: Europe/Istanbul. Primary post at 18:30 TRT (15:30 UTC), when European 
 ## Day 8 — Chapter 002
 
 - Time: 18:30 TRT
-- Hook: `The Vault contains 1,000 capsules. Only 997 are occupied.`
+- Hook: `The Vault contains the capsules. Only a few remain empty.`
 - Main: `DECAY LOG 002 — THREE OPEN CAPSULES. No alarm was triggered. No door was opened. Yet wet footprints begin inside each empty capsule and end at the same sealed wall.`
 - CTA: `Who left first: a prisoner, a scientist or something that was never human?`
 - Visual: dark capsule corridor illustration
@@ -86,7 +86,7 @@ Timezone: Europe/Istanbul. Primary post at 18:30 TRT (15:30 UTC), when European 
 
 - Time: 18:30 TRT
 - Hook: `A collection becomes a brand when owning one piece changes how you read the whole world.`
-- Main: `Decay Labs Subjects are entry points into the same archive. The goal is not 1,000 isolated profile pictures. It is 1,000 conflicting testimonies.`
+- Main: `Decay Labs Subjects are entry points into the same archive. The goal is not a set of isolated profile pictures. It is conflicting testimonies across the archive.`
 - CTA: `Browse and tell me which witness you would question first: https://decaylabs.online/collection`
 - Visual: 3x3 curated grid
 
@@ -109,10 +109,10 @@ Timezone: Europe/Istanbul. Primary post at 18:30 TRT (15:30 UTC), when European 
 ## Day 14 — Community theory
 
 - Time: 21:30 TRT
-- Hook: `Theory Lab 01: there are 1,000 tokens—but the experiment log records Subject 1001.`
+- Hook: `Theory Lab 01: the archive looks complete—but the experiment log records one Subject beyond it.`
 - Main: `Possibility A: an erased witness. B: the Vault itself. C: every holder collectively. D: something worse.`
 - CTA: `Choose A/B/C/D and defend it in one sentence.`
-- Visual: redacted Subject 1001 file
+- Visual: redacted file for the Subject beyond the archive
 
 ## Day 15 — Glass Saints
 

@@ -3,7 +3,7 @@
   "profile": {
     "displayName": "DecayLabs | Half-Life Archive",
     "username": "@Decaylabss",
-    "bio": "Everything decays. Proof remains.\nThe Half-Life Archive — 1,000 Subjects on Base.\nLore, provenance, and an honest build log.",
+    "bio": "Everything decays. Proof remains.\nThe Half-Life Archive — the witnesses on Base.\nLore, provenance, and an honest build log.",
     "website": "https://decaylabs.online",
     "location": "Vanta / Base",
     "avatar": "public/x-avatar.png",
@@ -12,7 +12,7 @@
   },
   "pinnedThread": [
     "DecayLabs — Everything Decays. Proof Remains.",
-    "Half-Life Archive: 1,000 Subjects, five factions, one sealed city called Vanta.",
+    "Half-Life Archive: the witnesses, five factions, one sealed city called Vanta.",
     "Every Subject is a witness with a record, a memory fragment and a chapter connection.",
     "The collection, lore, contract and safer checkout are public. No invented rarity. No guaranteed utility.",
     "Enter the archive: https://decaylabs.online — verify first, then choose your next witness."
@@ -25,7 +25,7 @@
       "cta": "",
       "visual": "",
       "altText": "DecayLabs archive visual for day 1: ",
-      "time": "- Time: 18:30 TRT\n- Hook: `Everything decays. Proof remains.`\n- Main: `Decay Labs is reopening as The Half-Life Archive: 1,000 altered witnesses on Base, a sealed city called Vanta and one question—who owns a memory after its owner is gone?`\n- CTA: `Enter the archive: https://decaylabs.online`\n- Visual: `public/og-v2.png`\n",
+      "time": "- Time: 18:30 TRT\n- Hook: `Everything decays. Proof remains.`\n- Main: `Decay Labs is reopening as The Half-Life Archive: the witnesses on Base, a sealed city called Vanta and one question—who owns a memory after its owner is gone?`\n- CTA: `Enter the archive: https://decaylabs.online`\n- Visual: `public/og-v2.png`\n",
       "purpose": "discover + trust + conversation",
       "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
       "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
@@ -37,7 +37,7 @@
       "cta": "",
       "visual": "",
       "altText": "DecayLabs archive visual for day 2: ",
-      "time": "- Time: 18:30 TRT\n- Hook: `Most NFT roadmaps ask you to trust the future. Ours starts with what you can verify today.`\n- Main: `1,000 founder-created Subjects. Ownership on Base. Media on IPFS. Public contract. No active mint. No invented rarity. No guaranteed utility.`\n- CTA: `Audit the project yourself: https://decaylabs.online/trust`\n- Visual: contract card using `public/social-card-template.png`\n",
+      "time": "- Time: 18:30 TRT\n- Hook: `Most NFT roadmaps ask you to trust the future. Ours starts with what you can verify today.`\n- Main: `Founder-created Subjects. Ownership on Base. Media on IPFS. Public contract. No active mint. No invented rarity. No guaranteed utility.`\n- CTA: `Audit the project yourself: https://decaylabs.online/trust`\n- Visual: contract card using `public/social-card-template.png`\n",
       "purpose": "discover + trust + conversation",
       "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
       "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
@@ -61,7 +61,7 @@
       "cta": "",
       "visual": "",
       "altText": "DecayLabs archive visual for day 4: ",
-      "time": "- Time: 18:30 TRT\n- Hook: `A PFP is decoration. A witness carries evidence.`\n- Main: `Every Decay Labs Subject receives a faction, callsign, memory fragment and chapter connection. These are narrative records—not fake rarity scores.`\n- CTA: `Search any ID from 1–1000: https://decaylabs.online/collection`\n- Visual: three Subject cards from the collection page\n",
+      "time": "- Time: 18:30 TRT\n- Hook: `A PFP is decoration. A witness carries evidence.`\n- Main: `Every Decay Labs Subject receives a faction, callsign, memory fragment and chapter connection. These are narrative records—not fake rarity scores.`\n- CTA: `Search any Subject record by number: https://decaylabs.online/collection`\n- Visual: three Subject cards from the collection page\n",
       "purpose": "discover + trust + conversation",
       "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
       "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
@@ -111,7 +111,7 @@
       "cta": "",
       "visual": "",
       "altText": "DecayLabs archive visual for day 1: ",
-      "time": "- Time: 18:30 TRT\n- Hook: `Everything decays. Proof remains.`\n- Main: `Decay Labs is reopening as The Half-Life Archive: 1,000 altered witnesses on Base, a sealed city called Vanta and one question—who owns a memory after its owner is gone?`\n- CTA: `Enter the archive: https://decaylabs.online`\n- Visual: `public/og-v2.png`\n",
+      "time": "- Time: 18:30 TRT\n- Hook: `Everything decays. Proof remains.`\n- Main: `Decay Labs is reopening as The Half-Life Archive: the witnesses on Base, a sealed city called Vanta and one question—who owns a memory after its owner is gone?`\n- CTA: `Enter the archive: https://decaylabs.online`\n- Visual: `public/og-v2.png`\n",
       "purpose": "discover + trust + conversation",
       "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
       "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
@@ -123,7 +123,7 @@
       "cta": "",
       "visual": "",
       "altText": "DecayLabs archive visual for day 2: ",
-      "time": "- Time: 18:30 TRT\n- Hook: `Most NFT roadmaps ask you to trust the future. Ours starts with what you can verify today.`\n- Main: `1,000 founder-created Subjects. Ownership on Base. Media on IPFS. Public contract. No active mint. No invented rarity. No guaranteed utility.`\n- CTA: `Audit the project yourself: https://decaylabs.online/trust`\n- Visual: contract card using `public/social-card-template.png`\n",
+      "time": "- Time: 18:30 TRT\n- Hook: `Most NFT roadmaps ask you to trust the future. Ours starts with what you can verify today.`\n- Main: `Founder-created Subjects. Ownership on Base. Media on IPFS. Public contract. No active mint. No invented rarity. No guaranteed utility.`\n- CTA: `Audit the project yourself: https://decaylabs.online/trust`\n- Visual: contract card using `public/social-card-template.png`\n",
       "purpose": "discover + trust + conversation",
       "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
       "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
@@ -147,7 +147,7 @@
       "cta": "",
       "visual": "",
       "altText": "DecayLabs archive visual for day 4: ",
-      "time": "- Time: 18:30 TRT\n- Hook: `A PFP is decoration. A witness carries evidence.`\n- Main: `Every Decay Labs Subject receives a faction, callsign, memory fragment and chapter connection. These are narrative records—not fake rarity scores.`\n- CTA: `Search any ID from 1–1000: https://decaylabs.online/collection`\n- Visual: three Subject cards from the collection page\n",
+      "time": "- Time: 18:30 TRT\n- Hook: `A PFP is decoration. A witness carries evidence.`\n- Main: `Every Decay Labs Subject receives a faction, callsign, memory fragment and chapter connection. These are narrative records—not fake rarity scores.`\n- CTA: `Search any Subject record by number: https://decaylabs.online/collection`\n- Visual: three Subject cards from the collection page\n",
       "purpose": "discover + trust + conversation",
       "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
       "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
@@ -195,7 +195,7 @@
       "cta": "",
       "visual": "",
       "altText": "DecayLabs archive visual for day 8: ",
-      "time": "- Time: 18:30 TRT\n- Hook: `The Vault contains 1,000 capsules. Only 997 are occupied.`\n- Main: `DECAY LOG 002 — THREE OPEN CAPSULES. No alarm was triggered. No door was opened. Yet wet footprints begin inside each empty capsule and end at the same sealed wall.`\n- CTA: `Who left first: a prisoner, a scientist or something that was never human?`\n- Visual: dark capsule corridor illustration\n",
+      "time": "- Time: 18:30 TRT\n- Hook: `The Vault contains the capsules. Only a few remain empty.`\n- Main: `DECAY LOG 002 — THREE OPEN CAPSULES. No alarm was triggered. No door was opened. Yet wet footprints begin inside each empty capsule and end at the same sealed wall.`\n- CTA: `Who left first: a prisoner, a scientist or something that was never human?`\n- Visual: dark capsule corridor illustration\n",
       "purpose": "discover + trust + conversation",
       "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
       "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
@@ -231,7 +231,7 @@
       "cta": "",
       "visual": "",
       "altText": "DecayLabs archive visual for day 11: ",
-      "time": "- Time: 18:30 TRT\n- Hook: `A collection becomes a brand when owning one piece changes how you read the whole world.`\n- Main: `Decay Labs Subjects are entry points into the same archive. The goal is not 1,000 isolated profile pictures. It is 1,000 conflicting testimonies.`\n- CTA: `Browse and tell me which witness you would question first: https://decaylabs.online/collection`\n- Visual: 3x3 curated grid\n",
+      "time": "- Time: 18:30 TRT\n- Hook: `A collection becomes a brand when owning one piece changes how you read the whole world.`\n- Main: `Decay Labs Subjects are entry points into the same archive. The goal is not a set of isolated profile pictures. It is conflicting testimonies across the archive.`\n- CTA: `Browse and tell me which witness you would question first: https://decaylabs.online/collection`\n- Visual: 3x3 curated grid\n",
       "purpose": "discover + trust + conversation",
       "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
       "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
@@ -267,7 +267,7 @@
       "cta": "",
       "visual": "",
       "altText": "DecayLabs archive visual for day 14: ",
-      "time": "- Time: 21:30 TRT\n- Hook: `Theory Lab 01: there are 1,000 tokens—but the experiment log records Subject 1001.`\n- Main: `Possibility A: an erased witness. B: the Vault itself. C: every holder collectively. D: something worse.`\n- CTA: `Choose A/B/C/D and defend it in one sentence.`\n- Visual: redacted Subject 1001 file\n",
+      "time": "- Time: 21:30 TRT\n- Hook: `Theory Lab 01: the archive looks complete—but the experiment log records one Subject beyond it.`\n- Main: `Possibility A: an erased witness. B: the Vault itself. C: every holder collectively. D: something worse.`\n- CTA: `Choose A/B/C/D and defend it in one sentence.`\n- Visual: redacted file for the Subject beyond the archive\n",
       "purpose": "discover + trust + conversation",
       "prePublishReply": "A small archive note before today’s signal: read the evidence, then bring a theory.",
       "postPublishEngagement": "Reply to every genuine comment with one specific question or one piece of evidence within 20 minutes."
@@ -1044,10 +1044,10 @@
     },
     {
       "id": 65,
-      "hook": "ARCHIVE ID roulette: ask for 1–1000, generate the record, then let the commenter name it.",
-      "tweet": "ARCHIVE ID roulette: ask for 1–1000, generate the record, then let the commenter name it.",
+      "hook": "ARCHIVE ID roulette: ask for any archive ID, generate the record, then let the commenter name it.",
+      "tweet": "ARCHIVE ID roulette: ask for any archive ID, generate the record, then let the commenter name it.",
       "visual": "Minimal archive type card or relevant Subject artwork",
-      "altText": "DecayLabs post visual: ARCHIVE ID roulette: ask for 1–1000, generate the record, then let the commenter name it.",
+      "altText": "DecayLabs post visual: ARCHIVE ID roulette: ask for any archive ID, generate the record, then let the commenter name it.",
       "cta": "Reply with your reading and share the evidence.",
       "purpose": "conversation + saves + discovery"
     },
@@ -1251,10 +1251,10 @@
     },
     {
       "id": 88,
-      "hook": "Show a five-minute screen capture of browsing all 1,000 Subject records.",
-      "tweet": "Show a five-minute screen capture of browsing all 1,000 Subject records.",
+      "hook": "Show a five-minute screen capture of browsing the Subject records across the archive.",
+      "tweet": "Show a five-minute screen capture of browsing the Subject records across the archive.",
       "visual": "Minimal archive type card or relevant Subject artwork",
-      "altText": "DecayLabs post visual: Show a five-minute screen capture of browsing all 1,000 Subject records.",
+      "altText": "DecayLabs post visual: Show a five-minute screen capture of browsing the Subject records across the archive.",
       "cta": "Reply with your reading and share the evidence.",
       "purpose": "conversation + saves + discovery"
     },

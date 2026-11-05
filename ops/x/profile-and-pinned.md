@@ -10,7 +10,7 @@ Keep `@Decaylabss` until a clean handle can be secured without impersonation ris
 
 ## Bio
 
-`1,000 altered witnesses on Base. Dark science, verifiable provenance and a 100-chapter universe. Everything decays. Proof remains. ↓`
+`The witnesses on Base. Dark science, verifiable provenance and a 100-chapter universe. Everything decays. Proof remains. ↓`
 
 ## Location
 
@@ -32,7 +32,7 @@ Keep `@Decaylabss` until a clean handle can be secured without impersonation ris
 
 `Everything decays. Proof remains.`
 
-`Decay Labs is an onchain archive of 1,000 altered witnesses on Base—and the beginning of The Half-Life Archive.`
+`Decay Labs is an onchain archive of the witnesses on Base—and the beginning of The Half-Life Archive.`
 
 `Start here ↓`
 
@@ -42,7 +42,7 @@ Visual: `public/og-v2.png`
 
 `THE PREMISE`
 
-`In 2149, an immortality network called the Bloom began erasing identity instead of preserving life. One thousand witnesses woke beneath the sealed city of Vanta. Each carried a memory that belonged to someone else.`
+`In 2149, an immortality network called the Bloom began erasing identity instead of preserving life. The witnesses woke beneath the sealed city of Vanta. Each carried a memory that belonged to someone else.`
 
 `Read the archive: https://decaylabs.online/lore`
 
@@ -50,7 +50,7 @@ Visual: `public/og-v2.png`
 
 `THE RECORD`
 
-`• 1,000 founder-created Subjects`
+`• Founder-created Subjects in the archive`
 `• ownership recorded on Base`
 `• media stored on IPFS`
 `• contract and official links published openly`
