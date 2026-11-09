@@ -441,3 +441,13 @@ h1 em { color: var(--toxic); font-style: normal; }
   .section, .page-panel { width: 100%; padding: 2rem 0; border-color: #ccc; }
   a { color: #111; text-decoration: underline; }
 }
+
+/* Archive Board */
+.board-legend { display: flex; flex-wrap: wrap; gap: .5rem 1.2rem; margin: 0 0 1rem; font-family: var(--mono); font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; }
+.board-legend span::before { content: ""; display: inline-block; width: .7rem; height: .7rem; margin-right: .4rem; border-radius: 3px; background: var(--faction); vertical-align: -1px; }
+.board-grid { max-width: 760px; display: grid; grid-template-columns: repeat(10, 1fr); gap: 4px; margin-bottom: 3rem; }
+.board-cell { aspect-ratio: 1; min-width: 0; padding: 2px; border: 1px solid color-mix(in srgb, var(--faction) 40%, transparent); border-radius: 6px; color: var(--void); background: color-mix(in srgb, var(--faction) 10%, var(--surface)); font: 700 .6rem/1.1 var(--mono); cursor: pointer; overflow: hidden; }
+.board-cell:hover, .board-cell:focus-visible { border-color: var(--faction); }
+.board-cell.is-held { background: var(--faction); }
+.board-leaders { margin: 0 0 1.5rem; padding-left: 1.4rem; color: var(--bone); line-height: 1.8; }
+@media (max-width: 640px) { .board-cell { font-size: .45rem; } }
