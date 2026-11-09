@@ -40,3 +40,11 @@ Pushes to the configured production branch deploy through Vercel. Required envir
 - `CURATED_TOKEN_IDS`: optional comma-separated set used by the generic in-app purchase button. Defaults to `1..24`.
 
 No secrets belong in this repository.
+
+## Archive Board (`/board`)
+
+Holders place a Subject into its faction's zone by signing a message (`personal_sign`). No gas, no payment, no prizes; the only reward is a level (days held) and the leaderboard.
+
+- Logic: `board-rules.mjs` (signature check, on-chain `ownerOf` via Base RPC, faction zones, levels). Tests: `tests/board.test.mjs`.
+- API: `functions/api/board.js` (`GET` / `POST /api/board`).
+- Storage: bind a Workers KV namespace as `BOARD` in the Pages project (Settings → Functions → KV bindings). Without it the board runs in preview mode and placements are not persistent.
